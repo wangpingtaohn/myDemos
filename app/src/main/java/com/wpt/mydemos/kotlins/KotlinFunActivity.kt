@@ -17,7 +17,8 @@ class KotlinFunActivity : AppCompatActivity() {
 
     private fun initView(){
         val content = letTest("let") + "\n" + withTest(MyBean("with", 22)) + "\n" +
-        runTest(MyBean("run", 26)) + "\n" + applyTest(MyBean("apply", 26))
+        runTest(MyBean("run", 26)) + "\n" + applyTest(MyBean("apply", 26)) + "\n" +
+                alsoTest("also")
         textview.text = content
     }
 
@@ -81,6 +82,20 @@ class KotlinFunActivity : AppCompatActivity() {
             Log.d("wpt_log", "run_age=$age")
         }
 
+        return result
+    }
+
+    /**
+     * 1.去掉了let的it调用
+     * 2.不用对传入的参数null判断
+     * 3.run函数返回本身
+     */
+    private fun alsoTest(str: String?): String? {
+        var result = str?.also {
+            Log.d("wpt_log", it)
+            Log.d("wpt_log", it.length.toString())
+            "return also result"
+        }
         return result
     }
 
