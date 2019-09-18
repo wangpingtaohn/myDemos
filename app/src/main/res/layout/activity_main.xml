@@ -12,9 +12,10 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
         <Button
+                android:id="@+id/kotlin_fun_demo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello World!"/>
+                android:text="kotlin fun Demo"/>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
