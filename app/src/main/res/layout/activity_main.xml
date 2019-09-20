@@ -21,6 +21,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="keyboard"/>
+        <Button
+                android:id="@+id/hashmap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hashmap"/>
 
 
     </LinearLayout>

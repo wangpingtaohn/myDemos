@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
+import com.wpt.mydemos.map.MapJavaACtivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
         keyboard.setOnClickListener {
             startActivity(Intent(this,KeyboardActivity::class.java))
+        }
+        hashmap.setOnClickListener {
+            startActivity(Intent(this,MapJavaACtivity::class.java))
         }
     }
 }
