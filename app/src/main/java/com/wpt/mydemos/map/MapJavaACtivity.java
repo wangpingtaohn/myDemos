@@ -68,6 +68,7 @@ public class MapJavaACtivity extends AppCompatActivity {
                     String value = entry.getValue();
                     list.add(key,value);
                 }
+                list.set(5,"555");
                 hashMapText += list.toString();
                 textView.setText(hashMapText);
 
