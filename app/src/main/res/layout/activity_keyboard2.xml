@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000">
+
+    <!--转发分享视图-->
+    <LinearLayout
+            android:id="@+id/ll_forward_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+        <!--头部-->
+        <LinearLayout
+                android:id="@+id/ll_user_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+            <ImageView
+                    android:id="@+id/tv_user_avater"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_forward_share_card"
+                    />
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="#ff333333"
+                        android:textSize="16sp"
+                        tools:text="杰克糖"/>
+
+                <ListView
+                        android:id="@+id/rcl_forward"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:paddingTop="6dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/rl_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="12dp">
+
+            <EditText
+                    android:id="@+id/et_forward_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="left|top"
+                    android:hint="说点什么吧…"
+                    android:maxHeight="180dp"
+                    android:maxLength="2000"
+                    android:textColor="#333333"
+                    android:textColorHint="#999999"
+                    android:textSize="16sp"/>
+
+            <TextView
+                    android:id="@+id/tv_share_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_below="@+id/et_forward_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/bg_btn_blue1_corner6"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="立即分享"
+                    android:textColor="#ffffffff"
+                    android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e5e5e5"/>
+
+        <LinearLayout
+                android:id="@+id/ll_share_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_share_ft"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/touch_bg"
+                    android:drawableLeft="@drawable/ic_forward_share_ft_friend"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="发给范团好友"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp"/>
+
+            <TextView
+                    android:id="@+id/tv_share_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/touch_bg"
+                    android:drawableLeft="@drawable/ic_forward_share_card"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="分享卡片到微信 "
+                    android:textColor="#ff333333"
+                    android:textSize="14sp"/>
+
+            <TextView
+                    android:id="@+id/tv_share_copy"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/touch_bg"
+                    android:drawableLeft="@drawable/ic_forward_share_copy"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="复制链接"
+                    android:textColor="#ff333333"
+                    android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!--配合弹起键盘时显示-->
+        <View
+                android:id="@+id/suport_keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:visibility="gone"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

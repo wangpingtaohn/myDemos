@@ -17,11 +17,19 @@
                 android:layout_height="wrap_content"
                 android:text="kotlin fun Demo"/>
         <Button
+                android:layout_marginTop="20dp"
                 android:id="@+id/keyboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="keyboard"/>
         <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/keyboard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="keyboard2"/>
+        <Button
+                android:layout_marginTop="20dp"
                 android:id="@+id/hashmap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

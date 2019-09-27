@@ -3,6 +3,7 @@ package com.wpt.mydemos.map;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.wpt.mydemos.R;
@@ -60,19 +61,40 @@ public class MapJavaACtivity extends AppCompatActivity {
             }
         });
         final List<String> list = new ArrayList<>();
+
         findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                List<String> list2 = new ArrayList<>();
                 for (Map.Entry<Integer, String> entry : hashMap.entrySet()){
                     int key = entry.getKey();
                     String value = entry.getValue();
                     list.add(key,value);
                 }
+                list2.addAll(list);
                 list.set(5,"555");
                 hashMapText += list.toString();
+                hashMapText += "\n====list2====\n" + list2.toString();
                 textView.setText(hashMapText);
 
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                    Toast.makeText(getApplicationContext(),"****",Toast.LENGTH_SHORT).show();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
 }
