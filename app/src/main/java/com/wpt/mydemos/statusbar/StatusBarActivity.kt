@@ -44,9 +44,9 @@ class StatusBarActivity : AppCompatActivity() {
             vis = vis or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             var text = StringBuilder(vis.toString())
 //            //            }
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                vis = vis or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-//            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vis = vis or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            }
             text.append("--")
                 .append(vis.toString())
             status_text.text = text
@@ -62,9 +62,9 @@ class StatusBarActivity : AppCompatActivity() {
             //白色字体
             vis = View.SYSTEM_UI_FLAG_VISIBLE
 //            //            }
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                vis = vis or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-//            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vis = vis or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            }
             text.append("--")
                 .append(vis.toString())
             status_text.text = text
