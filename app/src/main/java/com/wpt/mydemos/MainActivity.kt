@@ -7,6 +7,7 @@ import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
+import com.wpt.mydemos.statusbar.StatusBarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
         hashmap.setOnClickListener {
             startActivity(Intent(this,MapJavaACtivity::class.java))
+        }
+        statusBar.setOnClickListener {
+            startActivity(Intent(this,StatusBarActivity::class.java))
         }
     }
 }
