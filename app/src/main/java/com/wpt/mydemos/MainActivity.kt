@@ -7,6 +7,7 @@ import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
+import com.wpt.mydemos.recycler.RecyclerViewActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
     private fun initView(){
         kotlin_fun_demo.setOnClickListener {
             startActivity(Intent(this,KotlinFunActivity::class.java))
+        }
+        main_recyclerview.setOnClickListener {
+            startActivity(Intent(this,RecyclerViewActivity::class.java))
         }
         keyboard.setOnClickListener {
             startActivity(Intent(this,KeyboardActivity::class.java))
