@@ -59,6 +59,7 @@ class Keyboard2Activity : AppCompatActivity() {
 //            hideView()
 //            rl_edit.viewTreeObserver.addOnGlobalLayoutListener(OnGlobalLayoutListener)
 //        }
+        et_forward_content.setLayerType(View.LAYER_TYPE_SOFTWARE,null)
         var listener = ResizelayoutListener()
         resizelayout.setInputSoftListener(listener)
     }
