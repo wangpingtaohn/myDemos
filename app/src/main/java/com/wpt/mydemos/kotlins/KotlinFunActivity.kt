@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_kotlin_fun.*
+import java.lang.StringBuilder
 
 class KotlinFunActivity : AppCompatActivity() {
 
@@ -20,6 +21,21 @@ class KotlinFunActivity : AppCompatActivity() {
         runTest(MyBean("run", 26)) + "\n" + applyTest(MyBean("apply", 26)) + "\n" +
                 alsoTest("also")
         textview.text = content
+
+        var text2Str = StringBuilder()
+        var bean = TestBean()
+        text2Str.append("TestBean::class=")
+            .append(TestBean::class)
+            .append("\n")
+            .append("TestBean::class.java=")
+            .append(TestBean::class.java)
+            .append("\n")
+            .append("bean::class=")
+            .append(bean::class)
+            .append("\n")
+            .append("bean.javaClass=")
+            .append(bean.javaClass)
+        textview2.text = text2Str
     }
 
 

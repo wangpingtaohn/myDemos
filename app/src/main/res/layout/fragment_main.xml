@@ -13,6 +13,7 @@
             android:gravity="center_horizontal">
 
         <Button
+                android:textAllCaps="false"
                 android:id="@+id/dialog_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -20,6 +21,7 @@
 
 
         <Button
+                android:textAllCaps="false"
                 android:id="@+id/main_recyclerview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,30 +29,35 @@
 
 
         <Button
+                android:textAllCaps="false"
                 android:id="@+id/kotlin_fun_demo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kotlin fun Demo"/>
 
         <Button
+                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:id="@+id/keyboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="keyboard"/>
         <Button
+                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:id="@+id/keyboard2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="keyboard2"/>
         <Button
+                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:id="@+id/hashmap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="hashmap"/>
         <Button
+                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
                 android:id="@+id/statusBar"
                 android:layout_width="wrap_content"
