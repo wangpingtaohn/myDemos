@@ -1,11 +1,17 @@
 package com.wpt.mydemos.map;
 
+import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.wpt.mydemos.MainFragment;
 import com.wpt.mydemos.R;
 
 import java.util.*;
@@ -15,7 +21,7 @@ import java.util.*;
  * date   : 2019-09-19 15:15
  * desc   :
  */
-public class MapJavaACtivity extends AppCompatActivity {
+public class MapJavaACtivity extends Activity {
 
     HashMap<Integer, String> hashMap = new HashMap();
     LinkedHashMap<Integer, String> linkMap = new LinkedHashMap();

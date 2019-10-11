@@ -1,10 +1,10 @@
 package com.wpt.mydemos
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView(){
         var fragment = MainFragment()
-        var ft = supportFragmentManager.beginTransaction()
+        var ft = fragmentManager.beginTransaction()
         ft.add(R.id.frg_content,fragment)
         ft.commitAllowingStateLoss()
     }

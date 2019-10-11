@@ -6,8 +6,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".recycler.RecyclerViewActivity">
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="50dp"
+    <Button
+            android:text="btn1"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/btn1"/>
+    <Button
+            android:text="btn2"
+            android:layout_marginTop="80dp"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/btn2"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="150dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:id="@+id/recyclerView"

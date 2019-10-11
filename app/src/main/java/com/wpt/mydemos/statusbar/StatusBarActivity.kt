@@ -1,18 +1,18 @@
 package com.wpt.mydemos.statusbar
 
+import android.annotation.TargetApi
+import android.app.Activity
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import androidx.annotation.RequiresApi
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_status_bar.*
 import java.lang.StringBuilder
 
-class StatusBarActivity : AppCompatActivity() {
+class StatusBarActivity : Activity() {
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_status_bar)

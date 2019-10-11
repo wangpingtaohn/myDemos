@@ -1,9 +1,9 @@
 package com.wpt.mydemos.keyboard
 
 import android.annotation.TargetApi
+import android.app.Activity
 import android.content.Context
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.MotionEvent
@@ -14,7 +14,7 @@ import com.wpt.mydemos.R
 import com.wpt.mydemos.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_keyboard2.*
 
-class Keyboard2Activity : AppCompatActivity() {
+class Keyboard2Activity : Activity() {
 
     var handler = Handler()
 
@@ -24,7 +24,7 @@ class Keyboard2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keyboard2)
 
-        StatusBarUtils.setStatusBarTransparent(this,R.color.background_material_dark)
+        StatusBarUtils.setStatusBarTransparent(this,R.color.colorPrimaryDark)
 
 //        rl_edit.viewTreeObserver.addOnGlobalLayoutListener {
 //            if (!isSHowKeyboard(this,et_forward_content)){

@@ -6,7 +6,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Rect
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -17,7 +16,7 @@ import android.view.inputmethod.InputMethodManager
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_keyboard.*
 
-class KeyboardActivity : AppCompatActivity() {
+class KeyboardActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

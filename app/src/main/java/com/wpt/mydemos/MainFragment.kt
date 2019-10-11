@@ -1,13 +1,15 @@
 package com.wpt.mydemos
 
+import android.annotation.TargetApi
+import android.app.DialogFragment
+import android.app.Fragment
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
@@ -57,6 +59,7 @@ class MainFragment : Fragment() {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.O)
     private fun showDialog(){
         startActivity(Intent(activity, StatusBarActivity::class.java))
         var dialog = DialogFragment()
