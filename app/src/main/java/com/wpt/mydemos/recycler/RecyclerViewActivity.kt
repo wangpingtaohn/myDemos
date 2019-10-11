@@ -10,6 +10,9 @@ import android.view.View
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
+/**
+ * 处理RecyclerView的数据源发生变化后，不立即执行notifyDataSetChanged的现象
+ */
 class RecyclerViewActivity : Activity(),MyAdapter2.LongClickListener {
 
     private var list = mutableListOf<String>()
