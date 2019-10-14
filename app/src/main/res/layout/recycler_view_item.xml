@@ -11,30 +11,26 @@
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:text="标题"/>
-
-    <ImageView
-            android:id="@+id/img1"
-            app:layout_constraintTop_toBottomOf="@+id/title"
+    <RelativeLayout
             app:layout_constraintLeft_toLeftOf="parent"
-            android:src="@drawable/bg_btn_blue1_corner6"
-            android:layout_marginLeft="20dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
-    <ImageView
-            android:id="@+id/img2"
-            android:layout_marginLeft="20dp"
             app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintLeft_toRightOf="@id/img1"
-            android:src="@drawable/bg_btn_blue1_corner6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
-    <ImageView
-            android:id="@+id/img3"
-            android:layout_marginLeft="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintLeft_toRightOf="@id/img2"
-            android:src="@drawable/bg_btn_blue1_corner6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
 
+        <ImageView
+                android:id="@+id/img1"
+                android:src="@drawable/bg_btn_blue1_corner6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_album_selected"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:id="@+id/img1_sel"
+                android:visibility="gone"
+        />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

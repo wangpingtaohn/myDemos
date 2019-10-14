@@ -3,6 +3,7 @@ package com.wpt.mydemos.recycler
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -13,9 +14,16 @@ import kotlinx.android.synthetic.main.activity_recycler_view.*
 /**
  * 处理RecyclerView的数据源发生变化后，不立即执行notifyDataSetChanged的现象
  */
-class RecyclerViewActivity : Activity(),MyAdapter2.LongClickListener {
+class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
 
     private var list = mutableListOf<String>()
+
+    private var imgList = mutableListOf<ItemBean>()
+
+    private var adapter : MyAdapter ? = null
+
+    private var adapter2 : MyAdapter2 ? = null
+
 
     override fun onLongClick() {
 //        root_view.setBackgroundColor(Color.parseColor("#1A000000"))
@@ -32,22 +40,57 @@ class RecyclerViewActivity : Activity(),MyAdapter2.LongClickListener {
     private fun initView(){
         for (i in 0..99) {
             list.add(i.toString())
+
+        }
+        for (i in 0..59) {
+            var bean = ItemBean()
+            bean.resId = R.drawable.bg_btn_yellow_corner6
+            imgList.add(bean)
+        }
+//        adapter2 =  MyAdapter2(this,list)
+        adapter = MyAdapter(this,imgList)
+        adapter?.setLongClickListener(this)
+
+
+        recyclerView.layoutManager = GridLayoutManager(this,3)
+
+        if (adapter != null){
+            recyclerView.adapter = adapter
+        } else {
+            recyclerView.adapter = adapter2
         }
 
-        var adapter =  MyAdapter2(this,list)
-        adapter.setLongClickListener(this)
-
-        recyclerView.layoutManager = MyLinearLayoutManager(this)
-
-        recyclerView.adapter = adapter
-
         btn1.setOnClickListener {
-            list.clear()
+            if (adapter2 != null){
+                list.clear()
+            }
         }
 
         btn2.setOnClickListener {
-            list.add("btn2")
-            adapter.notifyDataSetChanged()
+            if (adapter2 != null){
+                list.add("btn2")
+                adapter2?.notifyDataSetChanged()
+            }
+        }
+
+        delete.setOnClickListener {
+            adapter?.setIsEdit(false)
+            var temp = mutableListOf<ItemBean>()
+            for (item in imgList){
+                if (item.isDelete){
+                    temp.add(item)
+                }
+            }
+            if (temp.size > 0){
+                imgList.removeAll(temp)
+            }
+            adapter?.notifyDataSetChanged()
+        }
+        select_all.setOnClickListener {
+            for (item in imgList){
+                item.isDelete = true
+            }
+            adapter?.notifyDataSetChanged()
         }
     }
 

@@ -46,6 +46,6 @@ class MyAdapter2(private var context: Context,private var mDatas:List<String>): 
     }
 
     public fun setLongClickListener(l:LongClickListener){
-        longlistener = l;
+        longlistener = l
     }
 }
