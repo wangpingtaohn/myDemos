@@ -67,6 +67,6 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
     }
 
     public fun setLongClickListener(l:LongClickListener){
-        longlistener = l;
+        longlistener = l
     }
 }
