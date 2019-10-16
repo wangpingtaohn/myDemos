@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,6 +65,12 @@ public class MapJavaACtivity extends Activity {
                 }
                 textView.setText(hashMapText);
 
+                try {
+                    expctionTest(null);
+                } catch (Exception e){
+                    Log.e("wpt",e.getMessage());
+                }
+
             }
         });
         final List<String> list = new ArrayList<>();
@@ -101,6 +108,12 @@ public class MapJavaACtivity extends Activity {
 //                }
 //            }
 //        }).start();
+    }
+
+    private void expctionTest(String str){
+        if (str == null){
+            throw new NullPointerException("str is null");
+        }
     }
 
 }
