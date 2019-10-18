@@ -31,26 +31,39 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        with(holder){
-            itemView.setOnLongClickListener {
-                //longlistener?.onLongClick()
-                itemView.img1_sel.visibility = View.VISIBLE
-                mData[position].isDelete = true
-                isEdit = true
-                false
-            }
-            itemView.img1.setImageResource(mData[position].resId)
-            itemView.setOnClickListener {
-                if (isEdit){
-                    itemView.img1_sel.visibility = View.VISIBLE
-                    mData[position].isDelete = true
+        with(holder.itemView){
+            var item = mData[position]
+            item?.run {
+                setOnLongClickListener {
+                    //longlistener?.onLongClick()
+                    if (!isEdit){
+//                        img1_sel.visibility = View.VISIBLE
+                        isDelete = true
+                        isEdit = true
+                        this@MyAdapter.notifyDataSetChanged()
+                        true
+                    } else {
+                        true
+                    }
+
                 }
-            }
+                img1.setImageResource(resId)
+                setOnClickListener {
+                    var pos = holder.adapterPosition
+                    if (isEdit && !isDelete){
+                        img1_sel.visibility = View.VISIBLE
+                        isDelete = true
+                    } else{
+                        img1_sel.visibility = View.GONE
+                        isDelete = false
+                    }
+                }
 //            itemView.img1_sel.setTag(position)
-            if (mData[position].isDelete) {
-                itemView.img1_sel.visibility = View.VISIBLE
-            } else {
-                itemView.img1_sel.visibility = View.GONE
+                if (isDelete) {
+                    img1_sel.visibility = View.VISIBLE
+                } else {
+                    img1_sel.visibility = View.GONE
+                }
             }
         }
 

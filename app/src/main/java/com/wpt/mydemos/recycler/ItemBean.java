@@ -11,4 +11,14 @@ public class ItemBean {
 
     public boolean isDelete;
 
+    public Test test = new Test();
+
+    public static class Test{
+        public Test02 test02 = new Test02();
+    }
+
+    public static class Test02{
+        public boolean isMid;
+    }
+
 }
