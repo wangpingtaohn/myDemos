@@ -10,6 +10,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.wpt.mydemos.emoji.EmojiActivity
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
@@ -38,6 +39,9 @@ class MainFragment : Fragment() {
     private fun initView() {
         dialog_fragment.setOnClickListener {
             showDialog()
+        }
+        main_emoji.setOnClickListener {
+            startActivity(Intent(activity, EmojiActivity::class.java))
         }
         kotlin_fun_demo.setOnClickListener {
             startActivity(Intent(activity, KotlinFunActivity::class.java))
