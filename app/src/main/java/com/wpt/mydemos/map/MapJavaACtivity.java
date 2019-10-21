@@ -45,6 +45,8 @@ public class MapJavaACtivity extends Activity {
         }
     }
 
+    TestBean test;
+    MyTest myTest;
     String hashMapText = "";
     private void initView(){
         final TextView textView = findViewById(R.id.textview);
@@ -71,6 +73,14 @@ public class MapJavaACtivity extends Activity {
                     Log.e("wpt",e.getMessage());
                 }
 
+                test = new TestBean();
+                test.name = "Jim";
+
+                myTest = new MyTest(test);
+                myTest.showTest();
+
+
+                test.name = "Tom";
             }
         });
         final List<String> list = new ArrayList<>();
@@ -89,6 +99,8 @@ public class MapJavaACtivity extends Activity {
                 hashMapText += list.toString();
                 hashMapText += "\n====list2====\n" + list2.toString();
                 textView.setText(hashMapText);
+
+                myTest.showTest();
 
             }
         });
@@ -113,6 +125,22 @@ public class MapJavaACtivity extends Activity {
     private void expctionTest(String str){
         if (str == null){
             throw new NullPointerException("str is null");
+        }
+    }
+
+    class TestBean {
+        String name;
+    }
+
+    class MyTest{
+        TestBean test;
+        public MyTest(TestBean bean){
+            test = bean;
+            Toast.makeText(MapJavaACtivity.this,test.name,Toast.LENGTH_SHORT).show();
+        }
+
+        public void showTest(){
+            Toast.makeText(MapJavaACtivity.this,test.name,Toast.LENGTH_SHORT).show();
         }
     }
 
