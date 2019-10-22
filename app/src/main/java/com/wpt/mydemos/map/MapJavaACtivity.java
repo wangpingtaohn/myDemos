@@ -22,6 +22,8 @@ public class MapJavaACtivity extends Activity {
     HashMap<Integer, String> hashMap = new HashMap();
     LinkedHashMap<Integer, String> linkMap = new LinkedHashMap();
 
+    Set<String> set = new HashSet<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,10 @@ public class MapJavaACtivity extends Activity {
         while (count < 10){
             hashMap.put(count,count+ "");
             linkMap.put(count,count+ "");
+            set.add(count+ "");
             count++;
         }
+        Log.d("MapJavaACtivity_set=", set.toString());
     }
 
     TestBean test;
