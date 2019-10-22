@@ -10,6 +10,7 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.wpt.mydemos.emoji.EmojiActivity
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
@@ -26,6 +27,9 @@ import kotlinx.android.synthetic.main.fragment_main.*
  */
 class MainFragment : Fragment() {
 
+
+    var mainBean: MainBean? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, null)
 
@@ -39,6 +43,13 @@ class MainFragment : Fragment() {
     private fun initView() {
         dialog_fragment.setOnClickListener {
             showDialog()
+        }
+        Toast.makeText(activity, mainBean?.name, Toast.LENGTH_SHORT).show()
+        main_object.setOnClickListener {
+            if (activity is MainActivity){
+                (activity as MainActivity).setMainBean()
+            }
+            Toast.makeText(activity, mainBean?.name, Toast.LENGTH_SHORT).show()
         }
         main_emoji.setOnClickListener {
             startActivity(Intent(activity, EmojiActivity::class.java))
@@ -82,5 +93,6 @@ class MainFragment : Fragment() {
     override fun onStop() {
         super.onStop()
     }
+
 
 }

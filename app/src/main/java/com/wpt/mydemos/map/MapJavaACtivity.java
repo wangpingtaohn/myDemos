@@ -1,20 +1,15 @@
 package com.wpt.mydemos.map;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.wpt.mydemos.MainFragment;
 import com.wpt.mydemos.R;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -128,7 +123,7 @@ public class MapJavaACtivity extends Activity {
         }
     }
 
-    class TestBean {
+    class TestBean implements Serializable {
         String name;
     }
 
