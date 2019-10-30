@@ -10,6 +10,8 @@ import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_status_bar.*
 import java.lang.StringBuilder
 
+
+
 class StatusBarActivity : Activity() {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -21,7 +23,7 @@ class StatusBarActivity : Activity() {
         //window.clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)//清除绘画模式
         //window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)//设置半透明模式
         //window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)//清除半透明模式
-        window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        //window.statusBarColor = resources.getColor(R.color.colorPrimary)
 
         init()
     }
@@ -32,6 +34,12 @@ class StatusBarActivity : Activity() {
         }
         setStatusDefatultBtn.setOnClickListener {
             setStatusBarDefafult()
+        }
+        screenBtn.setOnClickListener {
+            hideBottomUIMenu(this)
+        }
+        screenBtn2.setOnClickListener {
+            window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }
 
@@ -69,6 +77,24 @@ class StatusBarActivity : Activity() {
                 .append(vis.toString())
             status_text.text = text
             decorView.systemUiVisibility = vis
+        }
+    }
+
+    /**
+     * 180115 隐藏 魅族、Nexus、华为等底部的虚拟导航按键，避免遮挡内容
+     *
+     * @param activity 需要隐藏底部导航按键的Activity
+     */
+    fun hideBottomUIMenu(activity: Activity) {
+        //隐藏虚拟按键，并且全屏
+        if (Build.VERSION.SDK_INT < 19) { // lower api
+            val v = activity.window.decorView
+            v.systemUiVisibility = View.GONE
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            val decorView = activity.window.decorView
+            val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View
+                .SYSTEM_UI_FLAG_FULLSCREEN
+            decorView.systemUiVisibility = uiOptions
         }
     }
 }
