@@ -65,6 +65,11 @@ class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
                 list.clear()
             }
         }
+        notify.setOnClickListener {
+            if (adapter != null){
+                adapter!!.notifyItemChanged(0)
+            }
+        }
 
         btn2.setOnClickListener {
             if (adapter2 != null){

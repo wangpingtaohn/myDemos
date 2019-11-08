@@ -15,11 +15,20 @@
 
     <Button
             android:text="delete"
-            android:layout_marginLeft="160dp"
+            android:layout_marginLeft="120dp"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:id="@+id/delete"/>
+
+    <Button
+            android:text="notify"
+            android:layout_marginLeft="240dp"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/notify"/>
+
     <Button
             android:text="btn2"
             android:layout_marginTop="80dp"
@@ -31,7 +40,7 @@
     <Button
             android:layout_marginTop="80dp"
             android:text="select_all"
-            android:layout_marginLeft="160dp"
+            android:layout_marginLeft="120dp"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
