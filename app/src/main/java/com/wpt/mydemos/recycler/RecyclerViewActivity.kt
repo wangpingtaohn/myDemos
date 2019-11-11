@@ -42,7 +42,7 @@ class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
             list.add(i.toString())
 
         }
-        for (i in 0..59) {
+        for (i in 0..6) {
             var bean = ItemBean()
             bean.resId = R.drawable.bg_btn_yellow_corner6
             imgList.add(bean)
