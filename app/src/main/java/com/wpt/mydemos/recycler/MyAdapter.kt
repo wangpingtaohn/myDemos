@@ -17,7 +17,7 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
 
     var longlistener: LongClickListener ? = null
 
-    var isEdit:Boolean = false;
+    var isEdit:Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 

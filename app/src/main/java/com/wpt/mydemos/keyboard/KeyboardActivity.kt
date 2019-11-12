@@ -26,6 +26,8 @@ class KeyboardActivity : Activity() {
     }
 
     private fun initView(){
+        edittext.maxLines = 2
+        edittext.setHorizontallyScrolling(false)
         btn.setOnClickListener {
             var colorText = "已"
             var text = "软键盘已弹出"

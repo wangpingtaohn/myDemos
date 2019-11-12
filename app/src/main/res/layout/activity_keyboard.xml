@@ -16,9 +16,13 @@
             android:layout_height="wrap_content"/>
     <EditText
             android:id="@+id/edittext"
+            android:lines="2"
+            android:inputType="text|textCapSentences"
+            android:scrollHorizontally="false"
             app:layout_constraintTop_toBottomOf="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:imeOptions="actionNext"
             android:hint="editText"/>
 
     <EditText
