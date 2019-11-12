@@ -32,6 +32,8 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         with(holder.itemView){
+            title.maxLines = 2
+            title.setHorizontallyScrolling(false)
             var item = mData[position]
             item?.run {
                 setOnLongClickListener {
