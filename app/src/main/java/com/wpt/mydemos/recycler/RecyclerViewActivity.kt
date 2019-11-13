@@ -47,8 +47,8 @@ class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
             bean.resId = R.drawable.bg_btn_yellow_corner6
             imgList.add(bean)
         }
-//        adapter2 =  MyAdapter2(this,list)
-        adapter = MyAdapter(this,imgList)
+        adapter2 =  MyAdapter2(this,list)
+//        adapter = MyAdapter(this,imgList)
         adapter?.setLongClickListener(this)
 
 
@@ -62,7 +62,8 @@ class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
 
         btn1.setOnClickListener {
             if (adapter2 != null){
-                list.clear()
+//                list.clear()
+                list.removeAt(0)
             }
         }
         notify.setOnClickListener {
