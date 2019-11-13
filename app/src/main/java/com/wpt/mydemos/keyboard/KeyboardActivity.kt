@@ -7,12 +7,14 @@ import android.graphics.Color
 import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_keyboard.*
 
@@ -28,6 +30,7 @@ class KeyboardActivity : Activity() {
     private fun initView(){
         edittext.maxLines = 2
         edittext.setHorizontallyScrolling(false)
+        Handler().postDelayed({ showKeyboard(edittext2,0) }, 100)
         btn.setOnClickListener {
             var colorText = "已"
             var text = "软键盘已弹出"
@@ -37,6 +40,7 @@ class KeyboardActivity : Activity() {
             }
             textview.text = getTextSpan(text,colorText)
         }
+        edittext2.requestFocus()
     }
 
     private fun getTextSpan(text:String,colorText:String):SpannableStringBuilder{
@@ -113,6 +117,24 @@ class KeyboardActivity : Activity() {
             realHeight - usableHeight
         } else {
             0
+        }
+    }
+
+    fun showKeyboard(editText: EditText?, selectionIndex: Int) {
+        if (editText != null) {
+            //设置可获得焦点
+            editText.isFocusable = true
+            editText.isFocusableInTouchMode = true
+            //请求获得焦点
+            editText.requestFocus()
+
+            // 将光标移到末尾
+            editText.setSelection(selectionIndex)
+
+            //调用系统输入法
+            val inputManager = editText
+                .context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.showSoftInput(editText, 0)
         }
     }
 }
