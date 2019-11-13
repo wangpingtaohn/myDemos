@@ -88,18 +88,21 @@ public class MapJavaACtivity extends Activity {
             @Override
             public void onClick(View view) {
                 List<String> list2 = new ArrayList<>();
+
                 for (Map.Entry<Integer, String> entry : hashMap.entrySet()){
                     int key = entry.getKey();
                     String value = entry.getValue();
                     list.add(key,value);
                 }
                 list2.addAll(list);
+                List<String> list3 = new ArrayList<>(list.subList(1, list.size()));
                 list.set(5,"555");
                 hashMapText += list.toString();
                 hashMapText += "\n====list2====\n" + list2.toString();
+                hashMapText += "\n====list3====\n" + list3.toString();
                 textView.setText(hashMapText);
 
-                myTest.showTest();
+                //myTest.showTest();
 
             }
         });
