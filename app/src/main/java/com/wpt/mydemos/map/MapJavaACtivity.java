@@ -3,6 +3,7 @@ package com.wpt.mydemos.map;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -80,6 +81,11 @@ public class MapJavaACtivity extends Activity {
 
 
                 test.name = "Tom";
+
+                String str = "     ";
+                str.trim();
+                Log.d("===wpt===","str=" + str.trim());
+                Log.d("===wpt===","str is null=" + TextUtils.isEmpty(str.trim()));
             }
         });
         final List<String> list = new ArrayList<>();

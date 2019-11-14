@@ -8,8 +8,10 @@ import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.text.TextWatcher
 import android.text.style.ForegroundColorSpan
 import android.util.DisplayMetrics
 import android.view.View
@@ -41,6 +43,18 @@ class KeyboardActivity : Activity() {
             textview.text = getTextSpan(text,colorText)
         }
         edittext2.requestFocus()
+        edittext.addTextChangedListener(object :TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                textview.text = s.toString()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+        })
     }
 
     private fun getTextSpan(text:String,colorText:String):SpannableStringBuilder{
