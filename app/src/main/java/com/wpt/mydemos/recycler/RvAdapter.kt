@@ -16,7 +16,10 @@ import kotlinx.android.synthetic.main.item_recylerview_2.view.*
  *    date   : 2019-11-15 09:22
  *    desc   :
  */
-class RvAdapter(private var context: Context,private var mData: List<ItemBean2>): RecyclerView.Adapter<ViewHolder>() {
+class RvAdapter(private var context: Context,private var mData: MutableList<ItemBean2>): RecyclerView.Adapter<ViewHolder>() {
+
+    private var mMyWatcher: MyWatcher? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ItemVH(LayoutInflater.from(context).inflate(R.layout.item_recylerview_2,parent,false))
     }
@@ -28,9 +31,18 @@ class RvAdapter(private var context: Context,private var mData: List<ItemBean2>)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (holder is ItemVH){
             holder.itemView.run{
+                if (edittext.tag is MyWatcher){
+                    edittext.removeTextChangedListener(mMyWatcher)
+                }
+                mMyWatcher = MyWatcher(holder)
                 edittext.setText(mData[position].index)
-                edittext.tag = position
-                //edittext.addTextChangedListener(MyWatcher(holder))
+                edittext.tag = mMyWatcher
+                edittext.addTextChangedListener(mMyWatcher)
+
+                delete.setOnClickListener {
+                    mData.removeAt(position)
+                    notifyDataSetChanged()
+                }
             }
         }
 
@@ -42,8 +54,7 @@ class RvAdapter(private var context: Context,private var mData: List<ItemBean2>)
     inner class MyWatcher(private var viewHolder: ItemVH): TextWatcher{
 
         override fun afterTextChanged(s: Editable?) {
-            val tag:Int = viewHolder.itemView.edittext.tag as Int
-            mData[tag].index = s.toString()
+            mData[viewHolder.adapterPosition].index = s.toString()
         }
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
