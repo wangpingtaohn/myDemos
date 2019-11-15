@@ -17,6 +17,7 @@ import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.recycler.RecyclerViewActivity
+import com.wpt.mydemos.recycler.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -50,6 +51,9 @@ class MainFragment : Fragment() {
                 (activity as MainActivity).setMainBean()
             }
             Toast.makeText(activity, mainBean?.name, Toast.LENGTH_SHORT).show()
+        }
+        main_recyclerview2.setOnClickListener {
+            startActivity(Intent(activity, RecylerViewActivity2::class.java))
         }
         main_emoji.setOnClickListener {
             startActivity(Intent(activity, EmojiActivity::class.java))

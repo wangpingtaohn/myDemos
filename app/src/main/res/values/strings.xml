@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyDemos</string>
+    <string name="title_activity_recyler_view2">RecylerViewActivity2</string>
 </resources>
