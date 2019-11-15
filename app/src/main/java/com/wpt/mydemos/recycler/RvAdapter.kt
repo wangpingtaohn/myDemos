@@ -31,7 +31,10 @@ class RvAdapter(private var context: Context,private var mData: MutableList<Item
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (holder is ItemVH){
             holder.itemView.run{
-                if (edittext.tag is MyWatcher){
+//                if (edittext.tag is MyWatcher){
+//                    edittext.removeTextChangedListener(mMyWatcher)
+//                }
+                if (mMyWatcher != null){
                     edittext.removeTextChangedListener(mMyWatcher)
                 }
                 mMyWatcher = MyWatcher(holder)
