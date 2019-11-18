@@ -1,4 +1,4 @@
-package com.wpt.mydemos.recycler
+package com.wpt.mydemos.recycler.rcv1
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -15,14 +15,14 @@ import kotlinx.android.synthetic.main.recycler_view_item.view.*
  */
 class MyAdapter(private var context: Context,private var mData:List<ItemBean>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-    var longlistener: LongClickListener ? = null
+    var longlistener: LongClickListener? = null
 
     var isEdit:Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val view = LayoutInflater.from(context).inflate(R.layout.recycler_view_item, parent, false)
-        return  MyViewHolder(view)
+        return MyViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -81,7 +81,7 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
         fun onLongClick()
     }
 
-    public fun setLongClickListener(l:LongClickListener){
+    public fun setLongClickListener(l: LongClickListener){
         longlistener = l
     }
 }

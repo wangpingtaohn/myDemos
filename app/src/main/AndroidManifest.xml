@@ -13,12 +13,12 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-                android:name=".recycler.RecylerViewActivity2"
+                android:name=".recycler.rcv2.RecylerViewActivity2"
                 android:label="@string/title_activity_recyler_view2"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".frgexit.FrgActivity"/>
-        <activity android:name=".recycler.RecyclerViewActivity"/>
+        <activity android:name=".recycler.rcv1.RecyclerViewActivity"/>
         <activity android:name=".statusbar.StatusBarActivity"/>
         <activity
                 android:name=".keyboard.Keyboard2Activity"

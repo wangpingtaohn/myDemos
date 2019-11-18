@@ -1,4 +1,4 @@
-package com.wpt.mydemos.recycler
+package com.wpt.mydemos.recycler.rcv2
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -16,12 +16,18 @@ import kotlinx.android.synthetic.main.item_recylerview_2.view.*
  *    date   : 2019-11-15 09:22
  *    desc   :
  */
-class RvAdapter(private var context: Context,private var mData: MutableList<ItemBean2>): RecyclerView.Adapter<ViewHolder>() {
+class RvAdapter(private var context: Context,private var mData: MutableList<com.wpt.mydemos.recycler.rcv2.ItemBean2>): RecyclerView.Adapter<ViewHolder>() {
 
     private var mMyWatcher: MyWatcher? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ItemVH(LayoutInflater.from(context).inflate(R.layout.item_recylerview_2,parent,false))
+        return ItemVH(
+            LayoutInflater.from(context).inflate(
+                R.layout.item_recylerview_2,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {

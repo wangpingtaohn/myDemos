@@ -1,4 +1,4 @@
-package com.wpt.mydemos.recycler
+package com.wpt.mydemos.recycler.rcv1
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.recycler_view_item2.view.*
  */
 class MyAdapter2(private var context: Context,private var mDatas:List<String>): RecyclerView.Adapter<MyAdapter2.MyViewHolder>() {
 
-    var longlistener: LongClickListener ? = null
+    var longlistener: LongClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -45,7 +45,7 @@ class MyAdapter2(private var context: Context,private var mDatas:List<String>): 
         fun onLongClick()
     }
 
-    public fun setLongClickListener(l:LongClickListener){
+    public fun setLongClickListener(l: LongClickListener){
         longlistener = l
     }
 }

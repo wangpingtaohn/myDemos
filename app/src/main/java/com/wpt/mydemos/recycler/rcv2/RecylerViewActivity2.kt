@@ -1,7 +1,6 @@
-package com.wpt.mydemos.recycler
+package com.wpt.mydemos.recycler.rcv2
 
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
@@ -22,13 +21,13 @@ class RecylerViewActivity2 : AppCompatActivity() {
     }
 
     private fun initView(){
-        val list = mutableListOf<ItemBean2>()
+        val list = mutableListOf<com.wpt.mydemos.recycler.rcv2.ItemBean2>()
         for (i in 1..50){
-            val item = ItemBean2();
+            val item = com.wpt.mydemos.recycler.rcv2.ItemBean2();
             item.index = i.toString()
             list.add(item)
         }
-        adapter = RvAdapter(this,list)
+        adapter = RvAdapter(this, list)
         var layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter

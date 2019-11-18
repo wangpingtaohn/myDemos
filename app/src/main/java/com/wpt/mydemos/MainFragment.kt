@@ -16,8 +16,8 @@ import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
-import com.wpt.mydemos.recycler.RecyclerViewActivity
-import com.wpt.mydemos.recycler.RecylerViewActivity2
+import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
+import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 

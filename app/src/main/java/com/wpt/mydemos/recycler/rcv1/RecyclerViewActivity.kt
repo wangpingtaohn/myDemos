@@ -1,4 +1,4 @@
-package com.wpt.mydemos.recycler
+package com.wpt.mydemos.recycler.rcv1
 
 import android.app.Activity
 import android.content.Context
@@ -14,15 +14,15 @@ import kotlinx.android.synthetic.main.activity_recycler_view.*
 /**
  * 处理RecyclerView的数据源发生变化后，不立即执行notifyDataSetChanged的现象
  */
-class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
+class RecyclerViewActivity : Activity(), MyAdapter.LongClickListener {
 
     private var list = mutableListOf<String>()
 
     private var imgList = mutableListOf<ItemBean>()
 
-    private var adapter : MyAdapter ? = null
+    private var adapter : MyAdapter? = null
 
-    private var adapter2 : MyAdapter2 ? = null
+    private var adapter2 : MyAdapter2? = null
 
 
     override fun onLongClick() {
@@ -48,7 +48,7 @@ class RecyclerViewActivity : Activity(),MyAdapter.LongClickListener {
             imgList.add(bean)
         }
 //        adapter2 =  MyAdapter2(this,list)
-        adapter = MyAdapter(this,imgList)
+        adapter = MyAdapter(this, imgList)
         adapter?.setLongClickListener(this)
 
 
