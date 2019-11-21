@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+             android:padding="20dp">
+
+    <TextView
+
+            android:id="@+id/tv_tag"
+            android:background="@drawable/bg_btn_yellow_corner6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="海南大学"
+            android:textColor="#666666"
+            android:textSize="15sp"/>
+</FrameLayout>

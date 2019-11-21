@@ -42,6 +42,11 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_flexbox.setOnClickListener {
+            startActivity(Intent(activity, FlexboxActivity::class.java))
+        }
+
         dialog_fragment.setOnClickListener {
             showDialog()
         }
@@ -55,6 +60,7 @@ class MainFragment : Fragment() {
         main_recyclerview2.setOnClickListener {
             startActivity(Intent(activity, RecylerViewActivity2::class.java))
         }
+
         main_emoji.setOnClickListener {
             startActivity(Intent(activity, EmojiActivity::class.java))
         }

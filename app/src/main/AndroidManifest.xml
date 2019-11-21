@@ -12,6 +12,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".FlexboxActivity">
+        </activity>
         <activity
                 android:name=".recycler.rcv2.RecylerViewActivity2"
                 android:label="@string/title_activity_recyler_view2"
