@@ -12,6 +12,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".elevation.ElevationActivity">
+        </activity>
         <activity android:name=".FlexboxActivity">
         </activity>
         <activity

@@ -11,6 +11,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_horizontal">
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                android:id="@+id/main_elevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阴影"/>
 
 
         <Button

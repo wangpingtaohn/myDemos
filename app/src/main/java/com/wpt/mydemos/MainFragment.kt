@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
@@ -42,6 +43,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_elevation.setOnClickListener {
+            startActivity(Intent(activity, ElevationActivity::class.java))
+        }
 
         main_flexbox.setOnClickListener {
             startActivity(Intent(activity, FlexboxActivity::class.java))
