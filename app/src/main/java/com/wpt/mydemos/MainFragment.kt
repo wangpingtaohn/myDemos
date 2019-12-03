@@ -20,6 +20,7 @@ import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
+import com.wpt.mydemos.toast.ToastActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -44,6 +45,9 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_toast.setOnClickListener {
+            startActivity(Intent(activity, ToastActivity::class.java))
+        }
         main_elevation.setOnClickListener {
             startActivity(Intent(activity, ElevationActivity::class.java))
         }

@@ -12,6 +12,13 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+                android:name=".widget.BaseActivity"
+                android:label="@string/title_activity_base"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".toast.ToastActivity">
+        </activity>
         <activity android:name=".elevation.ElevationActivity">
         </activity>
         <activity android:name=".FlexboxActivity">
