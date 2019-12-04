@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
 import com.wpt.mydemos.keyboard.Keyboard2Activity
@@ -47,6 +48,9 @@ class MainFragment : Fragment() {
 
         main_toast.setOnClickListener {
             startActivity(Intent(activity, ToastActivity::class.java))
+        }
+        main_variable_edit.setOnClickListener {
+            startActivity(Intent(activity, VariableColorEditTextActivity::class.java))
         }
         main_elevation.setOnClickListener {
             startActivity(Intent(activity, ElevationActivity::class.java))

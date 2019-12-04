@@ -12,6 +12,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".edit.VariableColorEditTextActivity"
+                  android:windowSoftInputMode="adjustResize">
+        </activity>
         <activity
                 android:name=".widget.BaseActivity"
                 android:label="@string/title_activity_base"
