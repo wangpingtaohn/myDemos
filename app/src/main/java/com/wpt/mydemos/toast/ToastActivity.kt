@@ -1,6 +1,8 @@
 package com.wpt.mydemos.toast
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import com.wpt.mydemos.R
@@ -26,7 +28,15 @@ class ToastActivity : BaseActivity() {
             }
             toast!!.show()
             val toast2 = Toast.makeText(this@ToastActivity,"hello",Toast.LENGTH_SHORT)
+            //toast2!!.show()
             Log.d(LOG_TAG, "toast=$toast,toast2=$toast2")
+        }
+        toast_btn1.setOnClickListener {
+            Thread(Runnable {
+                Handler(Looper.getMainLooper()).post {
+                    Toast.makeText(this@ToastActivity,"Thread",Toast.LENGTH_SHORT).show()
+                }
+            }).start()
         }
     }
 }
