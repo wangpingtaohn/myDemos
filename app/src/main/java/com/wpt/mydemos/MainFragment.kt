@@ -18,6 +18,7 @@ import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
+import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
@@ -46,6 +47,9 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_okhttp.setOnClickListener {
+            startActivity(Intent(activity, OkHttpActivity::class.java))
+        }
         main_toast.setOnClickListener {
             startActivity(Intent(activity, ToastActivity::class.java))
         }

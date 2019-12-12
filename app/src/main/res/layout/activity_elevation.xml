@@ -15,13 +15,32 @@
 
     <LinearLayout
             android:layout_gravity="center"
-            android:layout_width="320dp"
-            android:layout_height="320dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:background="@drawable/bg_white_corner4"
-            android:elevation="6dp">
+            android:elevation="16dp">
 
         <TextView
                 android:id="@+id/tv_elevation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:layout_gravity="center_horizontal"
+                android:text="text"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/elevation_shap"
+            android:elevation="6dp">
+
+        <TextView
+                android:id="@+id/tv_elevation2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="28sp"

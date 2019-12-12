@@ -3,6 +3,10 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.wpt.mydemos">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
             android:name=".MyApplication"
             android:allowBackup="false"
@@ -12,8 +16,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".edit.VariableColorEditTextActivity"
-                  android:windowSoftInputMode="adjustResize">
+        <activity android:name=".okhttp.OkHttpActivity">
+        </activity>
+        <activity
+                android:name=".edit.VariableColorEditTextActivity"
+                android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
                 android:name=".widget.BaseActivity"
