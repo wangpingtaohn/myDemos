@@ -69,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:alpha="0.5"
                 android:textColor="#111111"
                 android:textDirection="locale"
                 android:textStyle="bold"
@@ -105,5 +106,25 @@
                 android:layout_marginBottom="8dp"
                 android:text="哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"/>
     </com.lijiankun24.shadowlayout.ShadowLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/bg_white"
+        />
+        <View
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#26000000"
+        />
+
+    </RelativeLayout>
+
+
 
 </LinearLayout>
