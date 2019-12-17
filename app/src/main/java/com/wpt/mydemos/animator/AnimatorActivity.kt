@@ -3,7 +3,6 @@ package com.wpt.mydemos.animator
 import android.os.Bundle
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_animator.*
-import android.view.animation.BounceInterpolator
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.view.animation.LinearInterpolator
