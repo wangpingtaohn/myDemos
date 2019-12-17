@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
@@ -49,6 +50,9 @@ class MainFragment : Fragment() {
 
         main_okhttp.setOnClickListener {
             startActivity(Intent(activity, OkHttpActivity::class.java))
+        }
+        main_animator.setOnClickListener {
+            startActivity(Intent(activity, AnimatorActivity::class.java))
         }
         main_toast.setOnClickListener {
             startActivity(Intent(activity, ToastActivity::class.java))

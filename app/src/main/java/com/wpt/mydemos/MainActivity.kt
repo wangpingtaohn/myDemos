@@ -1,10 +1,10 @@
 package com.wpt.mydemos
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import com.wpt.mydemos.widget.BaseActivity
 
-class MainActivity : Activity() {
+class MainActivity : BaseActivity() {
 
     private val mainBean = MainBean()
 
