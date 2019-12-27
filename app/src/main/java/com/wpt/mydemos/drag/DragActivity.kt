@@ -1,6 +1,7 @@
 package com.wpt.mydemos.drag
 
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
@@ -32,8 +33,12 @@ class DragActivity : BaseActivity() {
             list.add(R.drawable.ic_mygold_money_banner)
             count++
         }
+//        nestedScrollView.fullScroll(View.FOCUS_UP)
         adapter = DragAdapter(this,list)
-        drag_recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
+//        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, true)
+        val lm = GridLayoutManager(this,3)
+//        lm.stackFromEnd = true
+        drag_recyclerview.layoutManager = lm
         drag_recyclerview.adapter = adapter
     }
 
@@ -68,8 +73,9 @@ class DragActivity : BaseActivity() {
             ): Boolean {
                 val fromPosition = viewHolder.adapterPosition
                 val toPosition = target.adapterPosition
-                Collections.swap(list, fromPosition, toPosition);
-                adapter!!.notifyItemMoved(fromPosition, toPosition);
+                Collections.swap(list, fromPosition, toPosition)
+                adapter!!.notifyItemMoved(fromPosition, toPosition)
+                recyclerView.scrollToPosition(toPosition + 2)
                 return true
             }
 
@@ -81,8 +87,14 @@ class DragActivity : BaseActivity() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 //recyclerViewAdapter.delData(viewHolder.adapterPosition)
             }
+
+            override fun isLongPressDragEnabled(): Boolean {
+                return true
+            }
         })
         //关联RecyclerView
         itemTouchHelper.attachToRecyclerView(drag_recyclerview)
     }
+
+
 }

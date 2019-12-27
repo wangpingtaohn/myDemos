@@ -1,12 +1,15 @@
 package com.wpt.mydemos.drag
 
 import android.content.Context
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.item_drag.view.*
+
+
 
 /**
  *    author : wpt
@@ -26,6 +29,23 @@ class DragAdapter(private var mContext: Context,private var data:List<Int>): Rec
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyVH){
             holder.itemView.drag_item_img.setImageResource(data[position])
+        }
+    }
+
+    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
+        super.onAttachedToRecyclerView(recyclerView)
+        val lm = recyclerView.layoutManager
+        if (lm is GridLayoutManager){
+            lm.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+//                    return if (position != 11){
+//                        1
+//                    } else {
+//                        lm.spanCount
+//                    }
+                    return 3
+                }
+            }
         }
     }
 

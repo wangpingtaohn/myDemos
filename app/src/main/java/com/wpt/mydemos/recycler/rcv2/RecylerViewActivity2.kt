@@ -34,8 +34,8 @@ class RecylerViewActivity2 : AppCompatActivity() {
 
         btn.setOnClickListener {
             if (!TextUtils.isEmpty(textview.text)){
-//                recyclerView.scrollToPosition(textview.text.toString().toInt())
-                recyclerView.scrollBy(0,textview.text.toString().toInt())
+                recyclerView.scrollToPosition(textview.text.toString().toInt())
+//                recyclerView.scrollBy(0,textview.text.toString().toInt())
 
             }
         }
