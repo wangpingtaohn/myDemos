@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_drag.*
 import java.util.*
 
 
-class DragActivity : BaseActivity() {
+class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
 
     private var adapter: DragAdapter? = null
 
@@ -35,6 +35,7 @@ class DragActivity : BaseActivity() {
         }
 //        nestedScrollView.fullScroll(View.FOCUS_UP)
         adapter = DragAdapter(this,list)
+        adapter!!.mItemDragListener = this
 //        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, true)
         val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
@@ -43,7 +44,7 @@ class DragActivity : BaseActivity() {
     }
 
     private fun setDrag() {
-        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback() {
+        mItemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback() {
             /**
              *
              * @param recyclerView 关联的recyclerView
@@ -89,11 +90,15 @@ class DragActivity : BaseActivity() {
             }
 
             override fun isLongPressDragEnabled(): Boolean {
-                return true
+                return false
             }
         })
         //关联RecyclerView
-        itemTouchHelper.attachToRecyclerView(drag_recyclerview)
+        mItemTouchHelper!!.attachToRecyclerView(drag_recyclerview)
+    }
+
+    override fun onStartDrags(viewHolder: RecyclerView.ViewHolder) {
+        mItemTouchHelper?.startDrag(viewHolder)
     }
 
 

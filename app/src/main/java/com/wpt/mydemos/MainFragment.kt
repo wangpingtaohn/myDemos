@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.drag.DragActivity
+import com.wpt.mydemos.drag2.Drag2Activity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
@@ -49,6 +50,9 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_drag2.setOnClickListener {
+            startActivity(Intent(activity, Drag2Activity::class.java))
+        }
         main_drag.setOnClickListener {
             startActivity(Intent(activity, DragActivity::class.java))
         }

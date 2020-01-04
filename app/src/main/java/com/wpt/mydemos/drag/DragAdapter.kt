@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.item_drag.view.*
 
 
 
+
+
 /**
  *    author : wpt
  *    date   : 2019-12-18 09:07
@@ -29,6 +31,10 @@ class DragAdapter(private var mContext: Context,private var data:List<Int>): Rec
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MyVH){
             holder.itemView.drag_item_img.setImageResource(data[position])
+            holder.itemView.iv_sort.setOnTouchListener { v, event ->
+                mItemDragListener?.onStartDrags(holder)
+                false
+            }
         }
     }
 
@@ -47,6 +53,11 @@ class DragAdapter(private var mContext: Context,private var data:List<Int>): Rec
                 }
             }
         }
+    }
+
+    var mItemDragListener:ItemDragListener ? = null
+    interface ItemDragListener {
+        fun onStartDrags(viewHolder: RecyclerView.ViewHolder)
     }
 
     class MyVH(view:View):RecyclerView.ViewHolder(view)

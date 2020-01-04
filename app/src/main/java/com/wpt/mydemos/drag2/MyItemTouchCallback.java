@@ -1,4 +1,4 @@
-package com.wpt.mydemos.drag;
+package com.wpt.mydemos.drag2;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

@@ -17,8 +17,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".drag.DragActivity">
-        </activity>
+        <activity android:name=".drag.DragActivity"/>
+        <activity android:name=".drag2.Drag2Activity"/>
         <activity android:name=".animator.AnimatorActivity">
         </activity>
         <activity android:name=".okhttp.OkHttpActivity">

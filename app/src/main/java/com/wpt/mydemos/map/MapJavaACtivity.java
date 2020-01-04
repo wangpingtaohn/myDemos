@@ -112,6 +112,16 @@ public class MapJavaACtivity extends Activity {
 
             }
         });
+
+        List<String> list3 = new ArrayList<>();
+        list3.add("1");
+        list3.add("2");
+        textView.setText(list3.toString());
+        findViewById(R.id.btn3).setOnClickListener(v -> {
+            list3.add(1,"3");
+            textView.setText(list3.toString());
+
+        });
     }
 
     @Override
