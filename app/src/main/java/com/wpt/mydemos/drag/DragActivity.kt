@@ -5,6 +5,8 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
+import android.widget.Toast
+import com.fan.baselib.loadmore.AutoLoadMoreAdapter
 import com.wpt.mydemos.R
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_drag.*
@@ -16,6 +18,8 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
     private var adapter: DragAdapter? = null
 
     private var mItemTouchHelper:ItemTouchHelper? = null
+
+    private var autoLoadMoreAdapter:AutoLoadMoreAdapter ? = null
 
     private var list = mutableListOf<Int>()
 
@@ -33,14 +37,27 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
             list.add(R.drawable.ic_mygold_money_banner)
             count++
         }
+
+        refreshLayout.setEnableRefresh(true)
 //        nestedScrollView.fullScroll(View.FOCUS_UP)
         adapter = DragAdapter(this,list)
+        autoLoadMoreAdapter = AutoLoadMoreAdapter(this,adapter)
         adapter!!.mItemDragListener = this
-//        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, true)
-        val lm = GridLayoutManager(this,3)
+        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, true)
+//        val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
         drag_recyclerview.layoutManager = lm
-        drag_recyclerview.adapter = adapter
+        drag_recyclerview.adapter = autoLoadMoreAdapter
+
+        autoLoadMoreAdapter!!.setOnLoadListener(object : AutoLoadMoreAdapter.OnLoadListener {
+            override fun onRetry() {
+
+            }
+
+            override fun onLoadMore() {
+            }
+        })
+        autoLoadMoreAdapter!!.disable()
     }
 
     private fun setDrag() {
@@ -75,8 +92,9 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
                 val fromPosition = viewHolder.adapterPosition
                 val toPosition = target.adapterPosition
                 Collections.swap(list, fromPosition, toPosition)
-                adapter!!.notifyItemMoved(fromPosition, toPosition)
-                recyclerView.scrollToPosition(toPosition + 2)
+                autoLoadMoreAdapter!!.notifyItemMoved(fromPosition, toPosition)
+//                recyclerView.scrollToPosition(toPosition + 2)
+                refreshLayout.setEnableRefresh(true)
                 return true
             }
 
@@ -98,7 +116,12 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
     }
 
     override fun onStartDrags(viewHolder: RecyclerView.ViewHolder) {
+        refreshLayout.setEnableRefresh(false)
         mItemTouchHelper?.startDrag(viewHolder)
+    }
+
+    override fun onDragsUp() {
+        Toast.makeText(this,"拖拽完成",Toast.LENGTH_SHORT).show()
     }
 
 

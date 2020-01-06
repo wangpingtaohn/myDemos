@@ -26,9 +26,16 @@ android {
         targetCompatibility = '1.8'
     }
 }
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(name: 'fanbase', ext: 'aar')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 //    implementation 'com.android.support:appcompat-v7:27.1.12'
 //    implementation 'androidx.core:core-ktx:1.0.2'

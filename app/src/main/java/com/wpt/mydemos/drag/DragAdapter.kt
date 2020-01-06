@@ -3,7 +3,9 @@ package com.wpt.mydemos.drag
 import android.content.Context
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import com.wpt.mydemos.R
@@ -32,7 +34,12 @@ class DragAdapter(private var mContext: Context,private var data:List<Int>): Rec
         if (holder is MyVH){
             holder.itemView.drag_item_img.setImageResource(data[position])
             holder.itemView.iv_sort.setOnTouchListener { v, event ->
-                mItemDragListener?.onStartDrags(holder)
+                Log.d("===wpt===","drags_event.action=" + event.action)
+                if (event.action == MotionEvent.ACTION_MOVE || event.action == MotionEvent.ACTION_DOWN){
+                    mItemDragListener?.onStartDrags(holder)
+                } else if (event.action == MotionEvent.ACTION_UP){
+                    mItemDragListener?.onDragsUp()
+                }
                 false
             }
         }
@@ -58,6 +65,7 @@ class DragAdapter(private var mContext: Context,private var data:List<Int>): Rec
     var mItemDragListener:ItemDragListener ? = null
     interface ItemDragListener {
         fun onStartDrags(viewHolder: RecyclerView.ViewHolder)
+        fun onDragsUp()
     }
 
     class MyVH(view:View):RecyclerView.ViewHolder(view)
