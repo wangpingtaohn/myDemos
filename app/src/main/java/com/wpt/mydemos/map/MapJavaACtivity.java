@@ -114,11 +114,15 @@ public class MapJavaACtivity extends Activity {
         });
 
         List<String> list3 = new ArrayList<>();
+        List<String> list4 = new ArrayList<>();
         list3.add("1");
         list3.add("2");
+        list4.add("3");
+        list4.add("4");
         textView.setText(list3.toString());
         findViewById(R.id.btn3).setOnClickListener(v -> {
-            list3.add(1,"3");
+//            list3.add(1,"3");
+            list3.addAll(list4);
             textView.setText(list3.toString());
 
         });

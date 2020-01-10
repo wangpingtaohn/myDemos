@@ -21,7 +21,7 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
 
     private var autoLoadMoreAdapter:AutoLoadMoreAdapter ? = null
 
-    private var list = mutableListOf<Int>()
+    private var list = mutableListOf<DragItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,12 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
     private fun initView(){
         var count = 0
         while (count < 20){
-            list.add(R.drawable.ic_mygold_money_banner)
+            val item = DragItem()
+            if (count == 0){
+                item.type = count
+            }
+            item.resId = R.drawable.ic_mygold_money_banner
+            list.add(item)
             count++
         }
 
@@ -43,7 +48,7 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
         adapter = DragAdapter(this,list)
         autoLoadMoreAdapter = AutoLoadMoreAdapter(this,adapter)
         adapter!!.mItemDragListener = this
-        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, true)
+        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
 //        val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
         drag_recyclerview.layoutManager = lm
@@ -75,7 +80,7 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
                 //滑动方向标记
                 val swipeFlags = 0
                 //通过makeMovementFlags方法将将方向标记进行组合，并将复合的值返回
-                return ItemTouchHelper.Callback.makeMovementFlags(dragFlags, swipeFlags)
+                return makeMovementFlags(dragFlags, swipeFlags)
             }
 
             /**
@@ -94,7 +99,7 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
                 Collections.swap(list, fromPosition, toPosition)
                 autoLoadMoreAdapter!!.notifyItemMoved(fromPosition, toPosition)
 //                recyclerView.scrollToPosition(toPosition + 2)
-                refreshLayout.setEnableRefresh(true)
+//                refreshLayout.setEnableRefresh(true)
                 return true
             }
 
@@ -124,5 +129,10 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
         Toast.makeText(this,"拖拽完成",Toast.LENGTH_SHORT).show()
     }
 
+
+    class DragItem {
+        var type:Int = 1
+        var resId:Int = 0
+    }
 
 }

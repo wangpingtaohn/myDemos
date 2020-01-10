@@ -17,6 +17,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
+        <activity android:name=".edit.SorfKeyActivity">
+        </activity>
         <activity android:name=".drag.DragActivity"/>
         <activity android:name=".drag2.Drag2Activity"/>
         <activity android:name=".animator.AnimatorActivity">
