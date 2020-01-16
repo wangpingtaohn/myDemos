@@ -1,6 +1,7 @@
 package com.wpt.mydemos.edit
 
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import com.wpt.mydemos.R
 import com.wpt.mydemos.widget.BaseActivity
@@ -17,6 +18,8 @@ class SorfKeyActivity : BaseActivity() {
 //                Toast.makeText(this, hasFocus.toString(), Toast.LENGTH_SHORT).show()
 //            }
 //        }
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
         et_topic_name.setOnTouchListener { v, event ->
             Toast.makeText(this, "####", Toast.LENGTH_SHORT).show()
         false

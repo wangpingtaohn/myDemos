@@ -19,6 +19,8 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
 
     var isEdit:Boolean = false
 
+    var lastPos = 0
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val view = LayoutInflater.from(context).inflate(R.layout.recycler_view_item, parent, false)
@@ -66,6 +68,13 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
                 } else {
                     img1_sel.visibility = View.GONE
                 }
+//                title.setOnTouchListener { v, event ->
+//                    lastPos = position
+//                    false
+//                }
+//                if (lastPos == position){
+//                    title.requestFocus()
+//                }
             }
         }
 

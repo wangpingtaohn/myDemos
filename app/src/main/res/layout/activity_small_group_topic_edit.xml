@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0"
+                    android:fitsSystemWindows="false"
+    android:background="#ff0"
     android:orientation="vertical">
 
-    <View
+    <TextView
+            android:text="title"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
 
