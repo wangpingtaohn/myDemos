@@ -1,7 +1,6 @@
 package com.wpt.mydemos.drag
 
 import android.content.Context
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.item_drag.view.*
  *    date   : 2019-12-18 09:07
  *    desc   :
  */
-class DragAdapter(private var mContext: Context,private var data:List<DragActivity.DragItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecyclerViewDragAdapter(private var mContext: Context, private var data:List<RecyclerViewDragActivity.DragItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == 0){
             val view = LayoutInflater.from(mContext).inflate(R.layout.item_drag_header, parent, false)

@@ -12,7 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.wpt.mydemos.animator.AnimatorActivity
-import com.wpt.mydemos.drag.DragActivity
+import com.wpt.mydemos.drag.RecyclerViewDragActivity
 import com.wpt.mydemos.drag2.Drag2Activity
 import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
@@ -58,7 +58,7 @@ class MainFragment : Fragment() {
             startActivity(Intent(activity, Drag2Activity::class.java))
         }
         main_drag.setOnClickListener {
-            startActivity(Intent(activity, DragActivity::class.java))
+            startActivity(Intent(activity, RecyclerViewDragActivity::class.java))
         }
         main_okhttp.setOnClickListener {
             startActivity(Intent(activity, OkHttpActivity::class.java))

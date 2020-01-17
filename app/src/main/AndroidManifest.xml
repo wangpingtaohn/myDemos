@@ -19,7 +19,7 @@
             tools:replace="android:allowBackup">
         <activity android:name=".edit.SorfKeyActivity">
         </activity>
-        <activity android:name=".drag.DragActivity"/>
+        <activity android:name=".drag.RecyclerViewDragActivity"/>
         <activity android:name=".drag2.Drag2Activity"/>
         <activity android:name=".animator.AnimatorActivity">
         </activity>

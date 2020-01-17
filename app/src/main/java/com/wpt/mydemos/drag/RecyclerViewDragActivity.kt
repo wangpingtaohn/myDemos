@@ -1,7 +1,6 @@
 package com.wpt.mydemos.drag
 
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
@@ -13,9 +12,9 @@ import kotlinx.android.synthetic.main.activity_drag.*
 import java.util.*
 
 
-class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
+class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDragListener {
 
-    private var adapter: DragAdapter? = null
+    private var adapter: RecyclerViewDragAdapter? = null
 
     private var mItemTouchHelper:ItemTouchHelper? = null
 
@@ -45,7 +44,7 @@ class DragActivity : BaseActivity(),DragAdapter.ItemDragListener {
 
         refreshLayout.setEnableRefresh(true)
 //        nestedScrollView.fullScroll(View.FOCUS_UP)
-        adapter = DragAdapter(this,list)
+        adapter = RecyclerViewDragAdapter(this,list)
         autoLoadMoreAdapter = AutoLoadMoreAdapter(this,adapter)
         adapter!!.mItemDragListener = this
         val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
