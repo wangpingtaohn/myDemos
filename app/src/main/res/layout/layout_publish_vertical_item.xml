@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.wpt.mydemos.widget.PublishVerticalItemView
+<com.wpt.mydemos.widget.VerticalDragView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/vertical_item_layout"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/et_content2"
         android:layout_marginTop="20dp">
 
     <View
@@ -19,8 +18,7 @@
             android:layout_height="5dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/bg_ccc_corner5dp"/>
-    <LinearLayout
-            android:background="@drawable/bg_click_dfdfdf"
+    <com.wpt.mydemos.widget.DragItemView
             android:id="@+id/vertical_add_pic"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -40,7 +38,7 @@
                 android:textColor="@color/color_333"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-    </LinearLayout>
+    </com.wpt.mydemos.widget.DragItemView>
 
     <View
             android:layout_width="match_parent"
@@ -87,7 +85,7 @@
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_publish_photo"/>
+                android:src="@drawable/ic_publish_link"/>
 
         <TextView
                 android:textSize="16sp"
@@ -224,4 +222,4 @@
             android:layout_marginLeft="51dp"
             android:background="@color/color_e5e5e5"/>
 
-</com.wpt.mydemos.widget.PublishVerticalItemView>
+</com.wpt.mydemos.widget.VerticalDragView>

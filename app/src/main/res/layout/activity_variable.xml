@@ -5,7 +5,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <TextView
+            android:id="@+id/textview"
+            android:text="text"
+            android:gravity="center"
+            android:background="@drawable/bg_click_dfdfdf"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
     <EditText
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/textview"
             android:id="@+id/et_content"
             android:minHeight="60dp"
             android:layout_width="match_parent"
