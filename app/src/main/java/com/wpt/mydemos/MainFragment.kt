@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.wpt.mydemos.animator.AnimatorActivity
+import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
 import com.wpt.mydemos.drag2.Drag2Activity
 import com.wpt.mydemos.edit.SorfKeyActivity
@@ -53,6 +54,9 @@ class MainFragment : Fragment() {
 
         main_keybaord.setOnClickListener {
             startActivity(Intent(activity, SorfKeyActivity::class.java))
+        }
+        main_drag_view.setOnClickListener {
+            startActivity(Intent(activity, DragViewActivity::class.java))
         }
         main_drag2.setOnClickListener {
             startActivity(Intent(activity, Drag2Activity::class.java))

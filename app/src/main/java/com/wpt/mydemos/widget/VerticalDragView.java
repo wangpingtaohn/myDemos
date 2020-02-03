@@ -113,14 +113,13 @@ public class VerticalDragView extends LinearLayout{
                         if (y - lastY < 25){
                             isValidMove = false;
                         } else {
-                            isValidMove = false;
+                            isValidMove = true;
                             isMoveUp = false;
-                            int offsetY = y - lastY;
-                            layout(getLeft(),getTop()+offsetY,
-                                    getRight(),getBottom()+offsetY);
+//                            int offsetY = y - lastY;
+//                            layout(getLeft(),getTop()+offsetY,
+//                                    getRight(),getBottom()+offsetY);
                         }
-                    }
-                    if (y < lastY){//向上
+                    } else {//向上
                         isMoveDown = false;
                         isMoveUp = true;
 //                    int limitH = Tools.getScreenH(getContext()) - Tools.dip2px(getContext(), isLongAct ? 0 : 50);
