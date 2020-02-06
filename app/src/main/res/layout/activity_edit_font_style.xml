@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".edit.EditFontStyleActivity">
+
+    <EditText
+            android:id="@+id/edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp"
+    />
+
+    <Button
+            android:text="传递"
+            android:id="@+id/pass_btn"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <EditText
+            android:id="@+id/edittext2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/pass_btn"
+    />
+
+    <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/edittext2"
+    >
+        <TextView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_red"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_red_circle"
+        />
+        <TextView
+                android:id="@+id/tv_blue"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_blue_circle"
+        />
+        <TextView
+                android:layout_alignParentRight="true"
+                android:id="@+id/tv_green"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_green_circle"
+        />
+
+    </RelativeLayout>
+
+</RelativeLayout>

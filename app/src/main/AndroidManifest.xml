@@ -17,6 +17,17 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
+        <activity android:name=".edit.EditFontStyleActivity">
+        </activity>
+        <activity android:name=".oom.OOMActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".drag.DragViewActivity">
         </activity>
         <activity android:name=".edit.SorfKeyActivity">

@@ -15,6 +15,7 @@ import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
 import com.wpt.mydemos.drag2.Drag2Activity
+import com.wpt.mydemos.edit.EditFontStyleActivity
 import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
@@ -24,6 +25,7 @@ import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
+import com.wpt.mydemos.oom.OOMActivity
 import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
@@ -52,6 +54,12 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_font.setOnClickListener {
+            startActivity(Intent(activity, EditFontStyleActivity::class.java))
+        }
+        main_oom.setOnClickListener {
+            startActivity(Intent(activity, OOMActivity::class.java))
+        }
         main_keybaord.setOnClickListener {
             startActivity(Intent(activity, SorfKeyActivity::class.java))
         }

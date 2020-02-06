@@ -14,7 +14,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     companion object {
-        var LOG_TAG = javaClass.simpleName
+        val LOG_TAG = javaClass.simpleName!!
     }
 
     override fun getResources(): Resources {
