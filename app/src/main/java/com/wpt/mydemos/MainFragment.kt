@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.idlefish.flutterboost.FlutterBoost
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
@@ -20,6 +21,7 @@ import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
+import com.wpt.mydemos.flutter.MyFlutterActivity
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
@@ -30,6 +32,7 @@ import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.toast.ToastActivity
+import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -54,6 +57,10 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_flutter.setOnClickListener {
+            startActivity(Intent(activity, MyFlutterActivity::class.java))
+//            startActivity(FlutterActivity.createDefaultIntent(activity))
+        }
         main_font.setOnClickListener {
             startActivity(Intent(activity, EditFontStyleActivity::class.java))
         }

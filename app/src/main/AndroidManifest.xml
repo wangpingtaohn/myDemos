@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.wpt.mydemos">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.wpt.mydemos">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- flutter-boost -->
+    <meta-data
+            android:name="flutterEmbedding"
+            android:value="2"></meta-data>
 
     <application
             android:name=".MyApplication"
@@ -17,65 +20,75 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".edit.EditFontStyleActivity">
-        </activity>
+        <activity android:name=".flutter.MyFlutterActivity"></activity>
+        <activity android:name=".flutter.FlutterFragmentPageActivity" />
+        <activity android:name=".flutter.NativePageActivity" />
+        <activity android:name=".edit.EditFontStyleActivity" />
         <activity android:name=".oom.OOMActivity">
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
 
-                <data android:mimeType="image/*"/>
+                <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-        <activity android:name=".drag.DragViewActivity">
-        </activity>
-        <activity android:name=".edit.SorfKeyActivity">
-        </activity>
-        <activity android:name=".drag.RecyclerViewDragActivity"/>
-        <activity android:name=".drag2.Drag2Activity"/>
-        <activity android:name=".animator.AnimatorActivity">
-        </activity>
-        <activity android:name=".okhttp.OkHttpActivity">
-        </activity>
+        <activity android:name=".drag.DragViewActivity" />
+        <activity android:name=".edit.SorfKeyActivity" />
+        <activity android:name=".drag.RecyclerViewDragActivity" />
+        <activity android:name=".drag2.Drag2Activity" />
+        <activity android:name=".animator.AnimatorActivity" />
+        <activity android:name=".okhttp.OkHttpActivity" />
         <activity
                 android:name=".edit.VariableColorEditTextActivity"
-                android:windowSoftInputMode="adjustResize">
-        </activity>
+                android:windowSoftInputMode="adjustResize" />
         <activity
                 android:name=".widget.BaseActivity"
                 android:label="@string/title_activity_base"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".toast.ToastActivity">
-        </activity>
-        <activity android:name=".elevation.ElevationActivity">
-        </activity>
-        <activity android:name=".FlexboxActivity">
-        </activity>
+                android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".toast.ToastActivity" />
+        <activity android:name=".elevation.ElevationActivity" />
+        <activity android:name=".FlexboxActivity" />
         <activity
                 android:name=".recycler.rcv2.RecylerViewActivity2"
                 android:label="@string/title_activity_recyler_view2"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".frgexit.FrgActivity"/>
-        <activity android:name=".recycler.rcv1.RecyclerViewActivity"/>
-        <activity android:name=".statusbar.StatusBarActivity"/>
+                android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".frgexit.FrgActivity" />
+        <activity android:name=".recycler.rcv1.RecyclerViewActivity" />
+        <activity android:name=".statusbar.StatusBarActivity" />
         <activity
                 android:name=".keyboard.Keyboard2Activity"
-                android:theme="@style/ActivityDialogTheme">
-        </activity>
-        <activity android:name=".map.MapJavaACtivity"/>
-        <activity android:name=".keyboard.KeyboardActivity"/>
-        <activity android:name=".kotlins.KotlinFunActivity"/>
-        <activity android:name=".emoji.EmojiActivity"/>
+                android:theme="@style/ActivityDialogTheme" />
+        <activity android:name=".map.MapJavaACtivity" />
+        <activity android:name=".keyboard.KeyboardActivity" />
+        <activity android:name=".kotlins.KotlinFunActivity" />
+        <activity android:name=".emoji.EmojiActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+                android:name="io.flutter.embedding.android.FlutterActivity"
+                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+                android:hardwareAccelerated="true"
+                android:theme="@style/AppTheme"
+                android:windowSoftInputMode="adjustResize" />
+        <activity
+                android:name="com.idlefish.flutterboost.containers.BoostFlutterActivity"
+                android:theme="@style/Theme.AppCompat"
+                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+                android:hardwareAccelerated="true"
+                android:windowSoftInputMode="adjustResize" >
+<!--            <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@drawable/bg_white"/>-->
+
+        </activity>
+
+        <meta-data android:name="flutterEmbedding"
+                android:value="2">
+        </meta-data>
     </application>
 
 </manifest>

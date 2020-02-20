@@ -96,7 +96,7 @@ android:background="#000">
 
     </LinearLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="30dp">
@@ -132,6 +132,6 @@ android:background="#000">
                 android:layout_height="wrap_content"/>
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

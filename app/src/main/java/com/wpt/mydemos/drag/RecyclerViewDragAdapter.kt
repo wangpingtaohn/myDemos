@@ -1,7 +1,7 @@
 package com.wpt.mydemos.drag
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -75,7 +75,7 @@ class RecyclerViewDragAdapter(private var mContext: Context, private var data:Li
         fun onDragsUp()
     }
 
-    class MyVH(view:View):RecyclerView.ViewHolder(view)
+    class MyVH(view:View): RecyclerView.ViewHolder(view)
 
-    class HeaderVH(view:View):RecyclerView.ViewHolder(view)
+    class HeaderVH(view:View): RecyclerView.ViewHolder(view)
 }

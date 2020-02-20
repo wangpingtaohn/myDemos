@@ -1,9 +1,9 @@
 package com.wpt.mydemos.drag
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.helper.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ItemTouchHelper
 import android.widget.Toast
 import com.fan.baselib.loadmore.AutoLoadMoreAdapter
 import com.wpt.mydemos.R
@@ -47,7 +47,11 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
         adapter = RecyclerViewDragAdapter(this,list)
         autoLoadMoreAdapter = AutoLoadMoreAdapter(this,adapter)
         adapter!!.mItemDragListener = this
-        val lm = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
+        val lm = LinearLayoutManager(
+            this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
 //        val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
         drag_recyclerview.layoutManager = lm

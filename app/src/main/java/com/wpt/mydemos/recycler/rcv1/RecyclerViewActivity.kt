@@ -3,9 +3,9 @@ package com.wpt.mydemos.recycler.rcv1
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
@@ -53,7 +53,7 @@ class RecyclerViewActivity : Activity(), MyAdapter.LongClickListener {
         adapter?.setLongClickListener(this)
 
 
-        recyclerView.layoutManager = GridLayoutManager(this,3)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
 
         if (adapter != null){
             recyclerView.adapter = adapter

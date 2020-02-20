@@ -1,8 +1,8 @@
 package com.wpt.mydemos.recycler.rcv2
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.text.TextUtils
 import com.wpt.mydemos.R
 
@@ -28,7 +28,11 @@ class RecylerViewActivity2 : AppCompatActivity() {
             list.add(item)
         }
         adapter = RvAdapter(this, list)
-        var layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        var layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.VERTICAL,
+            false
+        )
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
