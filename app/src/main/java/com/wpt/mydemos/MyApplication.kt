@@ -12,6 +12,8 @@ import io.flutter.embedding.android.FlutterView
 
 
 
+
+
 /**
  *    author : wpt
  *    date   : 2019-10-19 10:41
@@ -35,6 +37,10 @@ class MyApplication: Application() {
             }
 
         val boostLifecycleListener = object : FlutterBoost.BoostLifecycleListener {
+
+            override fun beforeCreateEngine() {
+
+            }
 
             override fun onEngineCreated() {
 

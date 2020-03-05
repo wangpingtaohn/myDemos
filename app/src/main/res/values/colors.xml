@@ -56,5 +56,7 @@
     <color name="color_DFDFDF">#DFDFDF</color>
     <color name="color_4167B2">#4167B2</color>
     <color name="color_ffffff">#ffffff</color>
+    <color name="head_bg_cocor">#F0F0F0</color>
+    <color name="white">#ffffff</color>
 
 </resources>

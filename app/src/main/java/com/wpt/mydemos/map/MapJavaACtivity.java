@@ -148,6 +148,17 @@ public class MapJavaACtivity extends Activity {
         if (str == null){
             throw new NullPointerException("str is null");
         }
+        test111(new HttpCallBack<TestBean>() {
+            @Override
+            public void onSuccess(TestBean result) {
+
+            }
+
+            @Override
+            public void onFailed(String msg, int error) {
+
+            }
+        });
     }
 
     class TestBean implements Serializable {
@@ -164,6 +175,10 @@ public class MapJavaACtivity extends Activity {
         public void showTest(){
             Toast.makeText(MapJavaACtivity.this,test.name,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void test111(HttpCallBack callBack){
+        callBack.onSuccess("");
     }
 
 }

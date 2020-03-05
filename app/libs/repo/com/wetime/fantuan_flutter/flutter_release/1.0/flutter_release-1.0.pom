@@ -14,6 +14,24 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>io.github.ponnamkarthik.toast.fluttertoast</groupId>
+      <artifactId>fluttertoast_release</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.example.connectivity</groupId>
+      <artifactId>connectivity_macos_release</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.flutter.plugins.connectivity</groupId>
+      <artifactId>connectivity_release</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>io.flutter</groupId>
       <artifactId>flutter_embedding_release</artifactId>
       <version>1.0.0-a67792536ca236a971d0efbcfd7af4efb8f6c119</version>

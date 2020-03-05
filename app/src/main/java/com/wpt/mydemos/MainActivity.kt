@@ -1,5 +1,8 @@
 package com.wpt.mydemos
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import com.wpt.mydemos.widget.BaseActivity
@@ -13,6 +16,12 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         initView()
+        if(Build.VERSION.SDK_INT>=23){
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 11)
+            }
+        }
 
     }
 
@@ -33,4 +42,5 @@ class MainActivity : BaseActivity() {
     fun setMainBean(){
         mainBean.name = "Tom"
     }
+
 }

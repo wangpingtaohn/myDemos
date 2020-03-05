@@ -11,7 +11,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.idlefish.flutterboost.FlutterBoost
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
@@ -21,13 +20,15 @@ import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
-import com.wpt.mydemos.flutter.MyFlutterActivity
+import com.wpt.mydemos.flutter.FlutterDemoActivity
+import com.wpt.mydemos.flutter.PageRouter
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
+import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
@@ -58,9 +59,28 @@ class MainFragment : Fragment() {
     private fun initView() {
 
         main_flutter.setOnClickListener {
-            startActivity(Intent(activity, MyFlutterActivity::class.java))
+            startActivity(
+                FlutterActivity
+                    .withNewEngine()
+                    .initialRoute("/flutter?myWalletPage")
+                    .build(activity)
+            )
+        }
+        main_flutter_boost.setOnClickListener {
+            PageRouter.openPageByUrl(activity, PageRouter.FLUTTER_MY_WALLET,null)
+        }
+
+        main_flutter_boost_simple.setOnClickListener {
+            startActivity(Intent(activity, FlutterDemoActivity::class.java))
 //            startActivity(FlutterActivity.createDefaultIntent(activity))
         }
+
+
+        main_load_pic.setOnClickListener {
+            startActivity(Intent(activity, LoadPicActivity::class.java))
+//            startActivity(FlutterActivity.createDefaultIntent(activity))
+        }
+
         main_font.setOnClickListener {
             startActivity(Intent(activity, EditFontStyleActivity::class.java))
         }

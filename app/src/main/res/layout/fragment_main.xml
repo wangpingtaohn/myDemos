@@ -23,6 +23,30 @@
         <Button
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
+                android:id="@+id/main_flutter_boost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="flutter_boost"/>
+
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                android:id="@+id/main_flutter_boost_simple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="flutter_boost_simple"/>
+
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                android:id="@+id/main_load_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载本地图片"/>
+
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
                 android:id="@+id/main_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

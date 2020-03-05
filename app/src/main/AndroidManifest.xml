@@ -3,12 +3,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="com.wpt.mydemos">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- flutter-boost -->
     <meta-data
             android:name="flutterEmbedding"
-            android:value="2"></meta-data>
+            android:value="2" />
 
     <application
             android:name=".MyApplication"
@@ -20,7 +22,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".flutter.MyFlutterActivity"></activity>
+        <activity android:name=".flutter.FlutterBaseActivity"></activity>
+        <activity android:name=".pics.LoadPicActivity" />
+        <activity android:name=".flutter.FlutterDemoActivity" />
         <activity android:name=".flutter.FlutterFragmentPageActivity" />
         <activity android:name=".flutter.NativePageActivity" />
         <activity android:name=".edit.EditFontStyleActivity" />
@@ -78,17 +82,18 @@
                 android:windowSoftInputMode="adjustResize" />
         <activity
                 android:name="com.idlefish.flutterboost.containers.BoostFlutterActivity"
-                android:theme="@style/Theme.AppCompat"
                 android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
                 android:hardwareAccelerated="true"
-                android:windowSoftInputMode="adjustResize" >
-<!--            <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@drawable/bg_white"/>-->
+                android:theme="@style/Theme.AppCompat"
+                android:windowSoftInputMode="adjustResize">
+
+            <!-- <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@drawable/bg_white"/> -->
 
         </activity>
 
-        <meta-data android:name="flutterEmbedding"
-                android:value="2">
-        </meta-data>
+        <meta-data
+                android:name="flutterEmbedding"
+                android:value="2" />
     </application>
 
 </manifest>
