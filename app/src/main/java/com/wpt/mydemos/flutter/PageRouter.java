@@ -100,7 +100,7 @@ public class PageRouter {
         if (params == null) {
             params = new HashMap();
         }
-        params.put("token","6b484ae609284374bb91ad5c1b38c480");
+        params.put("token","fe42bbdb99a14a1db5d0ae5fcbf9ee82");
         params.put("env","debug");
         params.put("version","2.13.4");
     }

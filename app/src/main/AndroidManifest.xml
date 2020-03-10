@@ -22,7 +22,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".flutter.FlutterBaseActivity"></activity>
+        <activity android:name=".custom.CustomViewActivity"></activity>
+        <activity android:name=".flutter.FlutterBaseActivity" />
         <activity android:name=".pics.LoadPicActivity" />
         <activity android:name=".flutter.FlutterDemoActivity" />
         <activity android:name=".flutter.FlutterFragmentPageActivity" />

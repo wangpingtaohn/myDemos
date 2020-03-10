@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.wpt.mydemos.animator.AnimatorActivity
+import com.wpt.mydemos.custom.CustomViewActivity
 import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
 import com.wpt.mydemos.drag2.Drag2Activity
@@ -58,6 +59,9 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_custom_view.setOnClickListener {
+            startActivity(Intent(activity, CustomViewActivity::class.java))
+        }
         main_flutter.setOnClickListener {
             startActivity(
                 FlutterActivity
