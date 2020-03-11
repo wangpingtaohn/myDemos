@@ -3,11 +3,16 @@ package com.wpt.mydemos.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.wpt.mydemos.R;
 
 /**
  * author : wpt
@@ -25,10 +30,19 @@ public class MyTextView extends TextView {
 
     public MyTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        init(context,attrs);
     }
 
     public MyTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init(context,attrs);
+    }
+
+    private void init(Context context,@Nullable AttributeSet attrs){
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MyTextView);
+        String type = typedArray.getString(R.styleable.MyTextView_myText);
+        setCustomText(type);
+        typedArray.recycle();
     }
 
     @Override
@@ -36,5 +50,21 @@ public class MyTextView extends TextView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         count++;
         Log.d("===wpt===","MyTextView_onMeasure_第" + count + "次");
+    }
+
+    public void setCustomText(CharSequence text){
+        if (text == null){
+            return;
+        }
+        int lineHeight = (int) getTextSize();
+        SpannableStringBuilder ssb;
+        if (text instanceof SpannableStringBuilder){
+            ssb = (SpannableStringBuilder) text;
+            ssb.setSpan(new ExcludeInnerLineSpaceSpan(lineHeight),0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            ssb = new SpannableStringBuilder(text);
+            ssb.setSpan(new ExcludeInnerLineSpaceSpan(lineHeight),0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        setText(ssb);
     }
 }

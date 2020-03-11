@@ -14,7 +14,7 @@ class CustomViewActivity : AppCompatActivity() {
 
 
         custom_btn.setOnClickListener {
-            custom_tv.text = "fn\nfn\nff\n"
+            custom_tv.setCustomText("fn\nfn\nff哈哈哈")
 //            custom_tv.addOnLayoutChangeListener(object : View.OnLayoutChangeListener{
 //                override fun onLayoutChange(v: View?, left: Int, top: Int, right: Int, bottom: Int, oldLeft: Int, oldTop: Int, oldRight: Int, oldBottom: Int) {
 //                    val lp = custom_btn.layoutParams

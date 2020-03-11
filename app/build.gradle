@@ -69,6 +69,8 @@ dependencies {
     implementation 'com.lijiankun24:shadowlayout:1.1.0'
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
+    implementation 'com.github.wangpingtaohn:ExcludePaddingTextView:1.0.0'
+
 //    implementation 'exit.wpt.com.flutter_module'
 
 //    implementation(name: 'flutter-debug', ext: 'aar')
@@ -81,6 +83,7 @@ dependencies {
 //    debugImplementation 'com.wetime.fantuan_flutter:flutter_debug:1.0'
 //    profileImplementation 'com.wetime.fantuan_flutter:flutter_profile:1.0'
     implementation 'com.wetime.fantuan_flutter:flutter_release:1.0'
+
 
 //    configurations.all {
 //        resolutionStrategy {

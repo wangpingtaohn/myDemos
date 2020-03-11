@@ -9,20 +9,37 @@
 
     <Button
             android:id="@+id/custom_btn"
-            android:text="click"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="click" />
 
-
-    <com.wpt.mydemos.widget.MyTextView
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/tv_hot_reply"
-            android:id="@+id/custom_tv"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="xxxxxx" />
+            android:orientation="horizontal">
 
+        <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/color_333"
+                android:visibility="gone" />
+
+        <com.wpt.mydemos.widget.MyTextView
+                android:id="@+id/custom_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tv_hot_reply"
+                android:includeFontPadding="false"
+                app:myText="fffff" />
+
+    </LinearLayout>
+
+    <com.wpt.exclude.ExcludePaddingTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tv_hot_reply"
+            app:exText="哈哈哈" />
 
 </com.wpt.mydemos.widget.MyLinearLayout>
