@@ -5,6 +5,10 @@ import shutil
 
 path = './'
 
+# “/”：表示根目录，在windows系统下表示某个盘的根目录，如“E:\”；
+# “./”：表示当前目录；（表示当前目录时，也可以去掉“./”，直接写文件名或者下级目录）
+# “../”：表示上级目录
+
 # dirs = os.listdir(path)
 
 # for file in dirs:
