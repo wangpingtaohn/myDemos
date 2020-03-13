@@ -17,4 +17,4 @@ for root, dirs, files in os.walk(path):
 		if name == '.git' or name == 'build' or name == '.gradle':
 			# print(os.path.join(root,name))
 			shutil.rmtree(os.path.join(root,name))
-			print('删除：' + os.path.join(root,name) + '完成')
+			print('删除【' + os.path.join(root,name) + '】完成')
