@@ -31,6 +31,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/tv_hot_reply"
                 android:includeFontPadding="false"
+                android:maxLength="3"
+                android:ellipsize="end"
                 app:myText="fffff" />
 
     </LinearLayout>
