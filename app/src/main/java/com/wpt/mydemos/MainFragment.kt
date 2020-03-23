@@ -34,6 +34,7 @@ import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.toast.ToastActivity
+import com.wpt.mydemos.webview.WebActivity
 import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -58,6 +59,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_webView.setOnClickListener {
+            startActivity(Intent(activity, WebActivity::class.java))
+        }
 
         main_custom_view.setOnClickListener {
             startActivity(Intent(activity, CustomViewActivity::class.java))
