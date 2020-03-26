@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    <Button
-            android:id="@+id/btn"
-            android:text="滚动"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <EditText
-            android:layout_below="@id/btn"
-            android:hint="请输入滚动的位置"
-            android:inputType="number"
-            android:id="@+id/textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_above="@id/bottom"
-            android:layout_below="@id/textview"
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-    <Button
-            android:id="@+id/bottom"
-            android:text="BBBBBBB"
-            android:layout_alignParentBottom="true"
+    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mygold_money_banner"/>
+
+        <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="滚动" />
+
+        <EditText
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn"
+                android:hint="请输入滚动的位置"
+                android:inputType="number" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottom"
+                android:layout_below="@id/textview" />
+
+        <Button
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:text="BBBBBBB" />
+
+    </RelativeLayout>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

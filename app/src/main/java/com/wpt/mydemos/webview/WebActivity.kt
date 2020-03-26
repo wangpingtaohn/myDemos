@@ -16,8 +16,8 @@ class WebActivity : AppCompatActivity() {
         load_btn.setOnClickListener {
             webview.settings.javaScriptEnabled = true
             webview.webViewClient = WebViewClient()
-            webview.loadUrl("https://mtest.fantuan.cn/articleContent/fC_EajeVm")
-//            webview.loadUrl("https://www.baidu.com/")
+//            webview.loadUrl("https://mtest.fantuan.cn/articleContent/fC_EajeVm")
+            webview.loadUrl("https://www.jianshu.com/p/3c94ae673e2a")
         }
     }
 }
