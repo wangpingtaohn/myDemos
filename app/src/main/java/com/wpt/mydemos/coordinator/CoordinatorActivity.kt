@@ -1,7 +1,10 @@
 package com.wpt.mydemos.coordinator
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wpt.mydemos.R
 import com.wpt.mydemos.recycler.rcv2.RvAdapter
@@ -32,5 +35,14 @@ class CoordinatorActivity : AppCompatActivity() {
         )
         coordinator_recyclerview.layoutManager = layoutManager
         coordinator_recyclerview.adapter = adapter
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+                Log.d("===wpt===","setOnScrollChangeListener")
+                val lp = iv_header.getLayoutParams()
+                lp.height = lp.height + (scrollY - oldScrollY) / 20
+                iv_header.layoutParams = lp
+            }
+        }
     }
 }

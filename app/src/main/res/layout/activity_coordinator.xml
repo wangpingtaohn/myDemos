@@ -50,11 +50,19 @@
     </RelativeLayout>
     <!--header-->
 
+    <com.gavin.view.flexible.FlexibleLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srlEnableAutoLoadMore="false"
+            app:srlEnableRefresh="false"
             app:srlEnableHeaderTranslationContent="true"
             app:srlEnableOverScrollBounce="false">
 
@@ -91,6 +99,7 @@
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/iv_header"
                         android:src="@drawable/ic_mygold_money_banner"
                         app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />//加上此属性才能跟随滚动
 
@@ -111,6 +120,7 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
+    </ScrollView>
+    </com.gavin.view.flexible.FlexibleLayout>
 
 </LinearLayout>

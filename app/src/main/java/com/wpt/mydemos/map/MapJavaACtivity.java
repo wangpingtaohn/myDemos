@@ -35,6 +35,8 @@ public class MapJavaACtivity extends Activity {
     }
 
     private void initData(){
+        String number = "0898-68555036 0898-68555031  13322057282";
+        String[] numbers = number.split(" ");
         int count = 0;
         while (count < 10){
             hashMap.put(count,count+ "");

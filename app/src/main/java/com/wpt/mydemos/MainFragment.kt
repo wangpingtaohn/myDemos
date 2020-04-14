@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.wpt.mydemos.animator.AnimatorActivity
+import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
 import com.wpt.mydemos.drag.DragViewActivity
@@ -60,6 +61,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_scale.setOnClickListener {
+            startActivity(Intent(activity, ScaleAnimationActivity::class.java))
+        }
 
         main_coordinator.setOnClickListener {
             startActivity(Intent(activity, CoordinatorActivity::class.java))

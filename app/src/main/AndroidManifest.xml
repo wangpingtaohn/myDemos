@@ -22,7 +22,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".coordinator.CoordinatorActivity"></activity>
+        <activity android:name=".animator.ScaleAnimationActivity"></activity>
+        <activity android:name=".coordinator.CoordinatorActivity" />
         <activity android:name=".webview.WebActivity" />
         <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".flutter.FlutterBaseActivity" />
