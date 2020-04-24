@@ -34,6 +34,7 @@ import com.wpt.mydemos.oom.OOMActivity
 import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
+import com.wpt.mydemos.refresh.SwipeRefreshActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.toast.ToastActivity
 import com.wpt.mydemos.webview.WebActivity
@@ -61,6 +62,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_swipe.setOnClickListener {
+            startActivity(Intent(activity, SwipeRefreshActivity::class.java))
+        }
 
         main_scale.setOnClickListener {
             startActivity(Intent(activity, ScaleAnimationActivity::class.java))

@@ -76,7 +76,7 @@ class RecyclerViewActivity : BoostFlutterActivity(), MyAdapter.LongClickListener
         adapter?.setLongClickListener(this)
 
 
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         if (adapter != null){
             recyclerView.adapter = adapter

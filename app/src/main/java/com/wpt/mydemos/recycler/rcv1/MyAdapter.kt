@@ -28,13 +28,13 @@ class MyAdapter(private var context: Context,private var mData:List<ItemBean>): 
     }
 
     override fun getItemCount(): Int {
-        return mData?.size
+        return mData.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         with(holder.itemView){
-            title.maxLines = 2
+            title.minHeight = position * 20
             title.setHorizontallyScrolling(false)
             var item = mData[position]
             item?.run {

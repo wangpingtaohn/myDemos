@@ -72,7 +72,7 @@ dependencies {
     implementation 'com.github.Blincheng:PullDownEnlargeUtilDemo:v1.2'
 
     implementation 'com.github.wangpingtaohn:ExcludePaddingTextView:1.0.0'
-    compile 'com.gavin.view.flexible:library:1.0.2'
+    implementation 'com.gavin.view.flexible:library:1.0.2'
 
 //    implementation 'exit.wpt.com.flutter_module'
 
