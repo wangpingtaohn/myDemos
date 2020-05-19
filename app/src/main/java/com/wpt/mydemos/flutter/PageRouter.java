@@ -38,6 +38,8 @@ public class PageRouter {
 
     public static final String FLUTTER_MY_WALLET = FLUTTER_PREFIX + "myWalletPage";
 
+    public static final String FLUTTER_PIC_SWIPER = FLUTTER_PREFIX + "pictureSwiper";
+
     public static boolean openPageByUrl(Context context, String url, Map params) {
         return openPageByUrl(context, url, params, 0);
     }
@@ -103,5 +105,6 @@ public class PageRouter {
         params.put("token","fe42bbdb99a14a1db5d0ae5fcbf9ee82");
         params.put("env","debug");
         params.put("version","2.13.4");
+        params.put("proxy","PROXY 192.168.1.68:8888");
     }
 }
