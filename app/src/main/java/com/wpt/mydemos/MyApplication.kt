@@ -26,7 +26,7 @@ class MyApplication: Application() {
         val config:EmojiCompat.Config = BundledEmojiCompatConfig(this)
         EmojiCompat.init(config)
 
-        initFlutter()
+//        initFlutter()
     }
 
     private fun initFlutter(){

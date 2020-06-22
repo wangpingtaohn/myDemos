@@ -50,77 +50,156 @@
     </RelativeLayout>
     <!--header-->
 
-    <com.gavin.view.flexible.FlexibleLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-            android:id="@+id/refreshLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srlEnableAutoLoadMore="false"
-            app:srlEnableRefresh="false"
-            app:srlEnableHeaderTranslationContent="true"
-            app:srlEnableOverScrollBounce="false">
+<!--    <com.gavin.view.flexible.FlexibleLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:id="@+id/main_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:focusable="true"
-                android:focusableInTouchMode="true">
+<!--        <ScrollView-->
+<!--                android:id="@+id/scrollView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
 
-            <com.google.android.material.appbar.AppBarLayout
-                    android:id="@+id/appbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/translucent"
-                    app:elevation="0dp">
+<!--            <com.scwang.smartrefresh.layout.SmartRefreshLayout-->
+<!--                    android:id="@+id/refreshLayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    app:srlEnableAutoLoadMore="false"-->
+<!--                    app:srlEnableHeaderTranslationContent="true"-->
+<!--                    app:srlEnableOverScrollBounce="false"-->
+<!--                    app:srlEnableRefresh="false">-->
 
-                <!--                <com.google.android.material.appbar.CollapsingToolbarLayout-->
-                <!--                        android:id="@+id/CollapsingToolbarLayout"-->
-                <!--                        android:layout_width="match_parent"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        app:collapsedTitleGravity="center"-->
-                <!--                        app:contentInsetLeft="0dp"-->
-                <!--                        app:contentInsetStart="0dp"-->
-                <!--                        app:contentScrim="@color/white"-->
-                <!--                        app:expandedTitleGravity="left"-->
-                <!--                        app:expandedTitleMarginStart="110dp"-->
-                <!--                        app:expandedTitleMarginTop="-20dp"-->
-                <!--                        app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
-                <!--                        app:scrimAnimationDuration="200"-->
-                <!--                        app:title=" ">-->
-
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/iv_header"
-                        android:src="@drawable/ic_mygold_money_banner"
-                        app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />//加上此属性才能跟随滚动
-
-                <Button
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:id="@+id/main_content"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="吸顶了" />
-                <!--                </com.google.android.material.appbar.CollapsingToolbarLayout>-->
-            </com.google.android.material.appbar.AppBarLayout>
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/coordinator_recyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                    <com.google.android.material.appbar.AppBarLayout
+                            android:id="@+id/appbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/translucent"
+                            app:layout_behavior="com.yuruiyin.appbarlayoutbehavior.AppBarLayoutBehavior"
+                            app:elevation="0dp">
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                        <!--                <com.google.android.material.appbar.CollapsingToolbarLayout-->
+                        <!--                        android:id="@+id/CollapsingToolbarLayout"-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        app:collapsedTitleGravity="center"-->
+                        <!--                        app:contentInsetLeft="0dp"-->
+                        <!--                        app:contentInsetStart="0dp"-->
+                        <!--                        app:contentScrim="@color/white"-->
+                        <!--                        app:expandedTitleGravity="left"-->
+                        <!--                        app:expandedTitleMarginStart="110dp"-->
+                        <!--                        app:expandedTitleMarginTop="-20dp"-->
+                        <!--                        app:layout_scrollFlags="scroll|exitUntilCollapsed"-->
+                        <!--                        app:scrimAnimationDuration="200"-->
+                        <!--                        app:title=" ">-->
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-    </ScrollView>
-    </com.gavin.view.flexible.FlexibleLayout>
+                        <ImageView
+                                android:id="@+id/iv_header"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_mygold_money_banner"
+                                app:layout_scrollFlags="scroll|enterAlwaysCollapsed" />//加上此属性才能跟随滚动
+
+                      <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="吸顶了" />
+                      </LinearLayout>
+                        <!--                </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+                    </com.google.android.material.appbar.AppBarLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/coordinator_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--            </com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+<!--        </ScrollView>-->
+<!--    </com.gavin.view.flexible.FlexibleLayout>-->
 
 </LinearLayout>

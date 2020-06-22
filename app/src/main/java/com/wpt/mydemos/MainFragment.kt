@@ -1,5 +1,6 @@
 package com.wpt.mydemos
 
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.DialogFragment
 import android.app.Fragment
@@ -37,6 +38,7 @@ import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.toast.ToastActivity
+import com.wpt.mydemos.top.TopActivity
 import com.wpt.mydemos.webview.WebActivity
 import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -46,6 +48,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
  *    date   : 2019-10-10 15:12
  *    desc   :
  */
+@SuppressLint("NewApi")
 class MainFragment : Fragment() {
 
 
@@ -67,6 +70,9 @@ class MainFragment : Fragment() {
 
         main_swipe.setOnClickListener {
             startActivity(Intent(activity, SwipeRefreshActivity::class.java))
+        }
+        main_top_activity.setOnClickListener {
+            startActivity(Intent(activity, TopActivity::class.java))
         }
 
         main_scale.setOnClickListener {

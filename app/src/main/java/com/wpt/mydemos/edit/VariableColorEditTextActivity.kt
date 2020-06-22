@@ -46,7 +46,7 @@ class VariableColorEditTextActivity : BaseActivity() {
         this.window.decorView.post {
             val manager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
             val mClipData = ClipData.newPlainText("Label", "哈哈哈哈哈")
-            manager.primaryClip = mClipData
+            manager.setPrimaryClip(mClipData)
             if (manager.hasPrimaryClip() &&
                 manager.primaryClip != null && manager.primaryClip!!.itemCount > 0
                 && manager.primaryClip!!.getItemAt(0).text != null

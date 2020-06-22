@@ -15,6 +15,13 @@
         <Button
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
+                android:id="@+id/main_top_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q Top Activity"/>
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
                 android:id="@+id/main_swipe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
