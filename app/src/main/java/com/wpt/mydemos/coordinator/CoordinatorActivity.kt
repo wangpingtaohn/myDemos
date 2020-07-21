@@ -3,6 +3,7 @@ package com.wpt.mydemos.coordinator
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,9 @@ class CoordinatorActivity : AppCompatActivity() {
 
 
     private fun initView(){
+
+        tv_gh_search.text = Html.fromHtml("<font color=\"#ff0000\">第134名</font>")
+
         val list = mutableListOf<com.wpt.mydemos.recycler.rcv2.ItemBean2>()
         for (i in 1..50){
             val item = com.wpt.mydemos.recycler.rcv2.ItemBean2();

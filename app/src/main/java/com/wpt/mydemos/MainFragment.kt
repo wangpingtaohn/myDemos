@@ -29,6 +29,9 @@ import com.wpt.mydemos.flutter.PageRouter
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
+import com.wpt.mydemos.launchmode.LaunchActivity_1
+import com.wpt.mydemos.launchmode.LaunchActivity_2
+import com.wpt.mydemos.leecode.LeeCodeActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
@@ -67,6 +70,14 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_launch_more.setOnClickListener {
+            startActivity(Intent(activity, LaunchActivity_1::class.java))
+        }
+
+        main_leeCode.setOnClickListener {
+            startActivity(Intent(activity, LeeCodeActivity::class.java))
+        }
 
         main_swipe.setOnClickListener {
             startActivity(Intent(activity, SwipeRefreshActivity::class.java))

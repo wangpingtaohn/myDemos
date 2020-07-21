@@ -34,6 +34,8 @@ public class MapJavaACtivity extends Activity {
         initData();
     }
 
+
+
     private void initData(){
         String number = "0898-68555036 0898-68555031  13322057282";
         String[] numbers = number.split(" ");
@@ -182,5 +184,6 @@ public class MapJavaACtivity extends Activity {
     private void test111(HttpCallBack callBack){
         callBack.onSuccess("");
     }
+
 
 }
