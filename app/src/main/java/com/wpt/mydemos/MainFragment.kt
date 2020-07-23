@@ -40,6 +40,7 @@ import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
+import com.wpt.mydemos.textview.AnimatorTextViewActivity
 import com.wpt.mydemos.toast.ToastActivity
 import com.wpt.mydemos.top.TopActivity
 import com.wpt.mydemos.webview.WebActivity
@@ -70,6 +71,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_text_animator.setOnClickListener {
+            startActivity(Intent(activity, AnimatorTextViewActivity::class.java))
+        }
 
         main_launch_more.setOnClickListener {
             startActivity(Intent(activity, LaunchActivity_1::class.java))

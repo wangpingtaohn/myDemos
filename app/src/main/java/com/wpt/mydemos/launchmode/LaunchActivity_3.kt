@@ -16,5 +16,7 @@ class LaunchActivity_3 : AppCompatActivity() {
         tv_launch_3.setOnClickListener {
             startActivity(Intent(this,LaunchActivity_2::class.java))
         }
+
+        tv_launch_3.text = "页面3\n${this.taskId}"
     }
 }

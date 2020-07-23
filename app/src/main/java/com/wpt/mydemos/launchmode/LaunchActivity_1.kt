@@ -13,7 +13,12 @@ class LaunchActivity_1 : AppCompatActivity() {
         setContentView(R.layout.activity_launch_1)
 
         tv_launch_1.setOnClickListener {
-            startActivity(Intent(this,LaunchActivity_2::class.java))
+            val intent = Intent(this,LaunchActivity_2::class.java)
+            //singleTask与Intent.FLAG_ACTIVITY_NEW_TASK并不会创建新的task,但是如果manifest.xml里配置了taskAffinity，则会新建task
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
+
+        tv_launch_1.text = "页面1\n${this.taskId}"
     }
 }

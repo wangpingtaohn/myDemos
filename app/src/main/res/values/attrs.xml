@@ -4,4 +4,13 @@
         <attr name="myText" format="string"></attr>
     </declare-styleable>
 
+
+    <declare-styleable name="IncreaseTextView">
+        <attr name="num" format="integer"/>
+        <attr name="ani_duration" format="integer"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_dimen" format="dimension"/>
+    </declare-styleable>
+
 </resources>
