@@ -30,5 +30,7 @@ class SwipeRefreshActivity : AppCompatActivity() {
 //        ssb.setSpan(colorSpan, 3, 6, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         tv_swipe.text = ssb
+
+        tv_black.typeface = Typeface.DEFAULT_BOLD
     }
 }

@@ -25,6 +25,8 @@ public class MapJavaACtivity extends Activity {
 
     Set<String> set = new HashSet<>();
 
+    private LinkedList<String> linkedList = new LinkedList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

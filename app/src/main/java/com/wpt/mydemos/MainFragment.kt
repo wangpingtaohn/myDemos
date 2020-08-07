@@ -77,7 +77,9 @@ class MainFragment : Fragment() {
         }
 
         main_launch_more.setOnClickListener {
-            startActivity(Intent(activity, LaunchActivity_1::class.java))
+            val intent = Intent(activity, LaunchActivity_1::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION)
+            startActivity(intent)
         }
 
         main_leeCode.setOnClickListener {

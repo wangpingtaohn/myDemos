@@ -21,8 +21,33 @@
                 android:text="哈哈我给你打个老大哥"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:textSize="18sp"
-                android:textColor="@color/color_333"
+                android:textSize="30sp"
+                android:textColor="@color/color_111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:text="我是常规体"
+                android:textSize="30sp"
+                android:textColor="@color/color_111"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/tv_black"
+                android:text="我是黑体"
+                android:textSize="30sp"
+                android:textColor="@color/color_111"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="我是粗体"
+                android:textSize="30sp"
+                android:textColor="@color/color_111"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
     </LinearLayout>

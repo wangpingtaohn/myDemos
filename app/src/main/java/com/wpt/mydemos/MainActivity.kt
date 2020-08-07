@@ -34,9 +34,15 @@ class MainActivity : BaseActivity() {
         ft.commitAllowingStateLoss()
 
     }
+    //跳转其他Activity、home键时都执行了
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d("MainActivity","onSaveInstanceState")
+    }
+
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+        Log.d("MainActivity","onUserLeaveHint")
     }
 
     fun setMainBean(){
