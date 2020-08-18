@@ -32,6 +32,13 @@
                             android:id="@+id/recyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
+                    <Button
+                            android:layout_marginBottom="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:text="刷新"
+                            android:id="@+id/refresh_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
                 </RelativeLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

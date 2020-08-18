@@ -4,11 +4,13 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.wpt.mydemos.R;
@@ -57,12 +59,18 @@ public class Drag2Activity extends BaseActivity implements MyItemTouchCallback.O
 
 
             GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
+//            LinearLayoutManager llm = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
             gridLayoutManager.setSmoothScrollbarEnabled(true);
             gridLayoutManager.setAutoMeasureEnabled(true);
 
             mRecyclerView.setLayoutManager(gridLayoutManager);
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.setNestedScrollingEnabled(false);
+
+            findViewById(R.id.refresh_btn).setOnClickListener(v -> {
+                list.add(30,"新增");
+                mRecyclerAdapter.notifyDataSetChanged();
+            });
 
 
 
