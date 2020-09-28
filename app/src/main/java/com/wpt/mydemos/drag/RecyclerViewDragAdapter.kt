@@ -30,7 +30,7 @@ class RecyclerViewDragAdapter(private var mContext: Context, private var data:Li
     }
 
     override fun getItemViewType(position: Int): Int {
-        return data[position].type
+        return data[if (position == 0) position else position - 1].type
     }
 
     override fun getItemCount(): Int {
@@ -78,4 +78,5 @@ class RecyclerViewDragAdapter(private var mContext: Context, private var data:Li
     class MyVH(view:View): RecyclerView.ViewHolder(view)
 
     class HeaderVH(view:View): RecyclerView.ViewHolder(view)
+
 }

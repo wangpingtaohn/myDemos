@@ -17,6 +17,7 @@ import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
 import com.wpt.mydemos.drag.DragViewActivity
+import com.wpt.mydemos.drag.DrawerActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
 import com.wpt.mydemos.drag2.Drag2Activity
 import com.wpt.mydemos.edit.EditFontStyleActivity
@@ -71,6 +72,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_drawer.setOnClickListener {
+            startActivity(Intent(activity, DrawerActivity::class.java))
+        }
 
         main_text_animator.setOnClickListener {
             startActivity(Intent(activity, AnimatorTextViewActivity::class.java))

@@ -22,12 +22,13 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".textview.AnimatorTextViewActivity"></activity>
+        <activity android:name=".drag.DrawerActivity"></activity>
+        <activity android:name=".textview.AnimatorTextViewActivity" />
         <activity android:name=".launchmode.LaunchActivity_1" />
         <activity
                 android:name=".launchmode.LaunchActivity_2"
                 android:launchMode="singleTask"
-                android:taskAffinity="com.wpt.task"/>
+                android:taskAffinity="com.wpt.task" />
         <activity
                 android:name=".launchmode.LaunchActivity_3"
                 android:launchMode="singleInstance" />

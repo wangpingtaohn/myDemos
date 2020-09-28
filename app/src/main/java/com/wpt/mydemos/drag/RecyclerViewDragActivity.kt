@@ -1,6 +1,8 @@
 package com.wpt.mydemos.drag
 
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -21,6 +23,10 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
     private var autoLoadMoreAdapter:AutoLoadMoreAdapter ? = null
 
     private var list = mutableListOf<DragItem>()
+
+    private var lastTime: Long = 0
+
+    private var lastFirstPos = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +72,27 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
             }
         })
         autoLoadMoreAdapter!!.disable()
+
+        drag_recyclerview.addOnScrollListener(object :RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (newState == RecyclerView.SCROLL_STATE_IDLE){
+                    lastFirstPos = lm.findFirstVisibleItemPosition()
+                    Log.d("===wpt===", "onScrollStateChanged_pos=$lastFirstPos")
+                    Handler().postDelayed({
+                        val newPos = lm.findFirstVisibleItemPosition()
+                        Log.d("===wpt===", "onScrollStateChanged_pos_2=$newPos")
+                        if (lastFirstPos == newPos){
+                            Log.d("===wpt===", "发请求了")
+                        }
+                    },5*1000)
+                }
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        })
     }
 
     private fun setDrag() {

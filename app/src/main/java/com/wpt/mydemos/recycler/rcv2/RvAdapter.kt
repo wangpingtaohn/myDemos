@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,6 +58,16 @@ class RvAdapter(private var context: Context,private var mData: MutableList<com.
 
     }
 
+    override fun onViewAttachedToWindow(holder: RecyclerView.ViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        Log.d("===wpt===","onViewAttachedToWindow_pos=" + holder.adapterPosition)
+    }
+
+    override fun onViewDetachedFromWindow(holder: RecyclerView.ViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+        Log.d("===wpt===","onViewDetachedFromWindow_pos=" + holder.adapterPosition)
+    }
+
 
     class ItemVH(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -74,4 +85,5 @@ class RvAdapter(private var context: Context,private var mData: MutableList<com.
         }
 
     }
+
 }
