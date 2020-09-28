@@ -31,7 +31,6 @@ class AnimatorTextViewActivity : AppCompatActivity() {
         tv_3.paint.isFakeBoldText = true
 
         tv_4.typeface = Typeface.defaultFromStyle(Typeface.BOLD)
-
         tv_4.paint.isFakeBoldText = true
 
 
