@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/ll_root">
+    <FrameLayout
+            android:id="@+id/fl_wass"
+            android:background="#CCFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <Button
+            android:text="改变"
+            android:id="@+id/change_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <!--<ImageView
+            android:layout_below="@id/change_btn"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/iv"
+            android:src="@drawable/bg_gh_cover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>-->
+
+</RelativeLayout>

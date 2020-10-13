@@ -22,7 +22,8 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".drag.DrawerActivity"></activity>
+        <activity android:name=".wasabeef.WasabeefActivity"></activity>
+        <activity android:name=".drag.DrawerActivity" />
         <activity android:name=".textview.AnimatorTextViewActivity" />
         <activity android:name=".launchmode.LaunchActivity_1" />
         <activity

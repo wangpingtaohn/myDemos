@@ -15,6 +15,14 @@
         <Button
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
+                android:id="@+id/main_wasabeef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高斯模糊"/>
+
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
                 android:id="@+id/main_drawer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

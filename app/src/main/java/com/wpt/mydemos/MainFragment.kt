@@ -44,6 +44,7 @@ import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.textview.AnimatorTextViewActivity
 import com.wpt.mydemos.toast.ToastActivity
 import com.wpt.mydemos.top.TopActivity
+import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -73,6 +74,9 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        main_wasabeef.setOnClickListener {
+            startActivity(Intent(activity, WasabeefActivity::class.java))
+        }
         main_drawer.setOnClickListener {
             startActivity(Intent(activity, DrawerActivity::class.java))
         }
