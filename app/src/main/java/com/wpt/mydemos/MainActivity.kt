@@ -27,7 +27,7 @@ class MainActivity : BaseActivity() {
 
     private fun initView(){
         var fragment = MainFragment()
-        var ft = fragmentManager.beginTransaction()
+        var ft = supportFragmentManager.beginTransaction()
         mainBean.name = "Jim"
         fragment.mainBean = mainBean
         ft.add(R.id.frg_content,fragment)

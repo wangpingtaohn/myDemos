@@ -22,7 +22,10 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".wasabeef.WasabeefActivity"></activity>
+        <activity android:name=".viewpager.VerticalViewPagerActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+                android:screenOrientation="portrait"/>
+        <activity android:name=".wasabeef.WasabeefActivity" />
         <activity android:name=".drag.DrawerActivity" />
         <activity android:name=".textview.AnimatorTextViewActivity" />
         <activity android:name=".launchmode.LaunchActivity_1" />

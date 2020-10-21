@@ -15,6 +15,14 @@
         <Button
                 android:layout_marginTop="20dp"
                 android:textAllCaps="false"
+                android:id="@+id/main_vertical_viewpager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="纵向ViewPager"/>
+
+        <Button
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
                 android:id="@+id/main_wasabeef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

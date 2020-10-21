@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
 import androidx.annotation.Nullable
@@ -13,10 +14,9 @@ import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_wasabeef.*
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import kotlinx.android.synthetic.main.activity_wasabeef.tv_ver
 
 
 class WasabeefActivity : AppCompatActivity() {
@@ -24,6 +24,8 @@ class WasabeefActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wasabeef)
+
+        tv_ver.movementMethod = ScrollingMovementMethod.getInstance()
 
         change_btn.setOnClickListener {
             /*Glide.with(applicationContext)

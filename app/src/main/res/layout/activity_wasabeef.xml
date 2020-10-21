@@ -2,20 +2,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ll_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/ll_root">
+        android:orientation="vertical">
+
     <FrameLayout
             android:id="@+id/fl_wass"
-            android:background="#CCFFFFFF"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#CCFFFFFF" />
+
     <Button
-            android:text="改变"
             android:id="@+id/change_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="改变" />
+
+    <com.wpt.mydemos.textview.FakeBoldTextView
+            android:id="@+id/tv_ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:maxHeight="50dp"
+            android:text="在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical
+在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical
+在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical
+在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical
+在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical
+在xml布局声明textView的时候，我们设置它的scrollbars属性为vertical"
+            android:textSize="30sp" />
     <!--<ImageView
             android:layout_below="@id/change_btn"
             android:layout_marginTop="20dp"

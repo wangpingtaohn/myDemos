@@ -2,8 +2,6 @@ package com.wpt.mydemos
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
-import android.app.DialogFragment
-import android.app.Fragment
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -12,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
@@ -31,7 +31,6 @@ import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.launchmode.LaunchActivity_1
-import com.wpt.mydemos.launchmode.LaunchActivity_2
 import com.wpt.mydemos.leecode.LeeCodeActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
@@ -44,9 +43,9 @@ import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.textview.AnimatorTextViewActivity
 import com.wpt.mydemos.toast.ToastActivity
 import com.wpt.mydemos.top.TopActivity
+import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
-import io.flutter.embedding.android.FlutterActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -73,6 +72,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_vertical_viewpager.setOnClickListener {
+            startActivity(Intent(activity, VerticalViewPagerActivity::class.java))
+        }
 
         main_wasabeef.setOnClickListener {
             startActivity(Intent(activity, WasabeefActivity::class.java))
@@ -222,7 +225,7 @@ class MainFragment : Fragment() {
         var h = Handler()
         h.postDelayed({
             if (!fragmentManager!!.isStateSaved){
-                dialog.show(fragmentManager,"showdialog")
+                dialog.show(fragmentManager!!,"showdialog")
             }
         },4000)
     }

@@ -2,6 +2,7 @@ package com.wpt.mydemos.textview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -32,4 +33,11 @@ public class FakeBoldTextView extends AppCompatTextView {
         this.getPaint().setFakeBoldText(true);
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_MOVE){
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        return super.onTouchEvent(event);
+    }
 }
