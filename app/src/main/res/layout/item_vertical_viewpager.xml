@@ -13,19 +13,28 @@
             android:scaleType="centerCrop"
             android:src="@drawable/bg_gh_cover" />-->
     <Button
-            android:text="退出全部"
+            android:text="跳转"
+            android:id="@+id/btn_jump"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:text="退出全屏"
+            android:layout_marginTop="40dp"
             android:id="@+id/exit_full"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     <com.wpt.mydemos.textview.FakeBoldTextView
             android:id="@+id/tv_ver"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:textSize="30sp"
-            android:maxHeight="50dp"
+            android:maxHeight="150dp"
+            android:background="@color/green"
             tools:text="xxxx" />
 
     <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer

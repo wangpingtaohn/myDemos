@@ -102,6 +102,7 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
 
     implementation 'me.kaelaela:verticalviewpager:1.0.0@aar'
+    implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
 
     implementation 'com.shuyu:GSYVideoPlayer:6.0.3'
 

@@ -1,6 +1,9 @@
 package com.wpt.mydemos.viewpager
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,8 +15,7 @@ import kotlinx.android.synthetic.main.item_vertical_viewpager.*
 import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils
-
-
+import com.wpt.mydemos.drag.DrawerActivity
 
 
 /**
@@ -25,6 +27,8 @@ class VerticalFragment(private val num: Int) : Fragment() {
 
 
     private var orientationUtils: OrientationUtils? = null
+    
+    private val TAG = "VerticalFragment"
 
     private var isPlay = false
 
@@ -32,7 +36,15 @@ class VerticalFragment(private val num: Int) : Fragment() {
 
     private var mRootView: View? = null
 
+    private var createdView = false
+
     val ghJson = "{\"address\":\"大同路2号\",\"adname\":\"龙华区\",\"affiliation_mall\":false,\"amIFocus\":true,\"amIManager\":false,\"auslese_id\":\"0\",\"business_area\":\"解放西/泰龙城\",\"business_hours\":\"\",\"category_name\":\"购物中心\",\"cover\":\"http://staticcdntest.fantuan.cn/uimage/b7/c4/91/9b/b7c4919b984e2425f4d30a9a900fb819.jpg?x-oss-process\\u003dimage/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg\",\"distance\":\"0\",\"evaluate_post_num\":\"0\",\"exist_navigation\":true,\"hasNewMessage\":false,\"id\":\"1\",\"intro\":\"\",\"latitude\":\"20.037484\",\"logo\":\"http://staticcdntest.fantuan.cn/uimage/50/37/ab/b0/5037abb003cba72df92f0eb7e8e4c4e5.jpg?x-oss-process\\u003dimage/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg\",\"longitude\":\"110.337527\",\"member_num\":\"0\",\"name\":\"友谊商业广场\",\"phone\":\"0898-66225566 0898-63222914\",\"recommend_num\":\"0\",\"score\":\"0.0\",\"shareInfo\":{\"shareContent\":\"购物中心\",\"shareImage\":\"http://staticcdntest.fantuan.cn/uimage/b7/c4/91/9b/b7c4919b984e2425f4d30a9a900fb819.jpg?x-oss-process\\u003dimage/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg\",\"shareImageToSpider\":\"http://staticcdntest.fantuan.cn/uimage/b7/c4/91/9b/b7c4919b984e2425f4d30a9a900fb819.jpg?x-oss-process\\u003dimage/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg\",\"shareImageToWechat\":\"http://staticcdntest.fantuan.cn/uimage/b7/c4/91/9b/b7c4919b984e2425f4d30a9a900fb819.jpg?x-oss-process\\u003dimage/resize,m_lfit,h_600,w_600/quality,Q_70/interlace,1/format,jpg\",\"sharePlatformIcon\":\"https://fanttest.fantuan.cn/jv/static/image/fant/default_cover.jpg\",\"sharePlatformName\":\"主页\",\"shareTitle\":\"范团主页-友谊商业广场\",\"shareUrl\":\"https://mtest.fantuan.cn/ghAccount/fC_Gaj4bh\"},\"show_community\":\"1\",\"show_evaluate\":\"1\",\"show_nearby\":\"1\",\"type\":\"1\"}"
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d(TAG, "onAttach=$num")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,12 +57,27 @@ class VerticalFragment(private val num: Int) : Fragment() {
     }
 
 
+    var isExpend = true
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_ver.text = num.toString() + "\n" + ghJson
+        val allContent = num.toString() + "\n" + ghJson
+        val subContent = allContent.substring(0,15)
+        tv_ver.text = allContent
+        tv_ver.text = Editable.Factory.getInstance().newEditable(num.toString() + "\n" + ghJson)
         tv_ver.movementMethod = ScrollingMovementMethod.getInstance()
 
-        Log.d("===wpt===", "onViewCreated_num=$num")
+        tv_ver.setOnClickListener {v ->
+            if (isExpend){
+                tv_ver.text = subContent
+                isExpend = false
+                tv_ver.scrollTo(v.left,0)
+            } else {
+                tv_ver.text = allContent
+                isExpend = true
+            }
+        }
+
+        Log.d(TAG, "onViewCreated_num=$num")
 
         exit_full.setOnClickListener { _ ->
             run {
@@ -59,7 +86,14 @@ class VerticalFragment(private val num: Int) : Fragment() {
             }
         }
 
+        btn_jump.setOnClickListener {
+            startActivity(Intent(activity, DrawerActivity::class.java))
+        }
+
         initVideo()
+        createdView = true
+
+
     }
 
 
@@ -121,26 +155,26 @@ class VerticalFragment(private val num: Int) : Fragment() {
         super.onPause()
         isPause = true
 
-        Log.d("===wpt===", "onPause_num=$num")
+        Log.d(TAG, "onPause_num=$num")
     }
 
     override fun onResume() {
         detail_player.onVideoResume(false)
         super.onResume()
         isPause = false
-        Log.d("===wpt===", "onResume=$num")
+        Log.d(TAG, "onResume=$num")
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("===wpt===", "onDestroyView_num=$num")
+        Log.d(TAG, "onDestroyView_num=$num")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("===wpt===", "onDestroy_num=$num")
+        Log.d(TAG, "onDestroy_num=$num")
         if (isPlay) {
-            detail_player.release()
+            detail_player?.release()
         }
         if (orientationUtils != null)
             orientationUtils!!.releaseListener()
@@ -148,7 +182,10 @@ class VerticalFragment(private val num: Int) : Fragment() {
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
-        Log.d("===wpt===", "setUserVisibleHint_num=$num isVisibleToUser=$isVisibleToUser")
+        Log.d(TAG, "setUserVisibleHint_num=$num isVisibleToUser=$isVisibleToUser ,activity=$activity ,createdView=$createdView")
+        /*if (isVisibleToUser && createdView){
+            initVideo()
+        }*/
     }
 
 }

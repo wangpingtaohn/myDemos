@@ -19,8 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>-->
 
-    <androidx.viewpager2.widget.ViewPager2
+    <!--<androidx.viewpager2.widget.ViewPager2
             android:layout_marginTop="20dp"
+            android:id="@+id/vvp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>-->
+    <fr.castorflex.android.verticalviewpager.VerticalViewPager
             android:id="@+id/vvp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
