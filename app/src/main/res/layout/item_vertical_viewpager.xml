@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,11 +23,31 @@
             android:text="退出全屏"
             android:layout_marginTop="40dp"
             android:id="@+id/exit_full"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+    <Button
+            android:text="暂停"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/btn_jump"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/pause_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"/>
+    <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text="停止"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/btn_jump"
+            android:id="@+id/stop_btn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"/>
+
     <com.wpt.mydemos.textview.FakeBoldTextView
             android:id="@+id/tv_ver"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -38,9 +58,23 @@
             tools:text="xxxx" />
 
     <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+            android:layout_above="@id/tv_comment"
             android:id="@+id/detail_player"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+    <TextView
+            android:id="@+id/tv_comment"
+            android:text="评论吧"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+    <FrameLayout
+            android:id="@+id/fl_frg"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
-</LinearLayout>
+</RelativeLayout>

@@ -1,309 +1,348 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
         <Button
+                android:id="@+id/main_linkage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:text="联动"
                 android:textAllCaps="false"
+                tools:visibility="visible" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="tools:"
+                android:textAllCaps="false"
+                tools:visibility="visible" />
+
+        <Button
+                android:id="@+id/main_gsy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="GSY_VIDEO"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_vertical_viewpager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="纵向ViewPager"/>
+                android:layout_marginTop="20dp"
+                android:text="纵向ViewPager"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_wasabeef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="高斯模糊"/>
+                android:layout_marginTop="20dp"
+                android:text="高斯模糊"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_drawer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="drawer"/>
+                android:layout_marginTop="20dp"
+                android:text="drawer"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_text_animator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="textAnimator"/>
+                android:layout_marginTop="20dp"
+                android:text="textAnimator"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_launch_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="launchMode"/>
+                android:layout_marginTop="20dp"
+                android:text="launchMode"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_leeCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="leeCode"/>
+                android:layout_marginTop="20dp"
+                android:text="leeCode"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_top_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Q Top Activity"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="Q Top Activity"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_swipe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Swipe"/>
+                android:layout_marginTop="20dp"
+                android:text="Swipe"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_scale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="缩放动画"/>
+                android:layout_marginTop="20dp"
+                android:text="缩放动画"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_coordinator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="coordinator"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="coordinator"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_webView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="webView"/>
+                android:layout_marginTop="20dp"
+                android:text="webView"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_custom_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="customView"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="customView"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_flutter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="flutter"/>
+                android:layout_marginTop="20dp"
+                android:text="flutter"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_flutter_boost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="flutter_boost"/>
+                android:layout_marginTop="20dp"
+                android:text="flutter_boost"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_flutter_boost_simple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="flutter_boost_simple"/>
+                android:layout_marginTop="20dp"
+                android:text="flutter_boost_simple"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_load_pic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="加载本地图片"/>
+                android:layout_marginTop="20dp"
+                android:text="加载本地图片"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="可变字体"/>
+                android:layout_marginTop="20dp"
+                android:text="可变字体"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_oom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OOM"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="OOM"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_drag_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="拖拽布局"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="拖拽布局"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_keybaord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="键盘遮挡"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="键盘遮挡"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_drag2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="拖拽RecylerView(九宫格)"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="拖拽RecylerView(九宫格)"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_drag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="拖拽RecylerView(单行)"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="拖拽RecylerView(单行)"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_animator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="动画"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="动画"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_okhttp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OkHttp"/>
+                android:layout_marginTop="20dp"
+                android:text="OkHttp"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_variable_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="editText可变颜色"/>
+                android:layout_marginTop="20dp"
+                android:text="editText可变颜色"
+                android:textAllCaps="false" />
 
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_toast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="toast重复"/>
+                android:layout_marginTop="20dp"
+                android:text="toast重复"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_elevation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="阴影"/>
+                android:layout_marginTop="20dp"
+                android:text="阴影"
+                android:textAllCaps="false" />
 
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_flexbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FlexBox"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="FlexBox"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_recyclerview2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="recyclerview2"/>
+                android:layout_marginTop="20dp"
+                android:text="recyclerview2"
+                android:textAllCaps="false" />
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/main_object"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Object"/>
-        <Button
                 android:layout_marginTop="20dp"
-                android:textAllCaps="false"
+                android:text="Object"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/main_emoji"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Emoji"/>
+                android:layout_marginTop="20dp"
+                android:text="Emoji"
+                android:textAllCaps="false" />
 
 
         <Button
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
                 android:id="@+id/dialog_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="dialogFragment"/>
+                android:layout_marginTop="20dp"
+                android:text="dialogFragment"
+                android:textAllCaps="false" />
 
 
         <Button
-                android:textAllCaps="false"
                 android:id="@+id/main_recyclerview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="recyclerview"/>
+                android:text="recyclerview"
+                android:textAllCaps="false" />
 
 
         <Button
-                android:textAllCaps="false"
                 android:id="@+id/kotlin_fun_demo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kotlin fun Demo"/>
+                android:text="kotlin fun Demo"
+                android:textAllCaps="false" />
 
         <Button
-                android:textAllCaps="false"
-                android:layout_marginTop="20dp"
                 android:id="@+id/keyboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="keyboard"/>
-        <Button
-                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
+                android:text="keyboard"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/keyboard2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="keyboard2"/>
-        <Button
-                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
+                android:text="keyboard2"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/hashmap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hashmap"/>
-        <Button
-                android:textAllCaps="false"
                 android:layout_marginTop="20dp"
+                android:text="hashmap"
+                android:textAllCaps="false" />
+
+        <Button
                 android:id="@+id/statusBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="statusBar"/>
+                android:layout_marginTop="20dp"
+                android:text="statusBar"
+                android:textAllCaps="false" />
 
 
     </LinearLayout>

@@ -43,6 +43,7 @@ import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.textview.AnimatorTextViewActivity
 import com.wpt.mydemos.toast.ToastActivity
 import com.wpt.mydemos.top.TopActivity
+import com.wpt.mydemos.viewpager.DetailPlayer2
 import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
@@ -72,6 +73,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_gsy.setOnClickListener {
+            startActivity(Intent(activity, DetailPlayer2::class.java))
+        }
 
         main_vertical_viewpager.setOnClickListener {
             startActivity(Intent(activity, VerticalViewPagerActivity::class.java))

@@ -22,9 +22,20 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".viewpager.VerticalViewPagerActivity"
+        <activity android:name=".recycler.linkage.LinkageActivity"></activity>
+        <activity
+                android:name=".viewpager.VerticalViewPagerActivity"
                 android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-                android:screenOrientation="portrait"/>
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="adjustResize" />
+        <activity
+                android:name=".viewpager.VideoActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+                android:screenOrientation="portrait" />
+        <activity
+                android:name=".viewpager.DetailPlayer2"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+                android:screenOrientation="portrait" />
         <activity android:name=".wasabeef.WasabeefActivity" />
         <activity android:name=".drag.DrawerActivity" />
         <activity android:name=".textview.AnimatorTextViewActivity" />
@@ -90,7 +101,10 @@
         <activity android:name=".keyboard.KeyboardActivity" />
         <activity android:name=".kotlins.KotlinFunActivity" />
         <activity android:name=".emoji.EmojiActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+                android:name=".MainActivity"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

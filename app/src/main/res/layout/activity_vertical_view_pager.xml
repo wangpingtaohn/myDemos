@@ -5,10 +5,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:fitsSystemWindows="false"
         tools:context=".viewpager.VerticalViewPagerActivity">
 
     <Button
             android:text="添加"
+            android:visibility="gone"
             android:id="@+id/add_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

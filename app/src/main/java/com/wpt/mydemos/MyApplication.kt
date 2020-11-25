@@ -3,6 +3,7 @@ package com.wpt.mydemos
 import android.app.Application
 import androidx.emoji.text.EmojiCompat
 import androidx.emoji.bundled.BundledEmojiCompatConfig
+import androidx.multidex.MultiDex
 import com.idlefish.flutterboost.FlutterBoost
 import com.idlefish.flutterboost.interfaces.INativeRouter
 import com.idlefish.flutterboost.Utils
@@ -25,6 +26,8 @@ class MyApplication: Application() {
         super.onCreate()
         val config:EmojiCompat.Config = BundledEmojiCompatConfig(this)
         EmojiCompat.init(config)
+
+        MultiDex.install(this);
 
 //        initFlutter()
     }

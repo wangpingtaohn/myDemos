@@ -2,6 +2,7 @@ package com.wpt.mydemos.viewpager
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.text.Editable
 import android.text.method.ScrollingMovementMethod
@@ -9,7 +10,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.gyf.immersionbar.ImmersionBar
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.item_vertical_viewpager.*
 import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
@@ -44,6 +48,7 @@ class VerticalFragment(private val num: Int) : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         Log.d(TAG, "onAttach=$num")
+//        ImmersionBar.with(this).init()
     }
 
     override fun onCreateView(
@@ -87,24 +92,66 @@ class VerticalFragment(private val num: Int) : Fragment() {
         }
 
         btn_jump.setOnClickListener {
-            startActivity(Intent(activity, DrawerActivity::class.java))
+            startActivity(Intent(activity, VideoActivity::class.java))
         }
 
         initVideo()
         createdView = true
 
 
+        val commentFrg = CommnentFragment()
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.add(R.id.fl_frg, commentFrg)
+        transaction.commit()
+        tv_comment.setOnClickListener {
+//            fl_frg.visibility = View.VISIBLE
+//            commentFrg.showInput()
+            showDialog()
+        }
+
+        fl_frg.setOnClickListener {
+//            fl_frg.visibility = View.GONE
+        }
+
+        pause_btn.setOnClickListener {
+            detail_player.onVideoPause()
+        }
+        stop_btn.setOnClickListener {
+            detail_player.onVideoReset()
+//            detail_player.release()
+        }
+
+    }
+
+    private fun showDialog(){
+        val dialog = BottomSheetDialog(activity!!, R.style.Theme_Design_BottomSheetDialog)
+        dialog.setContentView(R.layout.fragment_comment)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.show()
+    }
+
+
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        Log.d(TAG, "onConfigurationChanged_newConfig=" + newConfig.orientation)
+        super.onConfigurationChanged(newConfig)
+
+        detail_player.onConfigurationChanged(activity, newConfig, orientationUtils, true, true)
+
+        val ivCover = ImageView(activity)
+        ivCover.setImageResource(R.drawable.ic_gh_foward)
+
     }
 
 
 
     private fun initVideo() {
+        Log.d(TAG, "initVideo=")
         //外部辅助的旋转，帮助全屏
         orientationUtils = OrientationUtils(activity, detail_player)
-//初始化不打开外部的旋转
-        orientationUtils!!.setEnable(false)
 
         val realUrl = "http://1400163667.vod2.myqcloud.com/d1c8688cvodtranscq1400163667/919ff6b05285890806449061880/v.f30.mp4"
+//        val realUrl = "https://v.youku.com/v_show/id_XMzg1OTUxMTY5Mg==.html?x&sharefrom=android&sharekey=02fc5625dcd14ac1cf9f685207f0200d6"
 
         val gsyVideoOption = GSYVideoOptionBuilder()
         gsyVideoOption
@@ -121,7 +168,8 @@ class VerticalFragment(private val num: Int) : Fragment() {
                 override fun onPrepared(url: String?, vararg objects: Any) {
                     super.onPrepared(url, *objects)
                     //开始播放了才能旋转和全屏
-                    orientationUtils!!.setEnable(true)
+                    Log.d(TAG, "initVideo_onPrepared")
+                    orientationUtils!!.isEnable = true
                     isPlay = true
                 }
 
@@ -134,7 +182,7 @@ class VerticalFragment(private val num: Int) : Fragment() {
             }).setLockClickListener { view, lock ->
                 if (orientationUtils != null) {
                     //配合下方的onConfigurationChanged
-                    orientationUtils!!.setEnable(!lock)
+                    orientationUtils!!.isEnable = true
                 }
             }.build(detail_player)
 
