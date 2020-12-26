@@ -22,7 +22,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".recycler.linkage.LinkageActivity"></activity>
+        <activity android:name=".fling.RightToJumpActivity"/>
+        <activity android:name=".fling.LeftActivity"/>
+        <activity android:name=".fling.RightActivity"/>
         <activity
                 android:name=".viewpager.VerticalViewPagerActivity"
                 android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"

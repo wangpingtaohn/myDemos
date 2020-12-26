@@ -1,14 +1,11 @@
 package com.wpt.mydemos.viewpager
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.gyf.immersionbar.ImmersionBar
 import com.wpt.mydemos.R
-import com.wpt.mydemos.statusbar.MyStatusBarUtil
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_vertical_view_pager.*
 
@@ -40,6 +37,7 @@ class VerticalViewPagerActivity : BaseActivity() {
         val adapter = MyViewPagerAdapter(supportFragmentManager,fragments)
 //        val adapter = ViewPager2Adapter(supportFragmentManager,fragments)
 //        vvp.orientation = ViewPager2.ORIENTATION_VERTICAL
+//        vvp.offscreenPageLimit = 6
         vvp.adapter = adapter
 
 
@@ -65,13 +63,13 @@ class VerticalViewPagerActivity : BaseActivity() {
 
             override fun onPageSelected(position: Int) {
                 Log.d(TAG,"pos=${position}")
-                if (position == 3){
+                /*if (position == 3){
                     fragments.add(VerticalFragment(6))
                     fragments.add(VerticalFragment(7))
                     fragments.add(VerticalFragment(8))
                     fragments.add(VerticalFragment(9))
                     adapter.notifyDataSetChanged()
-                }
+                }*/
             }
         })
     }

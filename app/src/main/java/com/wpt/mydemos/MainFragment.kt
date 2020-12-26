@@ -25,6 +25,7 @@ import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
+import com.wpt.mydemos.fling.RightToJumpActivity
 import com.wpt.mydemos.flutter.FlutterDemoActivity
 import com.wpt.mydemos.flutter.PageRouter
 import com.wpt.mydemos.keyboard.Keyboard2Activity
@@ -73,6 +74,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+        main_fling.setOnClickListener {
+            startActivity(Intent(activity, RightToJumpActivity::class.java))
+        }
 
         main_gsy.setOnClickListener {
             startActivity(Intent(activity, DetailPlayer2::class.java))

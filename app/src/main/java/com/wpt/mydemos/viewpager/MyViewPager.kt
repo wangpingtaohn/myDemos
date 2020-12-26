@@ -21,7 +21,7 @@ class MyViewPager(private val mContext: Context): PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         Log.d("===wpt===", "position=$position")
-        val view  = LayoutInflater.from(mContext).inflate(R.layout.item_vertical_viewpager, container, false)
+        val view  = LayoutInflater.from(mContext).inflate(R.layout.item_vertical_viewpager_frg_1, container, false)
         container.addView(view)
         return view
     }

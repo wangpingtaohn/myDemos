@@ -13,6 +13,15 @@
             android:orientation="vertical">
 
         <Button
+                android:id="@+id/main_fling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="滑动跳转"
+                android:textAllCaps="false"
+                tools:visibility="visible" />
+
+        <Button
                 android:id="@+id/main_linkage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

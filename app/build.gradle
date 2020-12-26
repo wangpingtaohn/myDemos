@@ -48,7 +48,7 @@ repositories {
     }
     //flutter
     maven {
-        url '/Users/wangpingtao/yuxun/func_pro/MyDemos/app/libs/repo'
+        url '/Users/yjm/wpt/andr_space/myDemos/app/libs/repo'
     }
 
     //flutter
