@@ -7,6 +7,7 @@ import androidx.multidex.MultiDex
 import com.idlefish.flutterboost.FlutterBoost
 import com.idlefish.flutterboost.interfaces.INativeRouter
 import com.idlefish.flutterboost.Utils
+import com.wpt.mydemos.dragback.DragBackHelper
 import com.wpt.mydemos.flutter.PageRouter
 import io.flutter.embedding.android.FlutterView
 
@@ -28,6 +29,8 @@ class MyApplication: Application() {
         EmojiCompat.init(config)
 
         MultiDex.install(this);
+
+        registerActivityLifecycleCallbacks(DragBackHelper.getInstance())
 
 //        initFlutter()
     }

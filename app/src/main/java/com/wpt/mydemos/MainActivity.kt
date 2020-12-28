@@ -1,11 +1,16 @@
 package com.wpt.mydemos
 
 import android.Manifest
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import com.wpt.mydemos.widget.BaseActivity
+
 
 class MainActivity : BaseActivity() {
 
@@ -15,12 +20,33 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Log.d("===wpt===","onCreate")
+
         initView()
         if(Build.VERSION.SDK_INT>=23){
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(
                     arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 11)
             }
+        }
+
+        val homeFilter = IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
+
+        val myReceiver = MyReceiver()
+
+        registerReceiver(myReceiver, homeFilter)
+
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        Log.d("===wpt===","onPostCreate")
+    }
+
+    class MyReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val reason = intent!!.getStringExtra("reason")
+            Log.d("===wpt===","reason=$reason")
         }
 
     }
@@ -37,16 +63,32 @@ class MainActivity : BaseActivity() {
     //跳转其他Activity、home键时都执行了
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Log.d("MainActivity","onSaveInstanceState")
+        Log.d("===wpt===","onSaveInstanceState")
     }
 
+    //跳转其他Activity、home键时都执行了
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
-        Log.d("MainActivity","onUserLeaveHint")
+        Log.d("===wpt===","onUserLeaveHint")
     }
 
     fun setMainBean(){
         mainBean.name = "Tom"
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("===wpt===","onRestart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("===wpt===","onResume")
+    }
+
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        Log.d("===wpt===","onUserInteraction")
     }
 
 }

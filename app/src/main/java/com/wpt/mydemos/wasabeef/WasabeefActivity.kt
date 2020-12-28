@@ -7,22 +7,22 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import android.util.Log
 import android.view.View
-import androidx.annotation.Nullable
 import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_wasabeef.*
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
+import com.wpt.mydemos.dragback.BanDragBack
 import kotlinx.android.synthetic.main.activity_wasabeef.tv_ver
 
-
+@BanDragBack(can = true,name = "WasabeefActivity")
 class WasabeefActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        SwipeBackHelper.onCreate(this)
         setContentView(R.layout.activity_wasabeef)
 
         tv_ver.movementMethod = ScrollingMovementMethod.getInstance()
@@ -47,6 +47,16 @@ class WasabeefActivity : AppCompatActivity() {
                     }
                 })
         }
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+//        SwipeBackHelper.onPostCreate(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+//        SwipeBackHelper.onDestroy(this)
     }
 
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="layout_loading" type="id" />
+    <item name="loading_view" type="id" />
+    <item name="RequestLoadingLayout" type="id" />
+    <item name="RequestError" type="id" />
+    <item name="public_request_loading_view" type="id" />
+    <item name="RequestLoadingErrorText" type="id" />
+
+    <!--dragback-->
+    <item name="draglayout" type="id" />
+</resources>
