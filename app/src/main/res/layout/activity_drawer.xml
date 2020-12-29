@@ -18,10 +18,11 @@
                 android:text="主内容" />
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
             android:id="@+id/drawer_layout"
-            android:layout_width="240dp"
+            android:layout_width="match_parent"
             android:background="@color/green"
+            android:layout_marginLeft="-65dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:orientation="vertical">
@@ -30,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="抽屉布局" />
-    </LinearLayout>
+    </FrameLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
