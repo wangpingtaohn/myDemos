@@ -7,11 +7,15 @@ import com.wpt.mydemos.R
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_scale_animation.*
 import android.view.animation.ScaleAnimation
+import me.imid.swipebacklayout.lib.SwipeBackLayout
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity
 
 
-class ScaleAnimationActivity : BaseActivity() {
+class ScaleAnimationActivity : SwipeBackActivity() {
 
     private lateinit var animation: ScaleAnimation
+
+    private var mSwipeBackLayout: SwipeBackLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,9 @@ class ScaleAnimationActivity : BaseActivity() {
         animation.repeatCount = 10
 
         initView()
+
+        mSwipeBackLayout = swipeBackLayout
+        mSwipeBackLayout!!.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_ALL)
     }
 
     private fun initView() {

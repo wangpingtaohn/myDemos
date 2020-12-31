@@ -29,6 +29,8 @@ import androidx.core.view.VelocityTrackerCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.ScrollerCompat;
 
+import com.wpt.mydemos.utils.Utils;
+
 import java.util.Arrays;
 
 /**
@@ -103,7 +105,7 @@ public class ViewDragHelper {
      */
     public static final int DIRECTION_ALL = DIRECTION_HORIZONTAL | DIRECTION_VERTICAL;
 
-    public static final int EDGE_SIZE = 20; // dp
+    public static final int EDGE_SIZE = 375; // dp
 
     private static final int BASE_SETTLE_DURATION = 256; // ms
 

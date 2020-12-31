@@ -32,6 +32,13 @@
                 android:layout_height="wrap_content"
                 android:text="抽屉布局" />
     </FrameLayout>
-
+    <!--<FrameLayout
+            android:id="@+id/fl_back"
+            android:layout_marginRight="-65dp"
+            android:background="@color/translucent"
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

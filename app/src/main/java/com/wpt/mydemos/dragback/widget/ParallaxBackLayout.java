@@ -16,6 +16,7 @@ import androidx.core.view.ViewCompat;
 import com.wpt.mydemos.R;
 import com.wpt.mydemos.dragback.DragBackListener;
 import com.wpt.mydemos.dragback.ViewDragHelper;
+import com.wpt.mydemos.utils.Utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -124,7 +125,11 @@ public class ParallaxBackLayout extends FrameLayout {
     public void setEdgeMode(@EdgeMode int mode) {
         mEdgeMode = mode;
         if (mEdgeMode == EDGE_MODE_FULL) {
-            mDragHelper.setEdgeSize(Math.max(getWidth(), getHeight()));
+            int width = Utils.getScreenW(getContext());
+            int height = Utils.getScreenH(getContext());
+            width = Math.max(width,getWidth());
+            height = Math.max(height,getHeight());
+            mDragHelper.setEdgeSize(Math.max(width, height));
         }
     }
 
@@ -177,10 +182,19 @@ public class ParallaxBackLayout extends FrameLayout {
         invalidate();
     }
 
+    float lastX;
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         if (!mEnable || !mBackgroundView.canGoBack()) {
             return false;
+        }
+        if (event.getAction() == MotionEvent.ACTION_MOVE){ //不处理左滑
+            float x = event.getX();
+            boolean isLeft = x < lastX;
+            lastX = x;
+            if (isLeft){
+                return false;
+            }
         }
         try {
             return mDragHelper.shouldInterceptTouchEvent(event);
@@ -190,6 +204,7 @@ public class ParallaxBackLayout extends FrameLayout {
             return false;
         }
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,11 +21,22 @@ public class DragBackHelper extends SimpleActivityLifecycleCallbacks implements 
 
     private LinkedStack<Activity, Activity> mLinkedStack = new LinkedStack<Activity, Activity>();
 
+    private boolean isDynamicCan = true;
+
     private DragBackHelper() {
+    }
+
+    public boolean isDynamicCan() {
+        return isDynamicCan;
+    }
+
+    public void setDynamicCan(boolean dynamicCan) {
+        isDynamicCan = dynamicCan;
     }
 
     @Override
     public void onDragbackFinished(Activity activity) {
+        Log.d("===wpt===","onDragbackFinished");
         if (activity == null) return;
 
         BanDragBack banDragBack = checkAnnotation(activity.getClass());
@@ -48,6 +60,7 @@ public class DragBackHelper extends SimpleActivityLifecycleCallbacks implements 
     @Override
     public void onActivityCreated(Activity activity, Bundle bundle) {
 
+        Log.d("===wpt===","onActivityCreated");
         mLinkedStack.put(activity, activity);
 
         BanDragBack banDragBack = checkAnnotation(activity.getClass());
@@ -66,6 +79,7 @@ public class DragBackHelper extends SimpleActivityLifecycleCallbacks implements 
         if (dragBackLayout == null) return;
 
         //默认是边缘滑动，可以设置全局滑动
+//        dragBackLayout.setEdgeMode(ParallaxBackLayout.EDGE_MODE_FULL);
         dragBackLayout.setEdgeMode(ParallaxBackLayout.EDGE_MODE_DEFAULT);
     }
 
@@ -87,6 +101,7 @@ public class DragBackHelper extends SimpleActivityLifecycleCallbacks implements 
 
     @Override
     public void onActivityDestroyed(Activity activity) {
+        Log.d("===wpt===","onActivityDestroyed");
         mLinkedStack.remove(activity);
     }
 
@@ -146,7 +161,12 @@ public class DragBackHelper extends SimpleActivityLifecycleCallbacks implements 
 
         @Override
         public boolean canGoBack() {
-            return (mActivityBack = DragBackHelper.getInstance().mLinkedStack.before(mActivity)) != null;
+            return (mActivityBack = DragBackHelper.getInstance().mLinkedStack.before(mActivity)) != null && DragBackHelper.getInstance().isDynamicCan;
+        }
+
+        @Override
+        public boolean canGoTo() {
+            return false;
         }
     }
 }

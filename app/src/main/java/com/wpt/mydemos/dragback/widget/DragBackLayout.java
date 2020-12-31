@@ -575,6 +575,8 @@ public class DragBackLayout extends FrameLayout {
          * @return the boolean
          */
         boolean canGoBack();
+
+        boolean canGoTo();
     }
 
     public interface ParallaxSlideCallback {

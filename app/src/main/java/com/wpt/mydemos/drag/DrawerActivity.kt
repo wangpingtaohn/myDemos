@@ -8,13 +8,13 @@ import kotlinx.android.synthetic.main.activity_drawer.*
 import androidx.drawerlayout.widget.DrawerLayout
 import android.app.Activity
 import android.graphics.Point
+import android.view.View
 import androidx.customview.widget.ViewDragHelper
-
-
+import com.wpt.mydemos.dragback.DragBackHelper
 
 
 @BanDragBack(can = true)
-class DrawerActivity : AppCompatActivity() {
+class DrawerActivity : AppCompatActivity(),DrawerLayout.DrawerListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +31,7 @@ class DrawerActivity : AppCompatActivity() {
 
 
     private fun initView(){
+        drawer_root.addDrawerListener(this)
         val fragment = DrawerFragment()
         val ft = supportFragmentManager.beginTransaction()
         ft.add(R.id.drawer_layout,fragment)
@@ -87,5 +88,30 @@ class DrawerActivity : AppCompatActivity() {
         } catch (e: IllegalAccessException) {
         }
 
+    }
+
+
+    override fun onBackPressed() {
+        if (drawer_root.isDrawerOpen(drawer_layout)){
+            drawer_root.closeDrawer(drawer_layout)
+            return
+        }
+        super.onBackPressed()
+    }
+
+    override fun onDrawerStateChanged(newState: Int) {
+    }
+
+    override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+    }
+    override fun onDrawerClosed(drawerView: View) {
+        DragBackHelper.getInstance().isDynamicCan = true
+    }
+
+    override fun onDrawerOpened(drawerView: View) {
+        DragBackHelper.getInstance().isDynamicCan = false
+        /*if (drawerView.id == R.id.fl_back){
+            finish()
+        }*/
     }
 }
