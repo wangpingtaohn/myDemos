@@ -12,6 +12,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
@@ -49,6 +54,9 @@ import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
+import com.wpt.mydemos.custom.RoundedCornersTransform
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+
 
 /**
  *    author : wpt
@@ -74,6 +82,21 @@ class MainFragment : Fragment() {
     }
 
     private fun initView() {
+
+//        val url = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F28ba0eb865f7f09e2c8873e9fb567f53.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100&refer=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1613007940&t=2236010a025806f8aa499a36a0bdd7ca"
+        val url = "http://staticcdntest.fantuan.cn/uimage/ec/72/a0/11/ec72a011c7e78b38414fe324a8676092.jpg?x-oss-process=image/format,jpg"
+
+
+//        val transform = RoundedCornersTransform(context, 10f)
+//        transform.setNeedCorner(false, false, false, false)
+
+        Glide.with(this).load(R.drawable.test_cover)
+//            .apply(RequestOptions.overrideOf(300,300))
+            .apply(RequestOptions.bitmapTransform(RoundedCornersTransform(context,20,0)))
+            .into(iv_cover)
+
+        Glide.with(this).load(R.drawable.test_cover)
+            .into(iv_cover1)
 
         main_fling.setOnClickListener {
             startActivity(Intent(activity, RightToJumpActivity::class.java))

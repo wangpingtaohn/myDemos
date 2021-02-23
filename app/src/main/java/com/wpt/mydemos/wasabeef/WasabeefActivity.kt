@@ -12,6 +12,7 @@ import com.wpt.mydemos.R
 import kotlinx.android.synthetic.main.activity_wasabeef.*
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.wpt.mydemos.dragback.BanDragBack
@@ -35,7 +36,9 @@ class WasabeefActivity : AppCompatActivity() {
                 .transition(DrawableTransitionOptions.withCrossFade())//淡入淡出
                 .into(iv)*/
 
-            Glide.with(applicationContext).load(R.drawable.wass_bg)
+            Glide.with(applicationContext).load(R.drawable.wass_bg).transition(
+                DrawableTransitionOptions.withCrossFade()
+            )
                 .apply(RequestOptions.bitmapTransform(BlurTransformation(applicationContext, 13, 3)))
                 .into(object :
                     SimpleTarget<Drawable>() {

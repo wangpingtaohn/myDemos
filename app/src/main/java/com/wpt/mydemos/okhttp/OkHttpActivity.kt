@@ -28,7 +28,8 @@ class OkHttpActivity : BaseActivity() {
 
     private fun getData(){
 
-        val request = Request.Builder().url("https://www.baidu.com/").build()
+        val request = Request.Builder().url("https://www.baidu.com/")
+            .build()
         val call = okHttpClient.newCall(request)
         call.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {

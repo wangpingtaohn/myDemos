@@ -12,6 +12,36 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
+        <TextView
+                android:layout_marginTop="20dp"
+                android:text="哈哈哈哈"
+                android:gravity="center"
+                android:background="@drawable/bg_product_discount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/green"
+                android:layout_marginTop="20dp"
+                android:layout_height="147dp">
+            <ImageView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/iv_cover1"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <ImageView
+                    android:id="@+id/iv_cover"
+                    android:scaleType="centerInside"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
         <Button
                 android:id="@+id/main_fling"
                 android:layout_width="wrap_content"
