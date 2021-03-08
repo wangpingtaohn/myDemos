@@ -68,6 +68,7 @@
     <Button
             android:id="@+id/btn_scroll"
             android:text="滚动"
+            android:background="@color/white"
             android:layout_marginBottom="20dp"
             android:layout_marginRight="20dp"
             android:layout_alignParentBottom="true"

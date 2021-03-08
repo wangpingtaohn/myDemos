@@ -43,25 +43,15 @@ class Coordinator2Activity : BaseActivity() {
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
 
+        var isExpand = true
         btn_scroll.setOnClickListener {
-            /*val behavior =
-                (appbar.layoutParams as CoordinatorLayout.LayoutParams).behavior as (AppBarLayout.Behavior)
-            val posView = layoutManager.findViewByPosition(3)
-            behavior.topAndBottomOffset = -posView!!.y.toInt()
-
-            recyclerView.isNestedScrollingEnabled = true*/
-
-//            behavior.onNestedPreScroll(
-//                coordinatorLayout,
-//                appbar,
-//                recyclerView,
-//                0,
-//                240,
-//                intArrayOf(0, 0)
-//            )
-            appbar.setExpanded(false)
-//            recyclerView.scrollToPosition(1)
-            layoutManager.scrollToPositionWithOffset(1,50)
+            if(isExpand){
+                layoutManager.scrollToPositionWithOffset(1,50)
+            } else {
+                layoutManager.scrollToPositionWithOffset(0,0)
+            }
+            appbar.setExpanded(!isExpand)
+            isExpand = !isExpand
         }
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
