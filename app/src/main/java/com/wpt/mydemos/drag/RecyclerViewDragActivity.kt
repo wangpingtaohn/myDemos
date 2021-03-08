@@ -58,6 +58,11 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
             LinearLayoutManager.VERTICAL,
             false
         )
+
+        btn_scroll.setOnClickListener {
+            drag_recyclerview.layoutManager!!.scrollToPosition(8)
+            lm.scrollToPositionWithOffset(8,0)
+        }
 //        val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
         drag_recyclerview.layoutManager = lm
@@ -78,6 +83,7 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
                 super.onScrollStateChanged(recyclerView, newState)
                 if (newState == RecyclerView.SCROLL_STATE_IDLE){
                     lastFirstPos = lm.findFirstVisibleItemPosition()
+                    val lastPos = lm.findLastVisibleItemPosition()
                     Log.d("===wpt===", "onScrollStateChanged_pos=$lastFirstPos")
                     Handler().postDelayed({
                         val newPos = lm.findFirstVisibleItemPosition()
@@ -91,6 +97,10 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
+                val lastPos = lm.findLastCompletelyVisibleItemPosition() - 1
+                val visibleCount = lm.childCount
+                val itemCount = lm.itemCount
+                Log.d("===wpt===", "lastPos=$lastPos ,visibleCount=$visibleCount ,itemCount=$itemCount")
             }
         })
     }

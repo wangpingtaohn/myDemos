@@ -45,5 +45,13 @@
                     android:scrollbars="none" />/>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
     <!--</android.support.design.widget.CoordinatorLayout>-->
+    <Button
+            android:id="@+id/btn_scroll"
+            android:text="滚动"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </FrameLayout>

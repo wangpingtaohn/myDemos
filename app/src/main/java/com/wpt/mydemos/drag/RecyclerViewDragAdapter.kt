@@ -49,6 +49,7 @@ class RecyclerViewDragAdapter(private var mContext: Context, private var data:Li
                 }
                 false
             }
+            holder.itemView.tv_title.text = position.toString()
         }
     }
 

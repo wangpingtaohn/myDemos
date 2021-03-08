@@ -56,6 +56,7 @@
         <activity android:name=".refresh.SwipeRefreshActivity" />
         <activity android:name=".animator.ScaleAnimationActivity" />
         <activity android:name=".coordinator.CoordinatorActivity" />
+        <activity android:name=".coordinator.Coordinator2Activity" />
         <activity android:name=".webview.WebActivity" />
         <activity android:name=".custom.CustomViewActivity" />
         <activity android:name=".flutter.FlutterBaseActivity" />
