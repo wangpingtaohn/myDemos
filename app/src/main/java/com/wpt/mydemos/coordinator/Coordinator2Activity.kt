@@ -60,9 +60,8 @@ class Coordinator2Activity : BaseActivity() {
 //                intArrayOf(0, 0)
 //            )
             appbar.setExpanded(false)
-            val posView = layoutManager.findViewByPosition(3)
-            recyclerView.scrollToPosition(2)
-            layoutManager.scrollToPositionWithOffset(2,50)
+//            recyclerView.scrollToPosition(1)
+            layoutManager.scrollToPositionWithOffset(1,50)
         }
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
