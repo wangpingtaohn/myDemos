@@ -6,6 +6,9 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -56,6 +59,7 @@ import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 import com.wpt.mydemos.custom.RoundedCornersTransform
+import com.wpt.mydemos.flexbox.MyFlexBoxActivity
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 
@@ -84,7 +88,25 @@ class MainFragment : Fragment() {
 
     private fun initView() {
 
+        et_input.addTextChangedListener(object : TextWatcher{
 
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                Log.d("et_input","afterTextChanged_s=$s")
+                et_input.removeTextChangedListener(this)
+                et_input.text = Editable.Factory.getInstance().newEditable("7")
+                et_input.addTextChangedListener(this)
+            }
+        })
+
+
+        main_myflexbox.setOnClickListener {
+            startActivity(Intent(activity, MyFlexBoxActivity::class.java))
+        }
         main_coordinator2.setOnClickListener {
             startActivity(Intent(activity, Coordinator2Activity::class.java))
         }

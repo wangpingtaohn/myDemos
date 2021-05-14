@@ -8,4 +8,13 @@
         android:id="@+id/frg_content"
         tools:context=".MainActivity">
 
+    <Button
+            android:text="画中画"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/enter_pip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 </FrameLayout>

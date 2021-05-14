@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import com.wpt.mydemos.widget.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
@@ -35,6 +36,12 @@ class MainActivity : BaseActivity() {
         val myReceiver = MyReceiver()
 
         registerReceiver(myReceiver, homeFilter)
+
+        enter_pip.setOnClickListener {
+            if(Build.VERSION.SDK_INT>=24){
+                enterPictureInPictureMode()
+            }
+        }
 
     }
 
