@@ -22,17 +22,17 @@ class FlutterDemoActivity : AppCompatActivity() {
         params["env"] = "debug"
         params["version"] = "2.13.4"
         open_native.setOnClickListener {
-            PageRouter.openPageByUrl(this, PageRouter.NATIVE_PAGE_URL,params)
+//            PageRouter.openPageByUrl(this, PageRouter.NATIVE_PAGE_URL,params)
         }
         open_flutter.setOnClickListener {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_URL,params)
+//            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_URL,params)
 
         }
         open_flutter_fragment.setOnClickListener {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_FRAGMENT_PAGE_URL,params)
+//            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_FRAGMENT_PAGE_URL,params)
         }
         open_flutter_test.setOnClickListener {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_MY_WALLET,params)
+//            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_MY_WALLET,params)
         }
     }
 }

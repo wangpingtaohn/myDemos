@@ -4,12 +4,12 @@ import android.app.Application
 import androidx.emoji.text.EmojiCompat
 import androidx.emoji.bundled.BundledEmojiCompatConfig
 import androidx.multidex.MultiDex
-import com.idlefish.flutterboost.FlutterBoost
-import com.idlefish.flutterboost.interfaces.INativeRouter
-import com.idlefish.flutterboost.Utils
+//import com.idlefish.flutterboost.FlutterBoost
+//import com.idlefish.flutterboost.interfaces.INativeRouter
+//import com.idlefish.flutterboost.Utils
 import com.wpt.mydemos.dragback.DragBackHelper
-import com.wpt.mydemos.flutter.PageRouter
-import io.flutter.embedding.android.FlutterView
+//import com.wpt.mydemos.flutter.PageRouter
+//import io.flutter.embedding.android.FlutterView
 
 
 
@@ -36,7 +36,7 @@ class MyApplication: Application() {
     }
 
     private fun initFlutter(){
-        val router =
+       /* val router =
             INativeRouter { context, url, urlParams, _, _ ->
                 val assembleUrl = Utils.assembleUrl(url, urlParams)
                 PageRouter.openPageByUrl(context, assembleUrl, urlParams)
@@ -58,7 +58,7 @@ class MyApplication: Application() {
 
             override fun onEngineDestroy() {
 
-            }
+            }*/
 
         }
 
@@ -71,13 +71,13 @@ class MyApplication: Application() {
         // GeneratedPluginRegistrant 会自动生成 新的插件方式　
         //
         //
-        val platform = FlutterBoost.ConfigBuilder(this, router)
-            .isDebug(true)
-            .whenEngineStart(FlutterBoost.ConfigBuilder.ANY_ACTIVITY_CREATED)
-            .renderMode(FlutterView.RenderMode.texture)
-            .lifecycleListener(boostLifecycleListener)
-            .build()
-
-        FlutterBoost.instance().init(platform)
-    }
+//        val platform = FlutterBoost.ConfigBuilder(this, router)
+//            .isDebug(true)
+//            .whenEngineStart(FlutterBoost.ConfigBuilder.ANY_ACTIVITY_CREATED)
+//            .renderMode(FlutterView.RenderMode.texture)
+//            .lifecycleListener(boostLifecycleListener)
+//            .build()
+//
+//        FlutterBoost.instance().init(platform)
+//    }
 }

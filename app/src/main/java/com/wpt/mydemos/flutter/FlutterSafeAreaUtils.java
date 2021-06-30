@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import io.flutter.plugins.GeneratedPluginRegistrant;
+//import io.flutter.plugins.GeneratedPluginRegistrant;
 
 /**
  * author : wpt

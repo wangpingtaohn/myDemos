@@ -22,7 +22,7 @@
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning"
             tools:replace="android:allowBackup">
-        <activity android:name=".flexbox.MyFlexBoxActivity"></activity>
+        <activity android:name=".flexbox.MyFlexBoxActivity"/>
         <activity android:name=".fling.RightToJumpActivity" />
         <activity android:name=".fling.LeftActivity" />
         <activity android:name=".fling.RightActivity" />

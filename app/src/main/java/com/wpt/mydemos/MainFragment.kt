@@ -36,7 +36,7 @@ import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
 import com.wpt.mydemos.fling.RightToJumpActivity
 import com.wpt.mydemos.flutter.FlutterDemoActivity
-import com.wpt.mydemos.flutter.PageRouter
+//import com.wpt.mydemos.flutter.PageRouter
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
@@ -46,7 +46,6 @@ import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
 import com.wpt.mydemos.pics.LoadPicActivity
-import com.wpt.mydemos.recycler.rcv1.RecyclerViewActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
@@ -187,10 +186,10 @@ class MainFragment : Fragment() {
 //                    .initialRoute("/flutter?ghSelectShop")
 //                    .build(activity)
 //            )
-            PageRouter.openPageByUrl(activity,"/flutter?testPage",null)
+//            PageRouter.openPageByUrl(activity,"/flutter?testPage",null)
         }
         main_flutter_boost.setOnClickListener {
-            PageRouter.openPageByUrl(activity, PageRouter.FLUTTER_MY_WALLET,null)
+//            PageRouter.openPageByUrl(activity, PageRouter.FLUTTER_MY_WALLET,null)
         }
 
         main_flutter_boost_simple.setOnClickListener {
@@ -263,7 +262,7 @@ class MainFragment : Fragment() {
             startActivity(Intent(activity, KotlinFunActivity::class.java))
         }
         main_recyclerview.setOnClickListener {
-            startActivity(Intent(activity, RecyclerViewActivity::class.java))
+//            startActivity(Intent(activity, RecyclerViewActivity::class.java))
         }
         keyboard.setOnClickListener {
             startActivity(Intent(activity, KeyboardActivity::class.java))
