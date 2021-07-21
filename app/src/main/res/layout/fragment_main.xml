@@ -20,6 +20,21 @@
             android:hint="输入" />
 
         <Button
+            android:id="@+id/main_anr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ARN测试"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_memery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="获取缓存"
+            android:textAllCaps="false" />
+        <Button
             android:id="@+id/main_myflexbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,6 +58,7 @@
             android:textSize="18sp"
             android:background="@drawable/bg_product_discount2"
             android:gravity="center"
+            android:id="@+id/hh_text"
             android:shadowColor="@color/green"
             android:shadowDx="0"
             android:shadowDy="1"

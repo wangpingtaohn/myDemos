@@ -17,9 +17,15 @@
     <Button
             android:id="@+id/btn"
             android:text="get"
-            app:layout_constraintTop_toBottomOf="@+id/textview"
+            app:layout_constraintTop_toBottomOf="@+id/btn_trace"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/btn_trace"
+        app:layout_constraintTop_toBottomOf="@id/textview"
+        android:text="获取trace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
             android:id="@+id/btn2"
             android:text="get2"

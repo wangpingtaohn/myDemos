@@ -1,7 +1,9 @@
 package com.wpt.mydemos
 
+//import com.wpt.mydemos.flutter.PageRouter
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
+import android.app.ActivityManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -16,15 +18,14 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
+import com.wpt.mydemos.anr.ANRActivity
 import com.wpt.mydemos.coordinator.Coordinator2Activity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
+import com.wpt.mydemos.custom.RoundedCornersTransform
 import com.wpt.mydemos.drag.DragViewActivity
 import com.wpt.mydemos.drag.DrawerActivity
 import com.wpt.mydemos.drag.RecyclerViewDragActivity
@@ -34,9 +35,9 @@ import com.wpt.mydemos.edit.SorfKeyActivity
 import com.wpt.mydemos.edit.VariableColorEditTextActivity
 import com.wpt.mydemos.elevation.ElevationActivity
 import com.wpt.mydemos.emoji.EmojiActivity
+import com.wpt.mydemos.flexbox.MyFlexBoxActivity
 import com.wpt.mydemos.fling.RightToJumpActivity
 import com.wpt.mydemos.flutter.FlutterDemoActivity
-//import com.wpt.mydemos.flutter.PageRouter
 import com.wpt.mydemos.keyboard.Keyboard2Activity
 import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
@@ -57,9 +58,7 @@ import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
-import com.wpt.mydemos.custom.RoundedCornersTransform
-import com.wpt.mydemos.flexbox.MyFlexBoxActivity
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+import android.content.Context as Context
 
 
 /**
@@ -103,6 +102,10 @@ class MainFragment : Fragment() {
         })
 
 
+        main_anr.setOnClickListener {
+            startActivity(Intent(activity, ANRActivity::class.java))
+        }
+
         main_myflexbox.setOnClickListener {
             startActivity(Intent(activity, MyFlexBoxActivity::class.java))
         }
@@ -124,6 +127,10 @@ class MainFragment : Fragment() {
 
         Glide.with(this).load(R.drawable.test_cover)
             .into(iv_cover1)
+
+        main_memery.setOnClickListener {
+            hh_text.text = "可用内存:" + getMemory(context!!) + "是否内存过低:" + isLowMemory(context!!)
+        }
 
         main_fling.setOnClickListener {
             startActivity(Intent(activity, RightToJumpActivity::class.java))
@@ -296,6 +303,24 @@ class MainFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
+    }
+
+    // FIXME: It looks like outInfo.lowMemory does not work well as we expected.
+    // after run command: adb shell fillup -p 100, outInfo.lowMemory is still false.
+    private fun isLowMemory(context: Context): Boolean {
+        val am: ActivityManager =
+            context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val outInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
+        am.getMemoryInfo(outInfo)
+        return outInfo.lowMemory
+    }
+
+    private fun getMemory(context: Context): Long {
+        val am: ActivityManager =
+            context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        val outInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
+        am.getMemoryInfo(outInfo)
+        return outInfo.availMem
     }
 
 

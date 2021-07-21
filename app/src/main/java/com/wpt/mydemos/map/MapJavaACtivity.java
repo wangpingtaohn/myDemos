@@ -3,6 +3,8 @@ package com.wpt.mydemos.map;
 import android.app.Activity;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.wpt.mydemos.R;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.Serializable;
 import java.util.*;
 
@@ -34,6 +39,19 @@ public class MapJavaACtivity extends Activity {
 
         initView();
         initData();
+
+        ArrayList<Integer> list = new ArrayList<>();
+        int count = 0;
+        while (count <= 20){
+            list.add(count);
+            count++;
+        }
+        /*for (Integer value: list){
+            if (value % 3 == 0){
+                list.remove(value);
+            }
+        }*/
+        System.out.println(list.size());
     }
 
 
@@ -55,6 +73,9 @@ public class MapJavaACtivity extends Activity {
     MyTest myTest;
     String hashMapText = "";
     private void initView(){
+        findViewById(R.id.btn_trace).setOnClickListener(v -> {
+            getTraceFile();
+        });
         final TextView textView = findViewById(R.id.textview);
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +153,39 @@ public class MapJavaACtivity extends Activity {
             textView.setText(list3.toString());
 
         });
+    }
+
+    private void getTraceFile(){
+        File anrFile = null;
+        String status = Environment.getExternalStorageState();
+        if (status.equals(Environment.MEDIA_MOUNTED)) {
+            File sd = Environment.getExternalStorageDirectory();
+            String path = sd.getPath()+"/anrLog/aiwanbao/";
+            FileReader input = null;
+            FileWriter output = null;
+            try {
+                File file = new File("/data/anr/anr_2021-06-29-13-50-16-483");
+                if(file.exists()){
+                    input = new FileReader(file);
+                    output = new FileWriter(path + "/trace.txt");
+                    int read = input.read();
+                    while ( read != -1 ) {
+                        output.write(read);
+                        read = input.read();
+                    }
+                }
+            } catch (Exception e) {
+                Log.d("===wpt===","e=" + e.getMessage());
+            } finally {
+                try{if(null != input) input.close(); }catch (Exception e) {}
+                try{if(null != output) output.close(); }catch (Exception e) {}
+            }
+
+            anrFile = new File(path + "/trace.txt");
+            if(!anrFile.exists()){
+                anrFile = null;
+            }
+        }
     }
 
     @Override

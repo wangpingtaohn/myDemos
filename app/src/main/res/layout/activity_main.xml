@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frg_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <io.supercharge.shimmerlayout.ShimmerLayout
+        android:id="@+id/shimmerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frg_content"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="骨架屏效果" />
+    </io.supercharge.shimmerlayout.ShimmerLayout>
 
     <Button
-            android:text="画中画"
-            android:layout_gravity="end"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/enter_pip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:id="@+id/skeleton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp"
+        android:text="骨架屏" />
 
+    <Button
+        android:id="@+id/enter_pip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="画中画" />
 </FrameLayout>

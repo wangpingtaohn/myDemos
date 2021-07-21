@@ -123,6 +123,8 @@ dependencies {
 
     implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
 
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
 
 //    configurations.all {
 //        resolutionStrategy {

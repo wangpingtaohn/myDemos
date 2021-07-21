@@ -8,7 +8,10 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.os.Handler
 import android.util.Log
+import androidx.core.content.ContextCompat
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,6 +32,11 @@ class MainActivity : BaseActivity() {
                 requestPermissions(
                     arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 11)
             }
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(
+                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 11)
+            }
+
         }
 
         val homeFilter = IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
@@ -37,10 +45,22 @@ class MainActivity : BaseActivity() {
 
         registerReceiver(myReceiver, homeFilter)
 
+        shimmerLayout.setShimmerColor(ContextCompat.getColor(this,R.color.white))
+
         enter_pip.setOnClickListener {
             if(Build.VERSION.SDK_INT>=24){
                 enterPictureInPictureMode()
             }
+        }
+
+        var isStarAnimation = false
+        skeleton.setOnClickListener {
+            if (isStarAnimation) {
+                shimmerLayout.stopShimmerAnimation()
+            } else {
+                shimmerLayout.startShimmerAnimation()
+            }
+            isStarAnimation = !isStarAnimation
         }
 
     }
