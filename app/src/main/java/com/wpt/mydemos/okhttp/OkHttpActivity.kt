@@ -11,7 +11,7 @@ import java.io.IOException
 
 class OkHttpActivity : BaseActivity() {
 
-    private val okHttpClient = OkHttpClient()
+    private var okHttpClient: OkHttpClient? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +30,16 @@ class OkHttpActivity : BaseActivity() {
 
         val request = Request.Builder().url("https://www.baidu.com/")
             .build()
-        val call = okHttpClient.newCall(request)
-        call.enqueue(object : Callback {
+        val okHttpBuilder = OkHttpClient.Builder()
+        okHttpBuilder.sslSocketFactory(SSLContextUtil.getDefaultSLLContext().socketFactory)
+        okHttpClient = okHttpBuilder.build()
+        val call = okHttpClient?.newCall(request)
+        call?.enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                tv_respond.text = e.message
+                runOnUiThread {
+                    tv_respond.text = e.message
+                }
+
             }
 
             override fun onResponse(call: Call, response: Response) {

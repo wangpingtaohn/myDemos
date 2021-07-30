@@ -22,6 +22,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.anr.ANRActivity
+import com.wpt.mydemos.bezier.BezierActivity
 import com.wpt.mydemos.coordinator.Coordinator2Activity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
@@ -101,6 +102,10 @@ class MainFragment : Fragment() {
             }
         })
 
+
+        main_bezier.setOnClickListener {
+            startActivity(Intent(activity, BezierActivity::class.java))
+        }
 
         main_anr.setOnClickListener {
             startActivity(Intent(activity, ANRActivity::class.java))

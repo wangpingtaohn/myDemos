@@ -20,6 +20,13 @@
             android:hint="输入" />
 
         <Button
+            android:id="@+id/main_bezier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="贝塞尔曲线"
+            android:textAllCaps="false" />
+        <Button
             android:id="@+id/main_anr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

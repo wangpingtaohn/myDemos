@@ -52,9 +52,19 @@ public class MapJavaACtivity extends Activity {
             }
         }*/
         System.out.println(list.size());
+
+        Class cls = new ClassTest().getClass().getSuperclass();
+        Log.d("===wpt===","cls=" + cls.getSimpleName());
     }
 
 
+  abstract class AClass{
+
+  }
+
+  class ClassTest extends AClass{
+
+  }
 
     private void initData(){
         String number = "0898-68555036 0898-68555031  13322057282";

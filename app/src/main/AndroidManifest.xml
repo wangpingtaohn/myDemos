@@ -24,9 +24,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".anr.ANRActivity"></activity>
+        <activity android:name=".bezier.BezierActivity"></activity>
+        <activity android:name=".anr.ANRActivity" />
         <activity android:name=".flexbox.MyFlexBoxActivity" />
         <activity android:name=".fling.RightToJumpActivity" />
         <activity android:name=".fling.LeftActivity" />
