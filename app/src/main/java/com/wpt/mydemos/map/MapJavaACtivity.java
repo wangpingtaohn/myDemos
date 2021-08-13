@@ -58,11 +58,11 @@ public class MapJavaACtivity extends Activity {
     }
 
 
-  abstract class AClass{
+  interface AClass{
 
   }
 
-  class ClassTest extends AClass{
+  class ClassTest implements AClass{
 
   }
 

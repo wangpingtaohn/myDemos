@@ -15,6 +15,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        //极光配置
+        /*manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "111111111", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]*/
     }
     buildTypes {
         release {
@@ -41,6 +48,9 @@ android {
             universalApk true
         }
     }
+
+
+
 }
 repositories {
     flatDir {
@@ -124,6 +134,20 @@ dependencies {
     implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
 
     implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+    implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    implementation 'com.moxun:tagcloudlib:1.2.0'
+
+    //友盟基础库依赖（必须）
+    /*implementation 'com.umeng.umsdk:common:9.4.2'
+    implementation 'com.umeng.umsdk:asms:1.4.0'
+    //友盟Push依赖
+    implementation 'com.umeng.umsdk:push:6.4.0'*/
+
+    /*implementation 'cn.jiguang.sdk:jpush:4.2.8'  // 此处以JPush 4.2.8 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.9.0'  // 此处以JCore 2.9.0 版本为例。*/
 
 
 //    configurations.all {

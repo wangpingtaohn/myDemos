@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="PQRefreshView">
+        <attr name="crv_refreshEnable" format="boolean" />
+        <attr name="crv_loadMoreEnable" format="boolean" />
+        <attr name="crv_layout" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FrameAnimImageView">
+        <attr name="anim_isRepeat" format="boolean" />
+        <attr name="anim_isAutoPlay" format="boolean" />
+    </declare-styleable>
+
     <declare-styleable name="MyTextView">
         <attr name="myText" format="string"></attr>
     </declare-styleable>

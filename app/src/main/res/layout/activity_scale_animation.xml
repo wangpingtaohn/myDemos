@@ -7,6 +7,19 @@
         android:orientation="vertical">
 
     <Button
+        android:text="播放帧动画"
+        android:id="@+id/frame_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/iv_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/animlist_video_love"/>
+
+    <Button
             android:id="@+id/up_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,5 +46,19 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:src="@drawable/bg_gh_cover" />
+
+    <Button
+        android:text="播放帧动画2"
+        android:id="@+id/frame_btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.wpt.mydemos.widget.FrameAnimImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/faiv"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:anim_isAutoPlay="false"/>
 
 </LinearLayout>

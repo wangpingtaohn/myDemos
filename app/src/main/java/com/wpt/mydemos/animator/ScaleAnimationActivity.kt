@@ -1,5 +1,6 @@
 package com.wpt.mydemos.animator
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.ViewGroup
 import android.view.animation.Animation
@@ -36,6 +37,36 @@ class ScaleAnimationActivity : SwipeBackActivity() {
     }
 
     private fun initView() {
+
+
+        val frameAnim = iv_frame.drawable as AnimationDrawable
+        frameAnim.isOneShot = false
+
+        var isStart = false
+
+
+        frame_btn.setOnClickListener {
+            if (isStart){
+                frameAnim.stop()
+            } else {
+                frameAnim.start()
+            }
+            isStart = !isStart
+        }
+
+        var isStart2 = false
+
+
+        faiv.setImageResource(R.drawable.animlist_video_love)
+        faiv.setAnimDrawable(faiv.drawable as AnimationDrawable)
+        frame_btn2.setOnClickListener {
+            if (isStart2){
+                faiv.stopAnimation()
+            } else {
+                faiv.startAnimation()
+            }
+            isStart2 = !isStart2
+        }
 
         up_btn.setOnClickListener {
             iv_cover.startAnimation(animation)

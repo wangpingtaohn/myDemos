@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl"
+    app:srlEnableRefresh="true"
+    app:srlEnableLoadMore="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.wpt.mydemos.widget.PQRefreshHeader
+        android:id="@+id/rlv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rlv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include layout="@layout/view_recyclerview_empty"/>
+    </FrameLayout>
+
+
+    <com.wpt.mydemos.widget.PQRefreshFooter
+        android:id="@+id/rlv_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

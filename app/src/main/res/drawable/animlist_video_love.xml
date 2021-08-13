@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+
+    <item
+        android:drawable="@drawable/ic_love19"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love01"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love02"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love03"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love04"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love05"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love06"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love07"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love08"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love09"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love10"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love11"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love12"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love13"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love14"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love15"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love16"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love17"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love18"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/ic_love19"
+        android:duration="100" />
+
+</animation-list>

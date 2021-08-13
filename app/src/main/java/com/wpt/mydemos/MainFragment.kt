@@ -48,8 +48,11 @@ import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
 import com.wpt.mydemos.pics.LoadPicActivity
+import com.wpt.mydemos.recycler.SmartRefreshActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
+import com.wpt.mydemos.recycler.xrcv.XRecyclerViewActivity
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
+import com.wpt.mydemos.star.Tag3DActivity
 import com.wpt.mydemos.statusbar.StatusBarActivity
 import com.wpt.mydemos.textview.AnimatorTextViewActivity
 import com.wpt.mydemos.toast.ToastActivity
@@ -102,6 +105,17 @@ class MainFragment : Fragment() {
             }
         })
 
+        main_3d_tags.setOnClickListener {
+            startActivity(Intent(activity, Tag3DActivity::class.java))
+        }
+
+        main_smartRefresh.setOnClickListener {
+            startActivity(Intent(activity, SmartRefreshActivity::class.java))
+        }
+
+        main_quick_adapter.setOnClickListener {
+            startActivity(Intent(activity, XRecyclerViewActivity::class.java))
+        }
 
         main_bezier.setOnClickListener {
             startActivity(Intent(activity, BezierActivity::class.java))
