@@ -48,6 +48,7 @@ import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
 import com.wpt.mydemos.pics.LoadPicActivity
+import com.wpt.mydemos.radar.RadarActivity
 import com.wpt.mydemos.recycler.SmartRefreshActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.recycler.xrcv.XRecyclerViewActivity
@@ -104,6 +105,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_radar.setOnClickListener {
+            startActivity(Intent(activity, RadarActivity::class.java))
+        }
 
         main_3d_tags.setOnClickListener {
             startActivity(Intent(activity, Tag3DActivity::class.java))

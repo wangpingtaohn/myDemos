@@ -27,7 +27,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".star.Tag3DActivity"></activity>
+        <activity android:name=".radar.RadarActivity"></activity>
+        <activity android:name=".star.Tag3DActivity" />
         <activity android:name=".recycler.SmartRefreshActivity" />
         <activity android:name=".recycler.xrcv.XRecyclerViewActivity" />
         <activity android:name=".bezier.BezierActivity" />

@@ -20,6 +20,14 @@
             android:hint="输入" />
 
         <Button
+            android:id="@+id/main_radar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="雷达图"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/main_3d_tags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
