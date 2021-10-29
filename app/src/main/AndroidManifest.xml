@@ -27,7 +27,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".radar.RadarActivity"></activity>
+        <activity
+            android:name=".packer.PickerViewActivity"
+            android:exported="false" />
+        <activity android:name=".radar.RadarActivity" />
         <activity android:name=".star.Tag3DActivity" />
         <activity android:name=".recycler.SmartRefreshActivity" />
         <activity android:name=".recycler.xrcv.XRecyclerViewActivity" />

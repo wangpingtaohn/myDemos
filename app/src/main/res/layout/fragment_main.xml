@@ -19,6 +19,15 @@
             android:layout_marginTop="20dp"
             android:hint="输入" />
 
+
+        <Button
+            android:id="@+id/main_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="选择器"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/main_radar"
             android:layout_width="wrap_content"

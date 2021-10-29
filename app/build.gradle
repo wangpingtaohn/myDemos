@@ -140,6 +140,8 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     implementation 'com.moxun:tagcloudlib:1.2.0'
 
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
     //友盟基础库依赖（必须）
     /*implementation 'com.umeng.umsdk:common:9.4.2'
     implementation 'com.umeng.umsdk:asms:1.4.0'

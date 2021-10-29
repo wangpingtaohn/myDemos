@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/drawable/bg_white_corner20.xml" value="0.23072916666666668" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/drawable/bg_white_corner4.xml" value="0.23072916666666668" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_picker_view.xml" value="0.3515625" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/pickerview_custom_options.xml" value="0.2453125" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

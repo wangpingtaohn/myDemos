@@ -47,6 +47,7 @@ import com.wpt.mydemos.leecode.LeeCodeActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
+import com.wpt.mydemos.packer.PickerViewActivity
 import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.radar.RadarActivity
 import com.wpt.mydemos.recycler.SmartRefreshActivity
@@ -105,6 +106,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_picker.setOnClickListener {
+            startActivity(Intent(activity, PickerViewActivity::class.java))
+        }
 
         main_radar.setOnClickListener {
             startActivity(Intent(activity, RadarActivity::class.java))
