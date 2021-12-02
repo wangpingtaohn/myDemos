@@ -28,6 +28,9 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".animator.Fragment3DActivity"
+            android:exported="false" />
+        <activity
             android:name=".packer.PickerViewActivity"
             android:exported="false" />
         <activity android:name=".radar.RadarActivity" />

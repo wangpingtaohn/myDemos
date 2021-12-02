@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.text.Html
 import android.util.Log
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.appbar.AppBarLayout
 import com.wpt.mydemos.R
 import com.wpt.mydemos.recycler.rcv2.RvAdapter
 import kotlinx.android.synthetic.main.activity_coordinator.*
@@ -18,8 +20,17 @@ class CoordinatorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_coordinator)
 
         initView()
+        setAppTopBar()
     }
 
+
+    private fun setAppTopBar() {
+        appbar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            val maxScroll = appBarLayout.totalScrollRange
+            val alpha = 1.0f * Math.abs(verticalOffset) / maxScroll
+            Log.d("===wpt===", "alpha=$alpha")
+        })
+    }
 
     private fun initView(){
 

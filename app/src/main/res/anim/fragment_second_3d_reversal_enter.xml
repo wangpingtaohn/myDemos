@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+    <objectAnimator
+        android:duration="0"
+        android:propertyName="rotationY"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:valueFrom="180f"
+        android:valueTo="0f" />
+    <!--<objectAnimator
+        android:duration="2000"
+        android:propertyName="rotationY"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:startOffset="0"
+        android:valueFrom="180f"
+        android:valueTo="0f" />-->
+</set>

@@ -7,11 +7,17 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <FrameLayout
+            android:id="@+id/llLayout"
+            android:background="@color/color_E05133"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <EditText
             android:id="@+id/et_input"
             android:layout_width="match_parent"
@@ -19,6 +25,13 @@
             android:layout_marginTop="20dp"
             android:hint="输入" />
 
+        <Button
+            android:id="@+id/main_3d_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="翻转Fragment"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/main_picker"

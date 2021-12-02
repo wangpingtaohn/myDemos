@@ -5,7 +5,17 @@
       <map>
         <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/drawable/bg_white_corner20.xml" value="0.23072916666666668" />
         <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/drawable/bg_white_corner4.xml" value="0.23072916666666668" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_coordinator.xml" value="0.28177083333333336" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_coordinator2.xml" value="0.1287037037037037" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_drag_view.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_fragment3_dactivity.xml" value="0.2609375" />
         <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_picker_view.xml" value="0.3515625" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/activity_scale_animation.xml" value="0.35052083333333334" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/constraint_test.xml" value="0.33" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/fragment_main.xml" value="0.14108409321175278" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/fragment_my3_d.xml" value="0.29010416666666666" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/fragment_my3_d_1.xml" value="0.31197916666666664" />
+        <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/fragment_my3_d_2.xml" value="0.2994791666666667" />
         <entry key="..\:/Android_space/myDemos/myDemos/app/src/main/res/layout/pickerview_custom_options.xml" value="0.2453125" />
       </map>
     </option>

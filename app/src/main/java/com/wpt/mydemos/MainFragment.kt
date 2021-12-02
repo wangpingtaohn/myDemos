@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.wpt.mydemos.animator.AnimatorActivity
+import com.wpt.mydemos.animator.Fragment3DActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.anr.ANRActivity
 import com.wpt.mydemos.bezier.BezierActivity
@@ -67,6 +68,9 @@ import kotlinx.android.synthetic.main.fragment_main.*
 import android.content.Context as Context
 
 
+
+
+
 /**
  *    author : wpt
  *    date   : 2019-10-10 15:12
@@ -106,6 +110,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_3d_fragment.setOnClickListener {
+            startActivity(Intent(activity, Fragment3DActivity::class.java))
+        }
 
         main_picker.setOnClickListener {
             startActivity(Intent(activity, PickerViewActivity::class.java))

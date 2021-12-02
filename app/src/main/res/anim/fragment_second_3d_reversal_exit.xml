@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:ordering="sequentially"
+    tools:ignore="MissingDefaultResource">
+    <objectAnimator
+        android:duration="2000"
+        android:propertyName="rotationY"
+        android:pivotX="100%"
+        android:pivotY="100%"
+        android:valueFrom="0f"
+        android:valueTo="-180f"/>
+</set>

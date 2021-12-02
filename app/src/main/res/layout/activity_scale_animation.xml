@@ -17,7 +17,7 @@
         android:id="@+id/iv_frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/animlist_video_love"/>
+        android:src="@drawable/amin_loading_list"/>
 
     <Button
         android:text="alpha"
