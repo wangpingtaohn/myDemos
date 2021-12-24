@@ -38,5 +38,9 @@ class ToastActivity : BaseActivity() {
                 }
             }).start()
         }
+
+        myToastBtn.setOnClickListener { MyToast.getInstance(this).show("哈哈哈",Toast.LENGTH_SHORT) }
+        zkToastBtn.setOnClickListener { ZKToastUtils.showShort(this,"哈哈哈ZKToast") }
+        zkToastCenterBtn.setOnClickListener { ZKToastUtils.showShortCenter(this,"我是centerToast") }
     }
 }

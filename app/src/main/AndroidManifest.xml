@@ -151,6 +151,12 @@
 
         </activity>
 
+        <!--腾讯X5-->
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt"/>
+
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
