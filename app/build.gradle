@@ -143,7 +143,7 @@ dependencies {
 
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
-    implementation 'com.tencent.tbs:tbssdk:44115'
+//    implementation 'com.tencent.tbs:tbssdk:44115'
 
     //友盟基础库依赖（必须）
     /*implementation 'com.umeng.umsdk:common:9.4.2'
