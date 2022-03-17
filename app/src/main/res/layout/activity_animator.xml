@@ -28,14 +28,46 @@
             android:layout_height="wrap_content"/>
 
     <ImageView
-            android:id="@+id/img_animator"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/ic_progress_retry"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-    />
+        android:id="@+id/img_animator"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_progress_retry"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/img_animator2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="260dp"
+        android:src="@drawable/qianbao_3_01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_animator2"
+        app:lottie_fileName="lottie.json"
+        app:lottie_autoPlay="true"
+        app:lottie_repeatMode="restart"
+        app:lottie_loop="true"
+        android:id="@+id/lottieView0"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lottieView0"
+        app:lottie_fileName="haipin.json"
+        app:lottie_autoPlay="true"
+        android:id="@+id/lottieView"
+        app:lottie_repeatMode="restart"
+        app:lottie_loop="true"
+        android:layout_width="360dp"
+        android:layout_height="360dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

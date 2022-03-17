@@ -28,10 +28,16 @@
                         android:layout_height="match_parent"
                         android:descendantFocusability="blocksDescendants">
 
+                    <io.supercharge.shimmerlayout.ShimmerLayout
+                        android:id="@+id/shimmerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp">
                     <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
+                    </io.supercharge.shimmerlayout.ShimmerLayout>
                     <Button
                             android:layout_marginBottom="20dp"
                             android:layout_alignParentBottom="true"

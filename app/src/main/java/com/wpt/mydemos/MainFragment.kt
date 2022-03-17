@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.ActivityManager
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -195,6 +196,19 @@ class MainFragment : Fragment() {
         main_launch_more.setOnClickListener {
             val intent = Intent(activity, LaunchActivity_1::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION)
+            startActivity(intent)
+        }
+
+        main_go_app.setOnClickListener {
+            val scheme = "zkgy://pinhn/splash?/Recruitment/companyLicense"
+            val uri = Uri.parse(scheme)
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+
+        main_go_market.setOnClickListener {
+            val uri = Uri.parse("market://details?id=${context!!.packageName}") // id为包名
+            val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
 

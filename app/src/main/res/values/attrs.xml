@@ -14,6 +14,12 @@
 
     <declare-styleable name="MyTextView">
         <attr name="myText" format="string"></attr>
+        <attr name="textStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="medium" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="italic" value="3" />
+        </attr>
     </declare-styleable>
 
 

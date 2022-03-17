@@ -29,7 +29,8 @@ class OkHttpActivity : BaseActivity() {
 
     private fun getData(){
 
-        val request = Request.Builder().url("https://www.baifubao.com/callback?cmd=1059&callback=phone&phone=13700449338")
+//        val request = Request.Builder().url("https://www.baifubao.com/callback?cmd=1059&callback=phone&phone=13700449338")
+        val request = Request.Builder().url("https://6tv.eu/update/")
             .build()
         val okHttpBuilder = OkHttpClient.Builder()
         okHttpBuilder.sslSocketFactory(SSLContextUtil.getDefaultSLLContext().socketFactory)

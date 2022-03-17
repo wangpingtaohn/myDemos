@@ -35,6 +35,17 @@
                 android:ellipsize="end"
                 app:myText="fffff" />
 
+        <com.wpt.mydemos.widget.MyTextView
+            android:id="@+id/custom_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_hot_reply"
+            android:includeFontPadding="false"
+            android:maxLength="3"
+            android:ellipsize="end"
+            app:textStyle="medium"
+            app:myText="fffff" />
+
     </LinearLayout>
 
     <com.wpt.exclude.ExcludePaddingTextView

@@ -28,6 +28,13 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".widget.LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".animator.Fragment3DActivity"
             android:exported="false" />
         <activity
@@ -128,11 +135,6 @@
             android:resizeableActivity="true"
             android:screenOrientation="portrait"
             android:supportsPictureInPicture="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"
@@ -149,13 +151,11 @@
 
             <!-- <meta-data android:name="io.flutter.embedding.android.SplashScreenDrawable" android:resource="@drawable/bg_white"/> -->
 
-        </activity>
-
-        <!--腾讯X5-->
+        </activity> <!-- 腾讯X5 -->
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
-            android:process=":dexopt"/>
+            android:process=":dexopt" />
 
         <meta-data
             android:name="flutterEmbedding"

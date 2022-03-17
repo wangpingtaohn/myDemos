@@ -143,6 +143,8 @@ dependencies {
 
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
+    implementation 'com.airbnb.android:lottie:5.0.3'
+
 //    implementation 'com.tencent.tbs:tbssdk:44115'
 
     //友盟基础库依赖（必须）

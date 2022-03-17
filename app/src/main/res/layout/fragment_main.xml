@@ -26,6 +26,22 @@
             android:hint="输入" />
 
         <Button
+            android:id="@+id/main_go_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="跳转其他APP"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_go_market"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="跳转应用市场"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/main_3d_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

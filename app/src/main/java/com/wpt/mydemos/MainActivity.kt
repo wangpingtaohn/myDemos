@@ -108,9 +108,15 @@ class MainActivity : BaseActivity() {
         Log.d("===wpt===","onRestart")
     }
 
+
     override fun onResume() {
         super.onResume()
         Log.d("===wpt===","onResume")
+    }
+
+    override fun finish() {
+        super.finish()
+        Log.d("===wpt===","finish")
     }
 
     override fun onUserInteraction() {

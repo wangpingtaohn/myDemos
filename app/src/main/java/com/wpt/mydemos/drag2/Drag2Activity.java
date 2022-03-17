@@ -2,6 +2,7 @@ package com.wpt.mydemos.drag2;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import io.supercharge.shimmerlayout.ShimmerLayout;
+
 /**
  * author : wpt
  * date   : 2019-12-27 20:55
@@ -31,6 +34,7 @@ public class Drag2Activity extends BaseActivity implements MyItemTouchCallback.O
         private View parent;
         //显示模块的recyleview
         private RecyclerView mRecyclerView;
+        private ShimmerLayout shimmerLayout;
         //可拖动模块的帮助类
         private ItemTouchHelper itemTouchHelper;
         //适配器
@@ -49,6 +53,14 @@ public class Drag2Activity extends BaseActivity implements MyItemTouchCallback.O
     }
 
         private void initView() {
+
+
+            shimmerLayout = findViewById(R.id.shimmerLayout);
+
+            shimmerLayout.setShimmerColor(ContextCompat.getColor(this,R.color.white));
+
+            shimmerLayout.startShimmerAnimation();
+
             for (int i = 0; i < 100; i++) {
                 list.add(i + "");
             }
