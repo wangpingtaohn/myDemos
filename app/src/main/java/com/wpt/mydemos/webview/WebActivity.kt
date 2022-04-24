@@ -77,7 +77,7 @@ class WebActivity : AppCompatActivity() {
                 Log.d("===wpt===","onProgressChanged_url=${view?.url},progress=$newProgress")
             }
         }
-        webview.loadUrl("https://ipinfo.io/")
+        webview.loadUrl("https://www.baidu.com/")
 
         load_btn.setOnClickListener {
 

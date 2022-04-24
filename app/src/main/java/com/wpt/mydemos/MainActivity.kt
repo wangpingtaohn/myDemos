@@ -12,6 +12,7 @@ import android.os.Environment
 import android.os.Handler
 import android.util.Log
 import androidx.core.content.ContextCompat
+import com.wpt.mydemos.utils.AppUtils
 import com.wpt.mydemos.widget.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,7 +25,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("===wpt===","onCreate")
+        Log.d("===wpt===","onCreate_versionCode=${AppUtils.getVersionCode(this)}")
 
         initView()
         if(Build.VERSION.SDK_INT>=23){

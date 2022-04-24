@@ -207,9 +207,15 @@ class MainFragment : Fragment() {
         }
 
         main_go_market.setOnClickListener {
-            val uri = Uri.parse("market://details?id=${context!!.packageName}") // id为包名
-            val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)
+            try {
+            val uri = Uri.parse("market://details?id=${requireContext().packageName}") // id为包名
+//                val uri = Uri.parse("market://details?id=com.zkgy.pinhn") // id为包名
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
+            } catch (e: Exception){
+                Log.d("===wpt===","跳转应用市场异常:${e.message}")
+            }
+
         }
 
         main_leeCode.setOnClickListener {
