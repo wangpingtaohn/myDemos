@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 /**
@@ -13,7 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
  * date   : 2020-10-16 17:51
  * desc   :
  */
-public class MyViewPager2 extends ViewPager2 {
+public class MyViewPager2 extends ViewPager {
     public MyViewPager2(@NonNull Context context) {
         super(context);
     }
@@ -22,12 +23,5 @@ public class MyViewPager2 extends ViewPager2 {
         super(context, attrs);
     }
 
-    public MyViewPager2(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public MyViewPager2(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
 
 }

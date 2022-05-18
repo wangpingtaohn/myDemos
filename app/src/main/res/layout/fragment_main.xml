@@ -26,6 +26,14 @@
             android:hint="输入" />
 
         <Button
+            android:id="@+id/main_go_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="城市列表"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/main_go_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

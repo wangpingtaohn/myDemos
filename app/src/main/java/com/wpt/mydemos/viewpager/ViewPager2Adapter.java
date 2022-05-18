@@ -17,16 +17,18 @@ import java.util.List;
 public class ViewPager2Adapter extends FragmentStateAdapter {
     private ArrayList<Fragment> mFragments;
     public ViewPager2Adapter(FragmentManager fm, ArrayList<Fragment> fragments){
-        super(fm);
+        super(fm,null);
         this.mFragments = fragments;
-    }
-    @Override
-    public Fragment getItem(int position) {
-        return mFragments.get(position);
     }
 
     @Override
     public int getItemCount() {
         return mFragments.size();
+    }
+
+    @NonNull
+    @Override
+    public Fragment createFragment(int i) {
+        return mFragments.get(i);
     }
 }

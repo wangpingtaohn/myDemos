@@ -28,9 +28,16 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".widget.LaunchActivity">
+            android:name=".packer.TreeListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".packer.CityPickerActivity"
+            android:exported="false"
+            android:theme="@style/DefaultCityPickerTheme" />
+        <activity android:name=".widget.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -134,8 +141,7 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:resizeableActivity="true"
             android:screenOrientation="portrait"
-            android:supportsPictureInPicture="true">
-        </activity>
+            android:supportsPictureInPicture="true" />
         <activity
             android:name="io.flutter.embedding.android.FlutterActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

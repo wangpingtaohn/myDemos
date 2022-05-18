@@ -49,6 +49,7 @@ import com.wpt.mydemos.leecode.LeeCodeActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
+import com.wpt.mydemos.packer.CityPickerActivity
 import com.wpt.mydemos.packer.PickerViewActivity
 import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.radar.RadarActivity
@@ -111,6 +112,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_go_city.setOnClickListener {
+            startActivity(Intent(activity, CityPickerActivity::class.java))
+        }
 
         main_3d_fragment.setOnClickListener {
             startActivity(Intent(activity, Fragment3DActivity::class.java))

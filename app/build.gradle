@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 //    buildToolsVersion "27.0.3"
     defaultConfig {
         applicationId "com.wpt.mydemos"
@@ -84,6 +84,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.google.android:flexbox:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(path: ':citypicker')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -117,8 +118,8 @@ dependencies {
     implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
-//    implementation 'com.shuyu:GSYVideoPlayer:6.0.3'
-    implementation 'com.shuyu:GSYVideoPlayer:7.1.8'
+    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer:v8.2.0-release-jitpack'
+//    implementation 'com.shuyu:GSYVideoPlayer:7.1.8'
 
     implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
 //    implementation "androidx.viewpager2:viewpager2:1.0.0"
@@ -144,6 +145,10 @@ dependencies {
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
     implementation 'com.airbnb.android:lottie:5.0.3'
+
+    implementation 'com.github.zhangke3016:MultilevelTreeList:1.0.2'
+
+//    implementation 'com.github.zaaach:CityPicker:2.1.0'
 
 //    implementation 'com.tencent.tbs:tbssdk:44115'
 
