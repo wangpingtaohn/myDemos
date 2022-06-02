@@ -25,8 +25,13 @@ android {
     }
     buildTypes {
         release {
+            /*minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'*/
+
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
         //flutter
         profile {
@@ -49,9 +54,25 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile file('wpt_keystore.jks') //路径
+            storePassword "wpt061023"
+            keyAlias "key0"
+            keyPassword "wpt061023"
+        }
+    }
 
+    android.applicationVariants.all { variant ->
+        /*variant.name为buildType,如debug、release;variant.versionName为versionName，如：1.0.1*/
+        variant.outputs.all {
+            outputFileName = "myDemos_${variant.versionName}.apk"
+        }
+    }
 
 }
+
+
 repositories {
     flatDir {
         dirs 'libs'

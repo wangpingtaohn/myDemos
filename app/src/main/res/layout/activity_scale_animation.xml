@@ -53,13 +53,21 @@
             android:layout_marginTop="20dp"
             android:text="缩小" />
 
-    <ImageView
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_height="wrap_content">
+        <ImageView
             android:id="@+id/iv_cover"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:src="@drawable/bg_gh_cover" />
+    </androidx.cardview.widget.CardView>
+
 
     <Button
         android:text="播放帧动画2"
