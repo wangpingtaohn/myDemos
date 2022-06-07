@@ -41,6 +41,7 @@
         app:layout_constraintTop_toTopOf="@id/tvArray"
         app:layout_constraintBottom_toBottomOf="@id/tvArray"
         app:layout_constraintLeft_toRightOf="@id/tvArray" />
+    
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLink"

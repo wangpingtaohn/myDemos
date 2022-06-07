@@ -61,6 +61,11 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.LinkViewHolder
         return mList != null ? mList.size() : 0;
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
     public class LinkViewHolder extends RecyclerView.ViewHolder {
 
         public LinkViewHolder(@NonNull View itemView) {

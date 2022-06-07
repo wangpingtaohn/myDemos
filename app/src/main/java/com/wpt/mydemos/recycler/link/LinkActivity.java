@@ -29,6 +29,7 @@ public class LinkActivity extends BaseActivity {
     private String[] mArray;
     private List<LinkBean> mList = new ArrayList<>();
     private int index = 0;
+    private  RecyclerView rvLink;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class LinkActivity extends BaseActivity {
     }
 
     private void initRv(){
-        RecyclerView rvLink = findViewById(R.id.rvLink);
+        rvLink = findViewById(R.id.rvLink);
         adapter = new LinkAdapter(this,mList);
         rvLink.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         rvLink.setAdapter(adapter);
@@ -78,6 +79,9 @@ public class LinkActivity extends BaseActivity {
     }
 
     private void nextData(){
+        if (index >= mArray.length){
+            return;
+        }
         String remainderStr = etYs.getText().toString();
         int remainder = Integer.parseInt(remainderStr);
         String str = mArray[index];
@@ -87,6 +91,7 @@ public class LinkActivity extends BaseActivity {
         subBean.setTitle(str);
         mList.get(result).getList().add(subBean);
         index++;
+        rvLink.scrollToPosition(result);
         adapter.notifyItemChanged(result);
     }
 }
