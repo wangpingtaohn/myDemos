@@ -166,6 +166,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <activity android:name=".recycler.link.LinkActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

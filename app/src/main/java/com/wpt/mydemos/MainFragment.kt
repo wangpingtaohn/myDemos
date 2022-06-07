@@ -54,6 +54,7 @@ import com.wpt.mydemos.packer.PickerViewActivity
 import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.radar.RadarActivity
 import com.wpt.mydemos.recycler.SmartRefreshActivity
+import com.wpt.mydemos.recycler.link.LinkActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.recycler.xrcv.XRecyclerViewActivity
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
@@ -112,6 +113,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_link_rv.setOnClickListener {
+            startActivity(Intent(activity, LinkActivity::class.java))
+        }
 
         main_go_city.setOnClickListener {
             startActivity(Intent(activity, CityPickerActivity::class.java))
