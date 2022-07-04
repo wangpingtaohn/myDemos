@@ -16,10 +16,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.snackbar.Snackbar
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.Fragment3DActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
@@ -114,6 +116,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_snackBar.setOnClickListener {
+            showSnackBar()
+        }
 
         main_arc_gis.setOnClickListener {
             startActivity(Intent(activity, ArcGisActivity::class.java))
@@ -355,6 +361,16 @@ class MainFragment : Fragment() {
         statusBar.setOnClickListener {
             startActivity(Intent(activity, StatusBarActivity::class.java))
         }
+    }
+
+    private fun showSnackBar() {
+        val snackBar = Snackbar.make(clSb, "哈哈哈，我是snackBar", Snackbar.LENGTH_SHORT)
+        snackBar.setAction("收到", View.OnClickListener {
+
+        })
+        val view = snackBar.view
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.red))
+        snackBar.show()
     }
 
     @TargetApi(Build.VERSION_CODES.O)
