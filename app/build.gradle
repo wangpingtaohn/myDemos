@@ -49,8 +49,10 @@ android {
         abi {
             enable true
             reset()
-            include 'x86', 'armeabi-v7a', 'x86_64'
+            include 'x86', 'armeabi', 'armeabi-v7a'
+//            include 'x86', 'armeabi-v7a', 'x86_64'
             universalApk true
+            exclude 'arm64-v8a'
         }
     }
 
@@ -168,6 +170,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.0.3'
 
     implementation 'com.github.zhangke3016:MultilevelTreeList:1.0.2'
+
+    implementation 'com.esri.arcgisruntime:arcgis-android:100.3.0'
 
 //    implementation 'com.github.zaaach:CityPicker:2.1.0'
 

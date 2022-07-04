@@ -24,6 +24,7 @@ import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.Fragment3DActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.anr.ANRActivity
+import com.wpt.mydemos.arcgis.ArcGisActivity
 import com.wpt.mydemos.bezier.BezierActivity
 import com.wpt.mydemos.coordinator.Coordinator2Activity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
@@ -113,6 +114,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_arc_gis.setOnClickListener {
+            startActivity(Intent(activity, ArcGisActivity::class.java))
+        }
 
         main_link_rv.setOnClickListener {
             startActivity(Intent(activity, LinkActivity::class.java))
