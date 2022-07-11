@@ -169,6 +169,8 @@ dependencies {
 
     implementation 'com.github.zhangke3016:MultilevelTreeList:1.0.2'
 
+    implementation 'com.github.penfeizhou.android.animation:apng:2.23.0'
+
 //    implementation 'com.github.zaaach:CityPicker:2.1.0'
 
 //    implementation 'com.tencent.tbs:tbssdk:44115'

@@ -30,6 +30,8 @@ class MyApplication: Application() {
 
         MultiDex.install(this);
 
+//        ApngImageLoader.getInstance().init(this)
+
         registerActivityLifecycleCallbacks(DragBackHelper.getInstance())
 
 //        initFlutter()
