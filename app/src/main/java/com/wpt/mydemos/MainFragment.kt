@@ -1,14 +1,18 @@
 package com.wpt.mydemos
 
 //import com.wpt.mydemos.flutter.PageRouter
+import android.Manifest
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.telephony.TelephonyManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -16,6 +20,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -28,6 +33,7 @@ import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.anr.ANRActivity
 import com.wpt.mydemos.arcgis.ArcGisActivity
 import com.wpt.mydemos.bezier.BezierActivity
+import com.wpt.mydemos.bitmap.JointBitmapActivity
 import com.wpt.mydemos.coordinator.Coordinator2Activity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
@@ -71,10 +77,6 @@ import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
-import android.content.Context as Context
-
-
-
 
 
 /**
@@ -98,6 +100,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
+
     }
 
     private fun initView() {
@@ -117,6 +121,13 @@ class MainFragment : Fragment() {
             }
         })
 
+        main_get_phone.setOnClickListener {
+            getPhoneNumber()
+        }
+
+        main_joint_bitmap.setOnClickListener {
+            startActivity(Intent(activity, JointBitmapActivity::class.java))
+        }
         main_snackBar.setOnClickListener {
             showSnackBar()
         }
@@ -361,6 +372,28 @@ class MainFragment : Fragment() {
         statusBar.setOnClickListener {
             startActivity(Intent(activity, StatusBarActivity::class.java))
         }
+    }
+
+    private fun getPhoneNumber(){
+        val tm: TelephonyManager = activity?.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+
+
+        val tel: String? = if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_SMS
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_PHONE_NUMBERS
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_PHONE_STATE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            tm.line1Number
+        } else {
+            "获取不到手机号"
+        }
+        tel?.let { Snackbar.make(clSb, it, Snackbar.LENGTH_SHORT).show() }
     }
 
     private fun showSnackBar() {

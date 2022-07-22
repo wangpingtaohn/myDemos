@@ -13,10 +13,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- flutter-boost -->
-
-    <!--蓝牙权限-->
+    <!-- 蓝牙权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <meta-data
         android:name="flutterEmbedding"
@@ -39,6 +41,11 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".bitmap.JointBitmapActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.wpt.test"
+            android:exported="false" />
+        <activity
             android:name=".arcgis.ArcGisActivity"
             android:exported="false" />
         <activity
@@ -48,7 +55,8 @@
             android:name=".packer.CityPickerActivity"
             android:exported="false"
             android:theme="@style/DefaultCityPickerTheme" />
-        <activity android:name=".widget.LaunchActivity">
+        <activity android:name=".widget.LaunchActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -111,7 +119,8 @@
         <activity android:name=".flutter.FlutterFragmentPageActivity" />
         <activity android:name=".flutter.NativePageActivity" />
         <activity android:name=".edit.EditFontStyleActivity" />
-        <activity android:name=".oom.OOMActivity">
+        <activity android:name=".oom.OOMActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -184,6 +193,7 @@
         <activity
             android:name=".recycler.link.LinkActivity"
             android:screenOrientation="portrait" />
+
         <service android:name=".service.BlueToothService" />
     </application>
 

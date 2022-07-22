@@ -8,9 +8,8 @@ import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.os.Handler
 import android.util.Log
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.wpt.mydemos.utils.AppUtils
 import com.wpt.mydemos.widget.BaseActivity
@@ -21,9 +20,16 @@ class MainActivity : BaseActivity() {
 
     private val mainBean = MainBean()
 
+    private var saveData = 0L
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        savedInstanceState?.run {
+            saveData = this.getLong("saveData")
+        }
+        Log.d("===wpt===","saveData:${saveData}")
 
         Log.d("===wpt===","onCreate_versionCode=${AppUtils.getVersionCode(this)}")
 
@@ -36,6 +42,18 @@ class MainActivity : BaseActivity() {
             if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(
                     arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 11)
+            }
+            if (checkSelfPermission(Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(
+                    arrayOf(Manifest.permission.READ_SMS), 11)
+            }
+            if (checkSelfPermission(Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(
+                    arrayOf(Manifest.permission.READ_PHONE_NUMBERS), 11)
+            }
+            if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED){
+                requestPermissions(
+                    arrayOf(Manifest.permission.READ_PHONE_STATE), 11)
             }
 
         }
@@ -86,10 +104,12 @@ class MainActivity : BaseActivity() {
         fragment.mainBean = mainBean
         ft.add(R.id.frg_content,fragment)
         ft.commitAllowingStateLoss()
+        saveData = System.currentTimeMillis()
 
     }
     //跳转其他Activity、home键时都执行了
     override fun onSaveInstanceState(outState: Bundle) {
+        outState.putLong("saveData",saveData)
         super.onSaveInstanceState(outState)
         Log.d("===wpt===","onSaveInstanceState")
     }
@@ -124,5 +144,6 @@ class MainActivity : BaseActivity() {
         super.onUserInteraction()
         Log.d("===wpt===","onUserInteraction")
     }
+
 
 }
