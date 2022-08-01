@@ -77,6 +77,7 @@ import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
+import java.util.*
 
 
 /**
@@ -232,9 +233,15 @@ class MainFragment : Fragment() {
         }
 
         main_go_app.setOnClickListener {
-            val scheme = "zkgy://pinhn/splash?/Recruitment/companyLicense"
+            /*val scheme = "journer://com.love.journey"
             val uri = Uri.parse(scheme)
             val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)*/
+            val intent = Intent()
+            intent.setClassName(
+                "com.love.journey",
+                "com.love.journey.ui.WelcomeActivity"
+            )
             startActivity(intent)
         }
 
@@ -377,22 +384,27 @@ class MainFragment : Fragment() {
     private fun getPhoneNumber(){
         val tm: TelephonyManager = activity?.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
+        var tel: String? = UUID.randomUUID().toString()
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_PHONE_STATE
+            ) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(),arrayOf(Manifest.permission.READ_PHONE_STATE), 11)
+        } else {
+            tel = tm.imei
+        }
 
-        val tel: String? = if (ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.READ_SMS
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.READ_PHONE_NUMBERS
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+
+        /*tel: String? = if (ActivityCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.READ_PHONE_STATE
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            tm.line1Number
+            tm.imei
         } else {
             "获取不到手机号"
-        }
+        }*/
+//        val imei = tm.imei
         tel?.let { Snackbar.make(clSb, it, Snackbar.LENGTH_SHORT).show() }
     }
 
