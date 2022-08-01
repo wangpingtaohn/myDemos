@@ -233,16 +233,18 @@ class MainFragment : Fragment() {
         }
 
         main_go_app.setOnClickListener {
-            /*val scheme = "journer://com.love.journey"
+            //方式一
+            val scheme = "journer://com.love.journey"
             val uri = Uri.parse(scheme)
             val intent = Intent(Intent.ACTION_VIEW, uri)
-            startActivity(intent)*/
-            val intent = Intent()
+            startActivity(intent)
+            //方式二
+            /*val intent = Intent()
             intent.setClassName(
                 "com.love.journey",
                 "com.love.journey.ui.WelcomeActivity"
             )
-            startActivity(intent)
+            startActivity(intent)*/
         }
 
         main_go_market.setOnClickListener {
