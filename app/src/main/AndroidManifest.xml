@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wpt.mydemos">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
@@ -11,9 +14,20 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- flutter-boost -->
+    <!-- 蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <meta-data
         android:name="flutterEmbedding"
         android:value="2" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:name=".MyApplication"
@@ -28,13 +42,22 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".bitmap.JointBitmapActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.wpt.test"
+            android:exported="false" />
+        <activity
+            android:name=".arcgis.ArcGisActivity"
+            android:exported="false" />
+        <activity
             android:name=".packer.TreeListActivity"
             android:exported="false" />
         <activity
             android:name=".packer.CityPickerActivity"
             android:exported="false"
             android:theme="@style/DefaultCityPickerTheme" />
-        <activity android:name=".widget.LaunchActivity">
+        <activity android:name=".widget.LaunchActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -97,7 +120,8 @@
         <activity android:name=".flutter.FlutterFragmentPageActivity" />
         <activity android:name=".flutter.NativePageActivity" />
         <activity android:name=".edit.EditFontStyleActivity" />
-        <activity android:name=".oom.OOMActivity">
+        <activity android:name=".oom.OOMActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -166,6 +190,12 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <activity
+            android:name=".recycler.link.LinkActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".service.BlueToothService" />
     </application>
 
 </manifest>

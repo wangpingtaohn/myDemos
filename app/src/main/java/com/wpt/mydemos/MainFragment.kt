@@ -1,14 +1,18 @@
 package com.wpt.mydemos
 
 //import com.wpt.mydemos.flutter.PageRouter
+import android.Manifest
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.telephony.TelephonyManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -16,15 +20,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.snackbar.Snackbar
 import com.wpt.mydemos.animator.AnimatorActivity
 import com.wpt.mydemos.animator.Fragment3DActivity
 import com.wpt.mydemos.animator.ScaleAnimationActivity
 import com.wpt.mydemos.anr.ANRActivity
+import com.wpt.mydemos.arcgis.ArcGisActivity
 import com.wpt.mydemos.bezier.BezierActivity
+import com.wpt.mydemos.bitmap.JointBitmapActivity
 import com.wpt.mydemos.coordinator.Coordinator2Activity
 import com.wpt.mydemos.coordinator.CoordinatorActivity
 import com.wpt.mydemos.custom.CustomViewActivity
@@ -54,6 +63,7 @@ import com.wpt.mydemos.packer.PickerViewActivity
 import com.wpt.mydemos.pics.LoadPicActivity
 import com.wpt.mydemos.radar.RadarActivity
 import com.wpt.mydemos.recycler.SmartRefreshActivity
+import com.wpt.mydemos.recycler.link.LinkActivity
 import com.wpt.mydemos.recycler.rcv2.RecylerViewActivity2
 import com.wpt.mydemos.recycler.xrcv.XRecyclerViewActivity
 import com.wpt.mydemos.refresh.SwipeRefreshActivity
@@ -67,10 +77,7 @@ import com.wpt.mydemos.viewpager.VerticalViewPagerActivity
 import com.wpt.mydemos.wasabeef.WasabeefActivity
 import com.wpt.mydemos.webview.WebActivity
 import kotlinx.android.synthetic.main.fragment_main.*
-import android.content.Context as Context
-
-
-
+import java.util.*
 
 
 /**
@@ -94,6 +101,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+
+
     }
 
     private fun initView() {
@@ -112,6 +121,25 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_get_phone.setOnClickListener {
+            getPhoneNumber()
+        }
+
+        main_joint_bitmap.setOnClickListener {
+            startActivity(Intent(activity, JointBitmapActivity::class.java))
+        }
+        main_snackBar.setOnClickListener {
+            showSnackBar()
+        }
+
+        main_arc_gis.setOnClickListener {
+            startActivity(Intent(activity, ArcGisActivity::class.java))
+        }
+
+        main_link_rv.setOnClickListener {
+            startActivity(Intent(activity, LinkActivity::class.java))
+        }
 
         main_go_city.setOnClickListener {
             startActivity(Intent(activity, CityPickerActivity::class.java))
@@ -205,10 +233,18 @@ class MainFragment : Fragment() {
         }
 
         main_go_app.setOnClickListener {
-            val scheme = "zkgy://pinhn/splash?/Recruitment/companyLicense"
+            //方式一
+            val scheme = "journer://com.love.journey"
             val uri = Uri.parse(scheme)
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
+            //方式二
+            /*val intent = Intent()
+            intent.setClassName(
+                "com.love.journey",
+                "com.love.journey.ui.WelcomeActivity"
+            )
+            startActivity(intent)*/
         }
 
         main_go_market.setOnClickListener {
@@ -345,6 +381,43 @@ class MainFragment : Fragment() {
         statusBar.setOnClickListener {
             startActivity(Intent(activity, StatusBarActivity::class.java))
         }
+    }
+
+    private fun getPhoneNumber(){
+        val tm: TelephonyManager = activity?.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+
+        var tel: String? = UUID.randomUUID().toString()
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_PHONE_STATE
+            ) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(),arrayOf(Manifest.permission.READ_PHONE_STATE), 11)
+        } else {
+            tel = tm.imei
+        }
+
+
+        /*tel: String? = if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.READ_PHONE_STATE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            tm.imei
+        } else {
+            "获取不到手机号"
+        }*/
+//        val imei = tm.imei
+        tel?.let { Snackbar.make(clSb, it, Snackbar.LENGTH_SHORT).show() }
+    }
+
+    private fun showSnackBar() {
+        val snackBar = Snackbar.make(clSb, "哈哈哈，我是snackBar", Snackbar.LENGTH_SHORT)
+        snackBar.setAction("收到", View.OnClickListener {
+
+        })
+        val view = snackBar.view
+        view.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.red))
+        snackBar.show()
     }
 
     @TargetApi(Build.VERSION_CODES.O)

@@ -25,6 +25,52 @@
             android:layout_marginTop="20dp"
             android:hint="输入" />
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/clSb"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <Button
+                android:id="@+id/main_snackBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="snackBar"
+                android:textAllCaps="false" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <Button
+            android:id="@+id/main_get_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="获取手机号"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_joint_bitmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="JointBitmap"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/main_arc_gis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="arcGis"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_link_rv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="LinkRv"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/main_go_city"
             android:layout_width="wrap_content"
