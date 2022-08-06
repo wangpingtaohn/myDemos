@@ -77,7 +77,7 @@ class WebActivity : AppCompatActivity() {
                 Log.d("===wpt===","onProgressChanged_url=${view?.url},progress=$newProgress")
             }
         }
-        webview.loadUrl("https://coronavirus.1point3acres.com/en")
+        webview.loadUrl("http://shop.haomaiduo.cn:666/wap/")
 
         load_btn.setOnClickListener {
 

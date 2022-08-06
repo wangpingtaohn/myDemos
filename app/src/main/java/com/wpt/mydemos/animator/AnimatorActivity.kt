@@ -6,9 +6,9 @@ import kotlinx.android.synthetic.main.activity_animator.*
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.view.animation.*
-import com.github.penfeizhou.animation.loader.ResourceStreamLoader
+//import com.github.penfeizhou.animation.loader.ResourceStreamLoader
 import com.wpt.mydemos.R
-import com.github.penfeizhou.animation.apng.APNGDrawable
+//import com.github.penfeizhou.animation.apng.APNGDrawable
 
 
 
@@ -155,18 +155,18 @@ class AnimatorActivity : BaseActivity() {
         })
 
         // 从resource中加载
-        val resourceLoader = ResourceStreamLoader(this, R.drawable.clock)
-        // 创建APNG Drawable
-        // 创建APNG Drawable
-        val apngDrawable = APNGDrawable(resourceLoader)
-        apngDrawable.setAutoPlay(false)
-        img_animator2.setImageDrawable(apngDrawable)
+//        val resourceLoader = ResourceStreamLoader(this, R.drawable.clock)
+//        // 创建APNG Drawable
+//        // 创建APNG Drawable
+//        val apngDrawable = APNGDrawable(resourceLoader)
+//        apngDrawable.setAutoPlay(false)
+//        img_animator2.setImageDrawable(apngDrawable)
 //        img_animator2.setImageDrawable(resourceLoader)
 //        ApngImageLoader.getInstance().load(R.drawable.clock,img_animator2)
 //        ApngImageLoader.getInstance().displayImage("http://littlesvr.ca/apng/images/clock.png",img_animator2)
         btn_animator_start.setOnClickListener {
             rotate.start()
-            img_animator2.setImageDrawable(apngDrawable)
+//            img_animator2.setImageDrawable(apngDrawable)
             /*img_animator2.startAnimation(rotateAnimation)
 //            img_animator2.startAnimation(rotateAnimation1)
             val apngDrawable = ApngDrawable.getFromView(img_animator2)
