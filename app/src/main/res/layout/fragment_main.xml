@@ -39,6 +39,14 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <Button
+            android:id="@+id/main_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="定位"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/main_get_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

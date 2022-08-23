@@ -55,6 +55,7 @@ import com.wpt.mydemos.keyboard.KeyboardActivity
 import com.wpt.mydemos.kotlins.KotlinFunActivity
 import com.wpt.mydemos.launchmode.LaunchActivity_1
 import com.wpt.mydemos.leecode.LeeCodeActivity
+import com.wpt.mydemos.loc.LocationActivity
 import com.wpt.mydemos.map.MapJavaACtivity
 import com.wpt.mydemos.okhttp.OkHttpActivity
 import com.wpt.mydemos.oom.OOMActivity
@@ -121,6 +122,10 @@ class MainFragment : Fragment() {
                 et_input.addTextChangedListener(this)
             }
         })
+
+        main_location.setOnClickListener {
+            startActivity(Intent(activity, LocationActivity::class.java))
+        }
 
         main_get_phone.setOnClickListener {
             getPhoneNumber()
