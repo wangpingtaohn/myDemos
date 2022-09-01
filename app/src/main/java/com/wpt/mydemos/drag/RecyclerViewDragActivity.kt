@@ -14,7 +14,8 @@ import kotlinx.android.synthetic.main.activity_drag.*
 import java.util.*
 
 
-class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDragListener {
+class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDragListener
+,MyItemDecoration.GroupListener{
 
     private var adapter: RecyclerViewDragAdapter? = null
 
@@ -38,7 +39,7 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
 
     private fun initView(){
         var count = 0
-        while (count < 20){
+        while (count < 30){
             val item = DragItem()
             if (count == 0){
                 item.type = count
@@ -65,6 +66,7 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
         }
 //        val lm = GridLayoutManager(this,3)
 //        lm.stackFromEnd = true
+        drag_recyclerview.addItemDecoration(MyItemDecoration(this,this))
         drag_recyclerview.layoutManager = lm
         drag_recyclerview.adapter = autoLoadMoreAdapter
 
@@ -173,6 +175,30 @@ class RecyclerViewDragActivity : BaseActivity(),RecyclerViewDragAdapter.ItemDrag
     class DragItem {
         var type:Int = 1
         var resId:Int = 0
+    }
+
+    override fun getGroupName(position: Int): String? {
+
+        val name = when(position){
+            in 0..5 -> {
+                "第一组"
+            }
+            in 6..10 -> {
+                "第二组"
+            }
+            in 11..15 -> {
+                "第三组"
+            }
+            in 16..20 -> {
+                "第四组"
+            }
+            else -> {
+                "最后组"
+            }
+
+        }
+//        return position.toString()
+        return name
     }
 
 }
